@@ -1,0 +1,2079 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.20.1.5333 for 8051              06/Jun/2020  14:24:58
+// Copyright 2004-2018 IAR Systems AB.
+// PC-locked license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        C:\Users\TS-577\Desktop\Zigbee workspace\Product Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\Source\zcl_SampleSensorEnviroment_data.c
+//    Command line       =  
+//        -f C:\Users\TS-577\AppData\Local\Temp\EW60D8.tmp
+//        ("C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\Source\zcl_SampleSensorEnviroment_data.c"
+//        -D BDB_REPORTING -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D
+//        NV_RESTORE -D xZTOOL_P1 -D xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC
+//        -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D LCD_SUPPORTED=DEBUG -D
+//        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+//        ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_TEMPERATURE_MEASUREMENT -D
+//        ZCL_GROUPS -lC "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\CoordinatorEB\List"
+//        -lA "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\CoordinatorEB\List"
+//        --diag_suppress Pe001,Pa010 -o "C:\Users\TS-577\Desktop\Zigbee
+//        workspace\Product Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\CoordinatorEB\Obj"
+//        -e --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 16 -f
+//        "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg"
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DZDO_COORDINATOR -DRTR_NWK) -f "C:\Users\TS-577\Desktop\Zigbee
+//        workspace\Product Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0}
+//        -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=TRUE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000)
+//        -f "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\Source\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\Source\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\ZMain\TI2530DB\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\hal\include\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\mac\include\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\mt\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\osal\include\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\af\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\gp\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\zmac\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+//        -Ohz --require_prototypes)
+//    Locale             =  Japanese_JPN.932
+//    List file          =  
+//        C:\Users\TS-577\Desktop\Zigbee workspace\Product Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\CoordinatorEB\List\zcl_SampleSensorEnviroment_data.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME zcl_SampleSensorEnviroment_data
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        PUBLIC ??zclSampleSensorEnviroment_ResetAttributesToDe
+        FUNCTION ??zclSampleSensorEnviroment_ResetAttributesToDe,0203H
+        PUBLIC zclSampleSensorEnviroment_DateCode
+        PUBLIC zclSampleSensorEnviroment_DeviceEnable
+        PUBLIC zclSampleSensorEnviroment_HWRevision
+        PUBLIC zclSampleSensorEnviroment_Humidity_Attrs
+        PUBLIC zclSampleSensorEnviroment_Humidity_InClusterList
+        PUBLIC zclSampleSensorEnviroment_Humidity_MaxMeasuredValue
+        PUBLIC zclSampleSensorEnviroment_Humidity_MeasuredValue
+        PUBLIC zclSampleSensorEnviroment_Humidity_MinMeasuredValue
+        PUBLIC zclSampleSensorEnviroment_Humidity_NumAttributes
+        PUBLIC zclSampleSensorEnviroment_Humidity_OutClusterList
+        PUBLIC zclSampleSensorEnviroment_IdentifyTime
+        PUBLIC zclSampleSensorEnviroment_Light_Attrs
+        PUBLIC zclSampleSensorEnviroment_Light_InClusterList
+        PUBLIC zclSampleSensorEnviroment_Light_MeasuredValue
+        PUBLIC zclSampleSensorEnviroment_Light_NumAttributes
+        PUBLIC zclSampleSensorEnviroment_Light_OutClusterList
+        PUBLIC zclSampleSensorEnviroment_LocationDescription
+        PUBLIC zclSampleSensorEnviroment_ManufacturerName
+        PUBLIC zclSampleSensorEnviroment_ModelId
+        PUBLIC zclSampleSensorEnviroment_PhysicalEnvironment
+        PUBLIC zclSampleSensorEnviroment_Pir_Attrs
+        PUBLIC zclSampleSensorEnviroment_Pir_InClusterList
+        PUBLIC zclSampleSensorEnviroment_Pir_NumAttributes
+        PUBLIC zclSampleSensorEnviroment_Pir_OutClusterList
+        PUBLIC zclSampleSensorEnviroment_Pir_Status
+        PUBLIC zclSampleSensorEnviroment_Pir_Type
+        PUBLIC zclSampleSensorEnviroment_PowerSource
+        PUBLIC zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+        FUNCTION zclSampleSensorEnviroment_ResetAttributesToDefaultValues,0203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        PUBLIC zclSampleSensorEnviroment_SimpleDesc_List
+        PUBLIC zclSampleSensorEnviroment_Temperature_Attrs
+        PUBLIC zclSampleSensorEnviroment_Temperature_InClusterList
+        PUBLIC zclSampleSensorEnviroment_Temperature_MaxMeasuredValue
+        PUBLIC zclSampleSensorEnviroment_Temperature_MeasuredValue
+        PUBLIC zclSampleSensorEnviroment_Temperature_MinMeasuredValue
+        PUBLIC zclSampleSensorEnviroment_Temperature_NumAttributes
+        PUBLIC zclSampleSensorEnviroment_Temperature_OutClusterList
+        PUBLIC zclSampleSensorEnviroment_ZCLVersion
+        PUBLIC zclSampleSensorEnviroment_clusterRevision_all
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+          CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI V8 SameValue
+          CFI V9 SameValue
+          CFI V10 SameValue
+          CFI V11 SameValue
+          CFI V12 SameValue
+          CFI V13 SameValue
+          CFI V14 SameValue
+          CFI V15 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+zclSampleSensorEnviroment_ResetAttributesToDefaultValues SYMBOL "zclSampleSensorEnviroment_ResetAttributesToDefaultValues"
+??zclSampleSensorEnviroment_ResetAttributesToDe SYMBOL "?relay", zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+
+// C:\Users\TS-577\Desktop\Zigbee workspace\Product Developer\particular product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\Source\zcl_SampleSensorEnviroment_data.c
+//    1 /**************************************************************************************************
+//    2 Filename:       zcl_sampletemperaturesensor_data.c
+//    3 Revised:        $Date: 2014-09-25 13:20:41 -0700 (Thu, 25 Sep 2014) $
+//    4 Revision:       $Revision: 40295 $
+//    5 
+//    6 
+//    7 Description:    Zigbee Cluster Library - sample device application.
+//    8 
+//    9 
+//   10 Copyright 2013-2014 Texas Instruments Incorporated. All rights reserved.
+//   11 
+//   12 IMPORTANT: Your use of this Software is limited to those specific rights
+//   13 granted under the terms of a software license agreement between the user
+//   14 who downloaded the software, his/her employer (which must be your employer)
+//   15 and Texas Instruments Incorporated (the "License").  You may not use this
+//   16 Software unless you agree to abide by the terms of the License. The License
+//   17 limits your use, and you acknowledge, that the Software may not be modified,
+//   18 copied or distributed unless embedded on a Texas Instruments microcontroller
+//   19 or used solely and exclusively in conjunction with a Texas Instruments radio
+//   20 frequency transceiver, which is integrated into your product.  Other than for
+//   21 the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   22 works of, modify, distribute, perform, display or sell this Software and/or
+//   23 its documentation for any purpose.
+//   24 
+//   25 YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   26 PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   27 INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   28 NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   29 TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   30 NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   31 LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   32 INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   33 OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   34 OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   35 (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   36 
+//   37 Should you have any questions regarding your right to use this Software,
+//   38 contact Texas Instruments Incorporated at www.TI.com.
+//   39 **************************************************************************************************/
+//   40 
+//   41 /*********************************************************************
+//   42 * INCLUDES
+//   43 */
+//   44 #include "ZComDef.h"
+//   45 #include "OSAL.h"
+//   46 #include "AF.h"
+//   47 #include "ZDConfig.h"
+//   48 
+//   49 #include "zcl.h"
+//   50 #include "zcl_general.h"
+//   51 #include "zcl_ha.h"
+//   52 #include "zcl_ms.h"
+//   53 
+//   54 #include "zcl_SampleSensorEnviroment.h"
+//   55 
+//   56 /*********************************************************************
+//   57 * CONSTANTS
+//   58 */
+//   59 
+//   60 #define SAMPLESENSORENVIROMENT_DEVICE_VERSION     0
+//   61 #define SAMPLESENSORENVIROMENT_FLAGS              0
+//   62 
+//   63 #define SAMPLESENSORENVIROMENT_HWVERSION          1
+//   64 #define SAMPLESENSORENVIROMENT_ZCLVERSION         1
+//   65 
+//   66 #define SAMPLESENSORENVIROMENT_TEMPERATURE_MAX_MEASURED_VALUE  2700  // 27.00C
+//   67 #define SAMPLESENSORENVIROMENT_TEMPERATURE_MIN_MEASURED_VALUE  1700  // 17.00C
+//   68 #define SAMPLESENSORENVIROMENT_TEMPERATURE_MEASURED_VALUE      2000  // 20.00C
+//   69 
+//   70 #define SAMPLESENSORENVIROMENT_HUMIDITY_MIN_MEASURED_VALUE        50
+//   71 #define SAMPLESENSORENVIROMENT_HUMIDITY_MAX_MEASURED_VALUE        300
+//   72 #define SAMPLESENSORENVIROMENT_HUMIDITY_MEASURED_VALUE            150  
+//   73 
+//   74 #define SAMPLESENSORENVIROMENT_LIGHT_MEASURED_VALUE        50
+//   75 
+//   76 
+//   77 /*********************************************************************
+//   78 * TYPEDEFS
+//   79 */
+//   80 
+//   81 /*********************************************************************
+//   82 * MACROS
+//   83 */
+//   84 
+//   85 /*********************************************************************
+//   86 * GLOBAL VARIABLES
+//   87 */
+//   88 
+//   89 // Global attributes
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//   90 const uint16 zclSampleSensorEnviroment_clusterRevision_all = 0x0001; 
+zclSampleSensorEnviroment_clusterRevision_all:
+        DW 1
+//   91 
+//   92 // Basic Cluster
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   93 const uint8 zclSampleSensorEnviroment_HWRevision = SAMPLESENSORENVIROMENT_HWVERSION;
+zclSampleSensorEnviroment_HWRevision:
+        DB 1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   94 const uint8 zclSampleSensorEnviroment_ZCLVersion = SAMPLESENSORENVIROMENT_ZCLVERSION;
+zclSampleSensorEnviroment_ZCLVersion:
+        DB 1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   95 const uint8 zclSampleSensorEnviroment_ManufacturerName[] = { 16, 'T','e','x','a','s','I','n','s','t','r','u','m','e','n','t','s' };
+zclSampleSensorEnviroment_ManufacturerName:
+        DB 16
+        DB 84
+        DB 101
+        DB 120
+        DB 97
+        DB 115
+        DB 73
+        DB 110
+        DB 115
+        DB 116
+        DB 114
+        DB 117
+        DB 109
+        DB 101
+        DB 110
+        DB 116
+        DB 115
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   96 const uint8 zclSampleSensorEnviroment_ModelId[] = { 16, 'T','I','0','0','0','1',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ' };
+zclSampleSensorEnviroment_ModelId:
+        DB 16
+        DB 84
+        DB 73
+        DB 48
+        DB 48
+        DB 48
+        DB 49
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   97 const uint8 zclSampleSensorEnviroment_DateCode[] = { 16, '2','0','0','6','0','8','3','1',' ',' ',' ',' ',' ',' ',' ',' ' };
+zclSampleSensorEnviroment_DateCode:
+        DB 16
+        DB 50
+        DB 48
+        DB 48
+        DB 54
+        DB 48
+        DB 56
+        DB 51
+        DB 49
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+        DB 32
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//   98 const uint8 zclSampleSensorEnviroment_PowerSource = POWER_SOURCE_MAINS_1_PHASE;
+zclSampleSensorEnviroment_PowerSource:
+        DB 1
+//   99 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  100 uint8 zclSampleSensorEnviroment_LocationDescription[17];
+zclSampleSensorEnviroment_LocationDescription:
+        DS 17
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  101 uint8 zclSampleSensorEnviroment_PhysicalEnvironment;
+zclSampleSensorEnviroment_PhysicalEnvironment:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  102 uint8 zclSampleSensorEnviroment_DeviceEnable;
+zclSampleSensorEnviroment_DeviceEnable:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  103 
+//  104 // Identify Cluster
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  105 uint16 zclSampleSensorEnviroment_IdentifyTime;
+zclSampleSensorEnviroment_IdentifyTime:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  106 
+//  107 // Temperature Sensor Cluster
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  108 int16 zclSampleSensorEnviroment_Temperature_MeasuredValue;
+zclSampleSensorEnviroment_Temperature_MeasuredValue:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  109 int16 zclSampleSensorEnviroment_Temperature_MinMeasuredValue = SAMPLESENSORENVIROMENT_TEMPERATURE_MIN_MEASURED_VALUE; 
+zclSampleSensorEnviroment_Temperature_MinMeasuredValue:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for zclSampleSensorEnviroment_Te`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  110 uint16 zclSampleSensorEnviroment_Temperature_MaxMeasuredValue = SAMPLESENSORENVIROMENT_TEMPERATURE_MAX_MEASURED_VALUE;
+zclSampleSensorEnviroment_Temperature_MaxMeasuredValue:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for zclSampleSensorEnviroment_Te_1`
+        REQUIRE __INIT_XDATA_I
+//  111 
+//  112 // Light Sensor Cluster
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  113 int16 zclSampleSensorEnviroment_Light_MeasuredValue;
+zclSampleSensorEnviroment_Light_MeasuredValue:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+//  114 
+//  115 // Humidity Sensor Cluster
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA16
+//  116 int16 zclSampleSensorEnviroment_Humidity_MeasuredValue;
+zclSampleSensorEnviroment_Humidity_MeasuredValue:
+        DS 2
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  117 int16 zclSampleSensorEnviroment_Humidity_MinMeasuredValue = SAMPLESENSORENVIROMENT_HUMIDITY_MIN_MEASURED_VALUE;
+zclSampleSensorEnviroment_Humidity_MinMeasuredValue:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for zclSampleSensorEnviroment_Hu`
+        REQUIRE __INIT_XDATA_I
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  118 uint16 zclSampleSensorEnviroment_Humidity_MaxMeasuredValue = SAMPLESENSORENVIROMENT_HUMIDITY_MAX_MEASURED_VALUE;
+zclSampleSensorEnviroment_Humidity_MaxMeasuredValue:
+        DATA16
+        DS 2
+        REQUIRE `?<Initializer for zclSampleSensorEnviroment_Hu_1`
+        REQUIRE __INIT_XDATA_I
+//  119 
+//  120 // PIR Sensor Cluster
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  121 bool zclSampleSensorEnviroment_Pir_Status;
+zclSampleSensorEnviroment_Pir_Status:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  122 uint8 zclSampleSensorEnviroment_Pir_Type = MS_OCCUPANCY_SENSOR_TYPE_PIR;
+zclSampleSensorEnviroment_Pir_Type:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  123 /*********************************************************************
+//  124 * ATTRIBUTE DEFINITIONS - Uses REAL cluster IDs
+//  125 */
+//  126 
+//  127 // NOTE: The attributes listed in the AttrRec must be in ascending order 
+//  128 // per cluster to allow right function of the Foundation discovery commands
+//  129 
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA8
+//  130 CONST zclAttrRec_t zclSampleSensorEnviroment_Light_Attrs[] =
+zclSampleSensorEnviroment_Light_Attrs:
+        DATA16
+        DW 0
+        DW 0
+        DATA8
+        DB 32
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ZCLVersion
+        DW 0
+        DW 3
+        DATA8
+        DB 32
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_HWRevision
+        DW 0
+        DW 4
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ManufacturerName
+        DW 0
+        DW 5
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ModelId
+        DW 0
+        DW 6
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_DateCode
+        DW 0
+        DW 7
+        DATA8
+        DB 48
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_PowerSource
+        DW 0
+        DW 16
+        DATA8
+        DB 66
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_LocationDescription
+        DW 0
+        DW 17
+        DATA8
+        DB 48
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_PhysicalEnvironment
+        DW 0
+        DW 18
+        DATA8
+        DB 16
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_DeviceEnable
+        DW 0
+        DW 65533
+        DATA8
+        DB 33
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+        DW 3
+        DW 0
+        DATA8
+        DB 33
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_IdentifyTime
+        DW 3
+        DW 65533
+        DATA8
+        DB 33
+        DB 65
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+        DW 1024
+        DW 0
+        DATA8
+        DB 41
+        DB 5
+        DATA16
+        DW zclSampleSensorEnviroment_Light_MeasuredValue
+        DW 1024
+        DW 65533
+        DATA8
+        DB 33
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+//  131 {
+//  132   // *** General Basic Cluster Attributes ***
+//  133   {
+//  134     ZCL_CLUSTER_ID_GEN_BASIC,
+//  135     { // Attribute record
+//  136       ATTRID_BASIC_ZCL_VERSION,
+//  137       ZCL_DATATYPE_UINT8,
+//  138       ACCESS_CONTROL_READ,
+//  139       (void *)&zclSampleSensorEnviroment_ZCLVersion
+//  140     }
+//  141   },
+//  142   {
+//  143     ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+//  144     {  // Attribute record
+//  145       ATTRID_BASIC_HW_VERSION,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+//  146       ZCL_DATATYPE_UINT8,                 // Data Type - found in zcl.h
+//  147       ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+//  148       (void *)&zclSampleSensorEnviroment_HWRevision  // Pointer to attribute variable
+//  149     }
+//  150   },
+//  151   {
+//  152     ZCL_CLUSTER_ID_GEN_BASIC,
+//  153     { // Attribute record
+//  154       ATTRID_BASIC_MANUFACTURER_NAME,
+//  155       ZCL_DATATYPE_CHAR_STR,
+//  156       ACCESS_CONTROL_READ,
+//  157       (void *)zclSampleSensorEnviroment_ManufacturerName
+//  158     }
+//  159   },
+//  160   {
+//  161     ZCL_CLUSTER_ID_GEN_BASIC,
+//  162     { // Attribute record
+//  163       ATTRID_BASIC_MODEL_ID,
+//  164       ZCL_DATATYPE_CHAR_STR,
+//  165       ACCESS_CONTROL_READ,
+//  166       (void *)zclSampleSensorEnviroment_ModelId
+//  167     }
+//  168   },
+//  169   {
+//  170     ZCL_CLUSTER_ID_GEN_BASIC,
+//  171     { // Attribute record
+//  172       ATTRID_BASIC_DATE_CODE,
+//  173       ZCL_DATATYPE_CHAR_STR,
+//  174       ACCESS_CONTROL_READ,
+//  175       (void *)zclSampleSensorEnviroment_DateCode
+//  176     }
+//  177   },
+//  178   {
+//  179     ZCL_CLUSTER_ID_GEN_BASIC,
+//  180     { // Attribute record
+//  181       ATTRID_BASIC_POWER_SOURCE,
+//  182       ZCL_DATATYPE_ENUM8,
+//  183       ACCESS_CONTROL_READ,
+//  184       (void *)&zclSampleSensorEnviroment_PowerSource
+//  185     }
+//  186   },
+//  187   {
+//  188     ZCL_CLUSTER_ID_GEN_BASIC,
+//  189     { // Attribute record
+//  190       ATTRID_BASIC_LOCATION_DESC,
+//  191       ZCL_DATATYPE_CHAR_STR,
+//  192       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  193       (void *)zclSampleSensorEnviroment_LocationDescription
+//  194     }
+//  195   },
+//  196   {
+//  197     ZCL_CLUSTER_ID_GEN_BASIC,
+//  198     { // Attribute record
+//  199       ATTRID_BASIC_PHYSICAL_ENV,
+//  200       ZCL_DATATYPE_ENUM8,
+//  201       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  202       (void *)&zclSampleSensorEnviroment_PhysicalEnvironment
+//  203     }
+//  204   },
+//  205   {
+//  206     ZCL_CLUSTER_ID_GEN_BASIC,
+//  207     { // Attribute record
+//  208       ATTRID_BASIC_DEVICE_ENABLED,
+//  209       ZCL_DATATYPE_BOOLEAN,
+//  210       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  211       (void *)&zclSampleSensorEnviroment_DeviceEnable
+//  212     }
+//  213   },
+//  214   {
+//  215     ZCL_CLUSTER_ID_GEN_BASIC,
+//  216     {  // Attribute record
+//  217       ATTRID_CLUSTER_REVISION,
+//  218       ZCL_DATATYPE_UINT16,
+//  219       ACCESS_CONTROL_READ,
+//  220       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  221     }
+//  222   },
+//  223   // *** Identify Cluster Attribute ***
+//  224   {
+//  225     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  226     { // Attribute record
+//  227       ATTRID_IDENTIFY_TIME,
+//  228       ZCL_DATATYPE_UINT16,
+//  229       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  230       (void *)&zclSampleSensorEnviroment_IdentifyTime
+//  231     }
+//  232   },
+//  233   {
+//  234     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  235     {  // Attribute record
+//  236       ATTRID_CLUSTER_REVISION,
+//  237       ZCL_DATATYPE_UINT16,
+//  238       ACCESS_CONTROL_READ | ACCESS_GLOBAL,
+//  239       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  240     }
+//  241   },
+//  242   // *** Light Measurement Attriubtes ***
+//  243   {
+//  244     ZCL_CLUSTER_ID_MS_ILLUMINANCE_MEASUREMENT,
+//  245     { // Attribute record
+//  246       ATTRID_MS_ILLUMINANCE_LEVEL_STATUS,
+//  247       ZCL_DATATYPE_INT16,
+//  248       ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+//  249       (void *)&zclSampleSensorEnviroment_Light_MeasuredValue
+//  250     }
+//  251   },
+//  252   
+//  253   {
+//  254     ZCL_CLUSTER_ID_MS_ILLUMINANCE_MEASUREMENT,
+//  255     {  // Attribute record
+//  256       ATTRID_CLUSTER_REVISION,
+//  257       ZCL_DATATYPE_UINT16,
+//  258       ACCESS_CONTROL_READ,
+//  259       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  260     }
+//  261   }
+//  262 };
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA8
+//  263 uint8 CONST zclSampleSensorEnviroment_Light_NumAttributes = ( sizeof(zclSampleSensorEnviroment_Light_Attrs) / sizeof(zclSampleSensorEnviroment_Light_Attrs[0]) );
+zclSampleSensorEnviroment_Light_NumAttributes:
+        DB 14
+//  264 
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA8
+//  265 CONST zclAttrRec_t zclSampleSensorEnviroment_Temperature_Attrs[] =
+zclSampleSensorEnviroment_Temperature_Attrs:
+        DATA16
+        DW 0
+        DW 0
+        DATA8
+        DB 32
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ZCLVersion
+        DW 0
+        DW 3
+        DATA8
+        DB 32
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_HWRevision
+        DW 0
+        DW 4
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ManufacturerName
+        DW 0
+        DW 5
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ModelId
+        DW 0
+        DW 6
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_DateCode
+        DW 0
+        DW 7
+        DATA8
+        DB 48
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_PowerSource
+        DW 0
+        DW 16
+        DATA8
+        DB 66
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_LocationDescription
+        DW 0
+        DW 17
+        DATA8
+        DB 48
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_PhysicalEnvironment
+        DW 0
+        DW 18
+        DATA8
+        DB 16
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_DeviceEnable
+        DW 0
+        DW 65533
+        DATA8
+        DB 33
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+        DW 3
+        DW 0
+        DATA8
+        DB 33
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_IdentifyTime
+        DW 3
+        DW 65533
+        DATA8
+        DB 33
+        DB 65
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+        DW 1026
+        DW 0
+        DATA8
+        DB 41
+        DB 5
+        DATA16
+        DW zclSampleSensorEnviroment_Temperature_MeasuredValue
+        DW 1026
+        DW 1
+        DATA8
+        DB 41
+        DB 5
+        DATA16
+        DW zclSampleSensorEnviroment_Temperature_MinMeasuredValue
+        DW 1026
+        DW 2
+        DATA8
+        DB 41
+        DB 5
+        DATA16
+        DW zclSampleSensorEnviroment_Temperature_MaxMeasuredValue
+        DW 1026
+        DW 65533
+        DATA8
+        DB 33
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+//  266 {
+//  267     // *** General Basic Cluster Attributes ***
+//  268   {
+//  269     ZCL_CLUSTER_ID_GEN_BASIC,
+//  270     { // Attribute record
+//  271       ATTRID_BASIC_ZCL_VERSION,
+//  272       ZCL_DATATYPE_UINT8,
+//  273       ACCESS_CONTROL_READ,
+//  274       (void *)&zclSampleSensorEnviroment_ZCLVersion
+//  275     }
+//  276   },
+//  277   {
+//  278     ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+//  279     {  // Attribute record
+//  280       ATTRID_BASIC_HW_VERSION,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+//  281       ZCL_DATATYPE_UINT8,                 // Data Type - found in zcl.h
+//  282       ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+//  283       (void *)&zclSampleSensorEnviroment_HWRevision  // Pointer to attribute variable
+//  284     }
+//  285   },
+//  286   {
+//  287     ZCL_CLUSTER_ID_GEN_BASIC,
+//  288     { // Attribute record
+//  289       ATTRID_BASIC_MANUFACTURER_NAME,
+//  290       ZCL_DATATYPE_CHAR_STR,
+//  291       ACCESS_CONTROL_READ,
+//  292       (void *)zclSampleSensorEnviroment_ManufacturerName
+//  293     }
+//  294   },
+//  295   {
+//  296     ZCL_CLUSTER_ID_GEN_BASIC,
+//  297     { // Attribute record
+//  298       ATTRID_BASIC_MODEL_ID,
+//  299       ZCL_DATATYPE_CHAR_STR,
+//  300       ACCESS_CONTROL_READ,
+//  301       (void *)zclSampleSensorEnviroment_ModelId
+//  302     }
+//  303   },
+//  304   {
+//  305     ZCL_CLUSTER_ID_GEN_BASIC,
+//  306     { // Attribute record
+//  307       ATTRID_BASIC_DATE_CODE,
+//  308       ZCL_DATATYPE_CHAR_STR,
+//  309       ACCESS_CONTROL_READ,
+//  310       (void *)zclSampleSensorEnviroment_DateCode
+//  311     }
+//  312   },
+//  313   {
+//  314     ZCL_CLUSTER_ID_GEN_BASIC,
+//  315     { // Attribute record
+//  316       ATTRID_BASIC_POWER_SOURCE,
+//  317       ZCL_DATATYPE_ENUM8,
+//  318       ACCESS_CONTROL_READ,
+//  319       (void *)&zclSampleSensorEnviroment_PowerSource
+//  320     }
+//  321   },
+//  322   {
+//  323     ZCL_CLUSTER_ID_GEN_BASIC,
+//  324     { // Attribute record
+//  325       ATTRID_BASIC_LOCATION_DESC,
+//  326       ZCL_DATATYPE_CHAR_STR,
+//  327       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  328       (void *)zclSampleSensorEnviroment_LocationDescription
+//  329     }
+//  330   },
+//  331   {
+//  332     ZCL_CLUSTER_ID_GEN_BASIC,
+//  333     { // Attribute record
+//  334       ATTRID_BASIC_PHYSICAL_ENV,
+//  335       ZCL_DATATYPE_ENUM8,
+//  336       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  337       (void *)&zclSampleSensorEnviroment_PhysicalEnvironment
+//  338     }
+//  339   },
+//  340   {
+//  341     ZCL_CLUSTER_ID_GEN_BASIC,
+//  342     { // Attribute record
+//  343       ATTRID_BASIC_DEVICE_ENABLED,
+//  344       ZCL_DATATYPE_BOOLEAN,
+//  345       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  346       (void *)&zclSampleSensorEnviroment_DeviceEnable
+//  347     }
+//  348   },
+//  349   {
+//  350     ZCL_CLUSTER_ID_GEN_BASIC,
+//  351     {  // Attribute record
+//  352       ATTRID_CLUSTER_REVISION,
+//  353       ZCL_DATATYPE_UINT16,
+//  354       ACCESS_CONTROL_READ,
+//  355       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  356     }
+//  357   },
+//  358   // *** Identify Cluster Attribute ***
+//  359   {
+//  360     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  361     { // Attribute record
+//  362       ATTRID_IDENTIFY_TIME,
+//  363       ZCL_DATATYPE_UINT16,
+//  364       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  365       (void *)&zclSampleSensorEnviroment_IdentifyTime
+//  366     }
+//  367   },
+//  368   {
+//  369     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  370     {  // Attribute record
+//  371       ATTRID_CLUSTER_REVISION,
+//  372       ZCL_DATATYPE_UINT16,
+//  373       ACCESS_CONTROL_READ | ACCESS_GLOBAL,
+//  374       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  375     }
+//  376   },
+//  377   
+//  378   // *** Temperature Measurement Attriubtes ***
+//  379   {
+//  380     ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+//  381     { // Attribute record
+//  382       ATTRID_MS_TEMPERATURE_MEASURED_VALUE,
+//  383       ZCL_DATATYPE_INT16,
+//  384       ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+//  385       (void *)&zclSampleSensorEnviroment_Temperature_MeasuredValue
+//  386     }
+//  387   },
+//  388   {
+//  389     ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+//  390     { // Attribute record
+//  391       ATTRID_MS_TEMPERATURE_MIN_MEASURED_VALUE,
+//  392       ZCL_DATATYPE_INT16,
+//  393       ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+//  394       (void *)&zclSampleSensorEnviroment_Temperature_MinMeasuredValue
+//  395     }
+//  396   },
+//  397   {
+//  398     ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+//  399     { // Attribute record
+//  400       ATTRID_MS_TEMPERATURE_MAX_MEASURED_VALUE,
+//  401       ZCL_DATATYPE_INT16,
+//  402       ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+//  403       (void *)&zclSampleSensorEnviroment_Temperature_MaxMeasuredValue
+//  404     }
+//  405   },
+//  406   {
+//  407     ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+//  408     {  // Attribute record
+//  409       ATTRID_CLUSTER_REVISION,
+//  410       ZCL_DATATYPE_UINT16,
+//  411       ACCESS_CONTROL_READ,
+//  412       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  413     }
+//  414   }
+//  415 };
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA8
+//  416 uint8 CONST zclSampleSensorEnviroment_Temperature_NumAttributes = ( sizeof(zclSampleSensorEnviroment_Temperature_Attrs) / sizeof(zclSampleSensorEnviroment_Temperature_Attrs[0]) );
+zclSampleSensorEnviroment_Temperature_NumAttributes:
+        DB 16
+//  417 
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA8
+//  418 CONST zclAttrRec_t zclSampleSensorEnviroment_Humidity_Attrs[] =
+zclSampleSensorEnviroment_Humidity_Attrs:
+        DATA16
+        DW 0
+        DW 0
+        DATA8
+        DB 32
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ZCLVersion
+        DW 0
+        DW 3
+        DATA8
+        DB 32
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_HWRevision
+        DW 0
+        DW 4
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ManufacturerName
+        DW 0
+        DW 5
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ModelId
+        DW 0
+        DW 6
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_DateCode
+        DW 0
+        DW 7
+        DATA8
+        DB 48
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_PowerSource
+        DW 0
+        DW 16
+        DATA8
+        DB 66
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_LocationDescription
+        DW 0
+        DW 17
+        DATA8
+        DB 48
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_PhysicalEnvironment
+        DW 0
+        DW 18
+        DATA8
+        DB 16
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_DeviceEnable
+        DW 0
+        DW 65533
+        DATA8
+        DB 33
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+        DW 3
+        DW 0
+        DATA8
+        DB 33
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_IdentifyTime
+        DW 3
+        DW 65533
+        DATA8
+        DB 33
+        DB 65
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+        DW 1029
+        DW 0
+        DATA8
+        DB 41
+        DB 5
+        DATA16
+        DW zclSampleSensorEnviroment_Humidity_MeasuredValue
+        DW 1029
+        DW 1
+        DATA8
+        DB 41
+        DB 5
+        DATA16
+        DW zclSampleSensorEnviroment_Humidity_MinMeasuredValue
+        DW 1029
+        DW 2
+        DATA8
+        DB 41
+        DB 5
+        DATA16
+        DW zclSampleSensorEnviroment_Humidity_MaxMeasuredValue
+        DW 1029
+        DW 65533
+        DATA8
+        DB 33
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+//  419 {
+//  420     // *** General Basic Cluster Attributes ***
+//  421   {
+//  422     ZCL_CLUSTER_ID_GEN_BASIC,
+//  423     { // Attribute record
+//  424       ATTRID_BASIC_ZCL_VERSION,
+//  425       ZCL_DATATYPE_UINT8,
+//  426       ACCESS_CONTROL_READ,
+//  427       (void *)&zclSampleSensorEnviroment_ZCLVersion
+//  428     }
+//  429   },
+//  430   {
+//  431     ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+//  432     {  // Attribute record
+//  433       ATTRID_BASIC_HW_VERSION,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+//  434       ZCL_DATATYPE_UINT8,                 // Data Type - found in zcl.h
+//  435       ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+//  436       (void *)&zclSampleSensorEnviroment_HWRevision  // Pointer to attribute variable
+//  437     }
+//  438   },
+//  439   {
+//  440     ZCL_CLUSTER_ID_GEN_BASIC,
+//  441     { // Attribute record
+//  442       ATTRID_BASIC_MANUFACTURER_NAME,
+//  443       ZCL_DATATYPE_CHAR_STR,
+//  444       ACCESS_CONTROL_READ,
+//  445       (void *)zclSampleSensorEnviroment_ManufacturerName
+//  446     }
+//  447   },
+//  448   {
+//  449     ZCL_CLUSTER_ID_GEN_BASIC,
+//  450     { // Attribute record
+//  451       ATTRID_BASIC_MODEL_ID,
+//  452       ZCL_DATATYPE_CHAR_STR,
+//  453       ACCESS_CONTROL_READ,
+//  454       (void *)zclSampleSensorEnviroment_ModelId
+//  455     }
+//  456   },
+//  457   {
+//  458     ZCL_CLUSTER_ID_GEN_BASIC,
+//  459     { // Attribute record
+//  460       ATTRID_BASIC_DATE_CODE,
+//  461       ZCL_DATATYPE_CHAR_STR,
+//  462       ACCESS_CONTROL_READ,
+//  463       (void *)zclSampleSensorEnviroment_DateCode
+//  464     }
+//  465   },
+//  466   {
+//  467     ZCL_CLUSTER_ID_GEN_BASIC,
+//  468     { // Attribute record
+//  469       ATTRID_BASIC_POWER_SOURCE,
+//  470       ZCL_DATATYPE_ENUM8,
+//  471       ACCESS_CONTROL_READ,
+//  472       (void *)&zclSampleSensorEnviroment_PowerSource
+//  473     }
+//  474   },
+//  475   {
+//  476     ZCL_CLUSTER_ID_GEN_BASIC,
+//  477     { // Attribute record
+//  478       ATTRID_BASIC_LOCATION_DESC,
+//  479       ZCL_DATATYPE_CHAR_STR,
+//  480       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  481       (void *)zclSampleSensorEnviroment_LocationDescription
+//  482     }
+//  483   },
+//  484   {
+//  485     ZCL_CLUSTER_ID_GEN_BASIC,
+//  486     { // Attribute record
+//  487       ATTRID_BASIC_PHYSICAL_ENV,
+//  488       ZCL_DATATYPE_ENUM8,
+//  489       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  490       (void *)&zclSampleSensorEnviroment_PhysicalEnvironment
+//  491     }
+//  492   },
+//  493   {
+//  494     ZCL_CLUSTER_ID_GEN_BASIC,
+//  495     { // Attribute record
+//  496       ATTRID_BASIC_DEVICE_ENABLED,
+//  497       ZCL_DATATYPE_BOOLEAN,
+//  498       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  499       (void *)&zclSampleSensorEnviroment_DeviceEnable
+//  500     }
+//  501   },
+//  502   {
+//  503     ZCL_CLUSTER_ID_GEN_BASIC,
+//  504     {  // Attribute record
+//  505       ATTRID_CLUSTER_REVISION,
+//  506       ZCL_DATATYPE_UINT16,
+//  507       ACCESS_CONTROL_READ,
+//  508       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  509     }
+//  510   },
+//  511   // *** Identify Cluster Attribute ***
+//  512   {
+//  513     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  514     { // Attribute record
+//  515       ATTRID_IDENTIFY_TIME,
+//  516       ZCL_DATATYPE_UINT16,
+//  517       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  518       (void *)&zclSampleSensorEnviroment_IdentifyTime
+//  519     }
+//  520   },
+//  521   {
+//  522     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  523     {  // Attribute record
+//  524       ATTRID_CLUSTER_REVISION,
+//  525       ZCL_DATATYPE_UINT16,
+//  526       ACCESS_CONTROL_READ | ACCESS_GLOBAL,
+//  527       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  528     }
+//  529   },
+//  530   // *** Humidity Measurement Attriubtes ***
+//  531   {
+//  532     ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+//  533     { // Attribute record
+//  534       ATTRID_MS_RELATIVE_HUMIDITY_MEASURED_VALUE,
+//  535       ZCL_DATATYPE_INT16,
+//  536       ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+//  537       (void *)&zclSampleSensorEnviroment_Humidity_MeasuredValue
+//  538     }
+//  539   },
+//  540     {
+//  541     ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+//  542     { // Attribute record
+//  543       ATTRID_MS_RELATIVE_HUMIDITY_MIN_MEASURED_VALUE,
+//  544       ZCL_DATATYPE_INT16,
+//  545       ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+//  546       (void *)&zclSampleSensorEnviroment_Humidity_MinMeasuredValue
+//  547     }
+//  548   },
+//  549     {
+//  550     ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+//  551     { // Attribute record
+//  552       ATTRID_MS_RELATIVE_HUMIDITY_MAX_MEASURED_VALUE,
+//  553       ZCL_DATATYPE_INT16,
+//  554       ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+//  555       (void *)&zclSampleSensorEnviroment_Humidity_MaxMeasuredValue
+//  556     }
+//  557   }, 
+//  558   {
+//  559     ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+//  560     {  // Attribute record
+//  561       ATTRID_CLUSTER_REVISION,
+//  562       ZCL_DATATYPE_UINT16,
+//  563       ACCESS_CONTROL_READ,
+//  564       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  565     }
+//  566   }
+//  567 };
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA8
+//  568 uint8 CONST zclSampleSensorEnviroment_Humidity_NumAttributes = ( sizeof(zclSampleSensorEnviroment_Humidity_Attrs) / sizeof(zclSampleSensorEnviroment_Humidity_Attrs[0]) );
+zclSampleSensorEnviroment_Humidity_NumAttributes:
+        DB 16
+//  569 
+//  570 
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA8
+//  571 CONST zclAttrRec_t zclSampleSensorEnviroment_Pir_Attrs[] =
+zclSampleSensorEnviroment_Pir_Attrs:
+        DATA16
+        DW 0
+        DW 0
+        DATA8
+        DB 32
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ZCLVersion
+        DW 0
+        DW 3
+        DATA8
+        DB 32
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_HWRevision
+        DW 0
+        DW 4
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ManufacturerName
+        DW 0
+        DW 5
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_ModelId
+        DW 0
+        DW 6
+        DATA8
+        DB 66
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_DateCode
+        DW 0
+        DW 7
+        DATA8
+        DB 48
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_PowerSource
+        DW 0
+        DW 16
+        DATA8
+        DB 66
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_LocationDescription
+        DW 0
+        DW 17
+        DATA8
+        DB 48
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_PhysicalEnvironment
+        DW 0
+        DW 18
+        DATA8
+        DB 16
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_DeviceEnable
+        DW 0
+        DW 65533
+        DATA8
+        DB 33
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+        DW 3
+        DW 0
+        DATA8
+        DB 33
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_IdentifyTime
+        DW 3
+        DW 65533
+        DATA8
+        DB 33
+        DB 65
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+        DW 1030
+        DW 0
+        DATA8
+        DB 24
+        DB 5
+        DATA16
+        DW zclSampleSensorEnviroment_Pir_Status
+        DW 1030
+        DW 1
+        DATA8
+        DB 48
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_Pir_Type
+        DW 1030
+        DW 65533
+        DATA8
+        DB 33
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_clusterRevision_all
+//  572 {
+//  573     // *** General Basic Cluster Attributes ***
+//  574   {
+//  575     ZCL_CLUSTER_ID_GEN_BASIC,
+//  576     { // Attribute record
+//  577       ATTRID_BASIC_ZCL_VERSION,
+//  578       ZCL_DATATYPE_UINT8,
+//  579       ACCESS_CONTROL_READ,
+//  580       (void *)&zclSampleSensorEnviroment_ZCLVersion
+//  581     }
+//  582   },
+//  583   {
+//  584     ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+//  585     {  // Attribute record
+//  586       ATTRID_BASIC_HW_VERSION,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+//  587       ZCL_DATATYPE_UINT8,                 // Data Type - found in zcl.h
+//  588       ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+//  589       (void *)&zclSampleSensorEnviroment_HWRevision  // Pointer to attribute variable
+//  590     }
+//  591   },
+//  592   {
+//  593     ZCL_CLUSTER_ID_GEN_BASIC,
+//  594     { // Attribute record
+//  595       ATTRID_BASIC_MANUFACTURER_NAME,
+//  596       ZCL_DATATYPE_CHAR_STR,
+//  597       ACCESS_CONTROL_READ,
+//  598       (void *)zclSampleSensorEnviroment_ManufacturerName
+//  599     }
+//  600   },
+//  601   {
+//  602     ZCL_CLUSTER_ID_GEN_BASIC,
+//  603     { // Attribute record
+//  604       ATTRID_BASIC_MODEL_ID,
+//  605       ZCL_DATATYPE_CHAR_STR,
+//  606       ACCESS_CONTROL_READ,
+//  607       (void *)zclSampleSensorEnviroment_ModelId
+//  608     }
+//  609   },
+//  610   {
+//  611     ZCL_CLUSTER_ID_GEN_BASIC,
+//  612     { // Attribute record
+//  613       ATTRID_BASIC_DATE_CODE,
+//  614       ZCL_DATATYPE_CHAR_STR,
+//  615       ACCESS_CONTROL_READ,
+//  616       (void *)zclSampleSensorEnviroment_DateCode
+//  617     }
+//  618   },
+//  619   {
+//  620     ZCL_CLUSTER_ID_GEN_BASIC,
+//  621     { // Attribute record
+//  622       ATTRID_BASIC_POWER_SOURCE,
+//  623       ZCL_DATATYPE_ENUM8,
+//  624       ACCESS_CONTROL_READ,
+//  625       (void *)&zclSampleSensorEnviroment_PowerSource
+//  626     }
+//  627   },
+//  628   {
+//  629     ZCL_CLUSTER_ID_GEN_BASIC,
+//  630     { // Attribute record
+//  631       ATTRID_BASIC_LOCATION_DESC,
+//  632       ZCL_DATATYPE_CHAR_STR,
+//  633       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  634       (void *)zclSampleSensorEnviroment_LocationDescription
+//  635     }
+//  636   },
+//  637   {
+//  638     ZCL_CLUSTER_ID_GEN_BASIC,
+//  639     { // Attribute record
+//  640       ATTRID_BASIC_PHYSICAL_ENV,
+//  641       ZCL_DATATYPE_ENUM8,
+//  642       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  643       (void *)&zclSampleSensorEnviroment_PhysicalEnvironment
+//  644     }
+//  645   },
+//  646   {
+//  647     ZCL_CLUSTER_ID_GEN_BASIC,
+//  648     { // Attribute record
+//  649       ATTRID_BASIC_DEVICE_ENABLED,
+//  650       ZCL_DATATYPE_BOOLEAN,
+//  651       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  652       (void *)&zclSampleSensorEnviroment_DeviceEnable
+//  653     }
+//  654   },
+//  655   {
+//  656     ZCL_CLUSTER_ID_GEN_BASIC,
+//  657     {  // Attribute record
+//  658       ATTRID_CLUSTER_REVISION,
+//  659       ZCL_DATATYPE_UINT16,
+//  660       ACCESS_CONTROL_READ,
+//  661       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  662     }
+//  663   },
+//  664   // *** Identify Cluster Attribute ***
+//  665   {
+//  666     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  667     { // Attribute record
+//  668       ATTRID_IDENTIFY_TIME,
+//  669       ZCL_DATATYPE_UINT16,
+//  670       (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+//  671       (void *)&zclSampleSensorEnviroment_IdentifyTime
+//  672     }
+//  673   },
+//  674   {
+//  675     ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  676     {  // Attribute record
+//  677       ATTRID_CLUSTER_REVISION,
+//  678       ZCL_DATATYPE_UINT16,
+//  679       ACCESS_CONTROL_READ | ACCESS_GLOBAL,
+//  680       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  681     }
+//  682   },
+//  683   // *** PIR Attriubtes ***
+//  684   {
+//  685     ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING,
+//  686     { // Attribute record
+//  687       ATTRID_MS_OCCUPANCY_SENSING_CONFIG_OCCUPANCY,
+//  688       ZCL_DATATYPE_BITMAP8,
+//  689       ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+//  690       (void *)&zclSampleSensorEnviroment_Pir_Status
+//  691     }
+//  692   },
+//  693   {
+//  694     ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING,
+//  695     { // Attribute record
+//  696       ATTRID_MS_OCCUPANCY_SENSING_CONFIG_OCCUPANCY_SENSOR_TYPE,
+//  697       ZCL_DATATYPE_ENUM8,
+//  698       ACCESS_CONTROL_READ,
+//  699       (void *)&zclSampleSensorEnviroment_Pir_Type
+//  700     }
+//  701   },
+//  702   
+//  703   {
+//  704     ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING,
+//  705     {  // Attribute record
+//  706       ATTRID_CLUSTER_REVISION,
+//  707       ZCL_DATATYPE_UINT16,
+//  708       ACCESS_CONTROL_READ,
+//  709       (void *)&zclSampleSensorEnviroment_clusterRevision_all
+//  710     }
+//  711   }
+//  712 };
+//  713 
+
+        RSEG CODE_C:CODE:REORDER:NOROOT(0)
+        DATA8
+//  714 uint8 CONST zclSampleSensorEnviroment_Pir_NumAttributes = ( sizeof(zclSampleSensorEnviroment_Pir_Attrs) / sizeof(zclSampleSensorEnviroment_Pir_Attrs[0]) );
+zclSampleSensorEnviroment_Pir_NumAttributes:
+        DB 15
+//  715 
+//  716 /*********************************************************************
+//  717 * SIMPLE DESCRIPTOR
+//  718 */
+//  719 // This is the Cluster ID List and should be filled with Application
+//  720 // specific cluster IDs.
+//  721 
+//  722 /************************ Cluster List for Light Sensor Endpoint ********************************/
+//  723 #define ZCLSAMPLESENSORENVIROMENT_LIGHT_MAX_INCLUSTERS       3
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  724 const cId_t zclSampleSensorEnviroment_Light_InClusterList[ZCLSAMPLESENSORENVIROMENT_LIGHT_MAX_INCLUSTERS] =
+zclSampleSensorEnviroment_Light_InClusterList:
+        DATA16
+        DW 0
+        DW 3
+        DW 1024
+//  725 {
+//  726   ZCL_CLUSTER_ID_GEN_BASIC,
+//  727   ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  728   ZCL_CLUSTER_ID_MS_ILLUMINANCE_MEASUREMENT
+//  729 };
+//  730 
+//  731 #define ZCLSAMPLESENSORENVIROMENT_LIGHT_MAX_OUTCLUSTERS       1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  732 const cId_t zclSampleSensorEnviroment_Light_OutClusterList[ZCLSAMPLESENSORENVIROMENT_LIGHT_MAX_OUTCLUSTERS] =
+zclSampleSensorEnviroment_Light_OutClusterList:
+        DW 3
+//  733 {
+//  734   ZCL_CLUSTER_ID_GEN_IDENTIFY
+//  735 };
+//  736 
+//  737 /************************ Cluster List for Temperature Sensor Endpoint **************************/
+//  738 #define ZCLSAMPLESENSORENVIROMENT_TEMPERATURE_MAX_INCLUSTERS       3
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  739 const cId_t zclSampleSensorEnviroment_Temperature_InClusterList[ZCLSAMPLESENSORENVIROMENT_TEMPERATURE_MAX_INCLUSTERS] =
+zclSampleSensorEnviroment_Temperature_InClusterList:
+        DATA16
+        DW 0
+        DW 3
+        DW 1026
+//  740 {
+//  741   ZCL_CLUSTER_ID_GEN_BASIC,
+//  742   ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  743   ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT
+//  744 };
+//  745 
+//  746 #define ZCLSAMPLESENSORENVIROMENT_TEMPERATURE_MAX_OUTCLUSTERS       1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  747 const cId_t zclSampleSensorEnviroment_Temperature_OutClusterList[ZCLSAMPLESENSORENVIROMENT_TEMPERATURE_MAX_OUTCLUSTERS] =
+zclSampleSensorEnviroment_Temperature_OutClusterList:
+        DW 3
+//  748 {
+//  749   ZCL_CLUSTER_ID_GEN_IDENTIFY
+//  750 };
+//  751 
+//  752 /************************ Cluster List for Humidity Sensor Endpoint ****************************/
+//  753 #define ZCLSAMPLESENSORENVIROMENT_HUMIDITY_MAX_INCLUSTERS       3
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  754 const cId_t zclSampleSensorEnviroment_Humidity_InClusterList[ZCLSAMPLESENSORENVIROMENT_HUMIDITY_MAX_INCLUSTERS] =
+zclSampleSensorEnviroment_Humidity_InClusterList:
+        DATA16
+        DW 0
+        DW 3
+        DW 1029
+//  755 {
+//  756   ZCL_CLUSTER_ID_GEN_BASIC,
+//  757   ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  758   ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY
+//  759 };
+//  760 
+//  761 #define ZCLSAMPLESENSORENVIROMENT_HUMIDITY_MAX_OUTCLUSTERS       1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  762 const cId_t zclSampleSensorEnviroment_Humidity_OutClusterList[ZCLSAMPLESENSORENVIROMENT_HUMIDITY_MAX_OUTCLUSTERS] =
+zclSampleSensorEnviroment_Humidity_OutClusterList:
+        DW 3
+//  763 {
+//  764   ZCL_CLUSTER_ID_GEN_IDENTIFY
+//  765 };
+//  766 
+//  767 /************************ Cluster List for PIR Sensor Endpoint *********************************/
+//  768 #define ZCLSAMPLESENSORENVIROMENT_PIR_MAX_INCLUSTERS       3
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA8
+//  769 const cId_t zclSampleSensorEnviroment_Pir_InClusterList[ZCLSAMPLESENSORENVIROMENT_PIR_MAX_INCLUSTERS] =
+zclSampleSensorEnviroment_Pir_InClusterList:
+        DATA16
+        DW 0
+        DW 3
+        DW 1030
+//  770 {
+//  771   ZCL_CLUSTER_ID_GEN_BASIC,
+//  772   ZCL_CLUSTER_ID_GEN_IDENTIFY,
+//  773   ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING
+//  774 };
+//  775 
+//  776 #define ZCLSAMPLESENSORENVIROMENT_PIR_MAX_OUTCLUSTERS       1
+
+        RSEG XDATA_ROM_C:CONST:REORDER:NOROOT(0)
+        DATA16
+//  777 const cId_t zclSampleSensorEnviroment_Pir_OutClusterList[ZCLSAMPLESENSORENVIROMENT_PIR_MAX_OUTCLUSTERS] =
+zclSampleSensorEnviroment_Pir_OutClusterList:
+        DW 3
+//  778 {
+//  779   ZCL_CLUSTER_ID_GEN_IDENTIFY
+//  780 };
+//  781 
+//  782 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  783 SimpleDescriptionFormat_t zclSampleSensorEnviroment_SimpleDesc_List[] =
+zclSampleSensorEnviroment_SimpleDesc_List:
+        DATA8
+        DS 48
+        REQUIRE `?<Initializer for zclSampleSensorEnviroment_Si`
+        REQUIRE __INIT_XDATA_I
+//  784 {
+//  785   
+//  786   /************************ Simple Description for Light Sensor Endpoint ********************************/
+//  787   {
+//  788     SAMPLESENSORENVIROMENT_ENDPOINT_LIGHT,                      //  int Endpoint;
+//  789     ZCL_HA_PROFILE_ID,                                          //  uint16 AppProfId[2];
+//  790     ZCL_HA_DEVICEID_TEMPERATURE_SENSOR,                         //  uint16 AppDeviceId[2];
+//  791     SAMPLESENSORENVIROMENT_DEVICE_VERSION,                      //  int   AppDevVer:4;
+//  792     SAMPLESENSORENVIROMENT_FLAGS,                               //  int   AppFlags:4;
+//  793     ZCLSAMPLESENSORENVIROMENT_LIGHT_MAX_INCLUSTERS,             //  byte  AppNumInClusters;
+//  794     (cId_t *)zclSampleSensorEnviroment_Light_InClusterList,     //  byte *pAppInClusterList;
+//  795     ZCLSAMPLESENSORENVIROMENT_LIGHT_MAX_OUTCLUSTERS,            //  byte  AppNumInClusters;
+//  796     (cId_t *)zclSampleSensorEnviroment_Light_OutClusterList     //  byte *pAppInClusterList;
+//  797   },
+//  798   
+//  799   /************************ Simple Description for Temperature Sensor Endpoint **************************/
+//  800   {
+//  801     SAMPLESENSORENVIROMENT_ENDPOINT_TEMPERATURE,                        //  int Endpoint;
+//  802     ZCL_HA_PROFILE_ID,                                                  //  uint16 AppProfId[2];
+//  803     ZCL_HA_DEVICEID_TEMPERATURE_SENSOR,                                 //  uint16 AppDeviceId[2];
+//  804     SAMPLESENSORENVIROMENT_DEVICE_VERSION,                              //  int   AppDevVer:4;
+//  805     SAMPLESENSORENVIROMENT_FLAGS,                                       //  int   AppFlags:4;
+//  806     ZCLSAMPLESENSORENVIROMENT_TEMPERATURE_MAX_INCLUSTERS,               //  byte  AppNumInClusters;
+//  807     (cId_t *)zclSampleSensorEnviroment_Temperature_InClusterList,       //  byte *pAppInClusterList;
+//  808     ZCLSAMPLESENSORENVIROMENT_TEMPERATURE_MAX_OUTCLUSTERS,              //  byte  AppNumInClusters;
+//  809     (cId_t *)zclSampleSensorEnviroment_Temperature_OutClusterList       //  byte *pAppInClusterList;
+//  810   },
+//  811   
+//  812   /************************ Simple Description for Hummidity Sensor Endpoint ****************************/
+//  813   {
+//  814     SAMPLESENSORENVIROMENT_ENDPOINT_HUMMIDITY,                  //  int Endpoint;
+//  815     ZCL_HA_PROFILE_ID,                                          //  uint16 AppProfId[2];
+//  816     ZCL_HA_DEVICEID_TEMPERATURE_SENSOR,                         //  uint16 AppDeviceId[2];
+//  817     SAMPLESENSORENVIROMENT_DEVICE_VERSION,                      //  int   AppDevVer:4;
+//  818     SAMPLESENSORENVIROMENT_FLAGS,                               //  int   AppFlags:4;
+//  819     ZCLSAMPLESENSORENVIROMENT_HUMIDITY_MAX_INCLUSTERS,          //  byte  AppNumInClusters;
+//  820     (cId_t *)zclSampleSensorEnviroment_Humidity_InClusterList,  //  byte *pAppInClusterList;
+//  821     ZCLSAMPLESENSORENVIROMENT_HUMIDITY_MAX_OUTCLUSTERS,         //  byte  AppNumInClusters;
+//  822     (cId_t *)zclSampleSensorEnviroment_Humidity_OutClusterList  //  byte *pAppInClusterList;
+//  823   },
+//  824   
+//  825   /************************ Simple Description for PIR Sensor Endpoint **********************************/
+//  826   {
+//  827     SAMPLESENSORENVIROMENT_ENDPOINT_PIR,                        //  int Endpoint;
+//  828     ZCL_HA_PROFILE_ID,                                          //  uint16 AppProfId[2];
+//  829     ZCL_HA_DEVICEID_TEMPERATURE_SENSOR,                         //  uint16 AppDeviceId[2];
+//  830     SAMPLESENSORENVIROMENT_DEVICE_VERSION,                      //  int   AppDevVer:4;
+//  831     SAMPLESENSORENVIROMENT_FLAGS,                               //  int   AppFlags:4;
+//  832     ZCLSAMPLESENSORENVIROMENT_PIR_MAX_INCLUSTERS,               //  byte  AppNumInClusters;
+//  833     (cId_t *)zclSampleSensorEnviroment_Pir_InClusterList,       //  byte *pAppInClusterList;
+//  834     ZCLSAMPLESENSORENVIROMENT_PIR_MAX_OUTCLUSTERS,              //  byte  AppNumInClusters;
+//  835     (cId_t *)zclSampleSensorEnviroment_Pir_OutClusterList       //  byte *pAppInClusterList;
+//  836   }
+//  837 };
+//  838 
+//  839 /*********************************************************************
+//  840 * GLOBAL FUNCTIONS
+//  841 */
+//  842 
+//  843 /*********************************************************************
+//  844 * LOCAL FUNCTIONS
+//  845 */
+//  846 
+//  847 /*********************************************************************
+//  848 * @fn      zclSampleLight_ResetAttributesToDefaultValues
+//  849 *
+//  850 * @brief   Reset all writable attributes to their default values.
+//  851 *
+//  852 * @param   none
+//  853 *
+//  854 * @return  none
+//  855 */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  856 void zclSampleSensorEnviroment_ResetAttributesToDefaultValues(void)
+zclSampleSensorEnviroment_ResetAttributesToDefaultValues:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+        CODE
+//  857 {
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  858   int i;
+//  859   
+//  860   zclSampleSensorEnviroment_LocationDescription[0] = 16;
+        MOV       DPTR,#zclSampleSensorEnviroment_LocationDescription
+        MOV       A,#0x10
+        MOVX      @DPTR,A
+//  861   for (i = 1; i <= 16; i++)
+//  862   {
+//  863     zclSampleSensorEnviroment_LocationDescription[i] = ' ';
+        MOV       A,#0x20
+        INC       DPTR
+        MOV       R0,#0x10
+??zclSampleSensorEnviroment_ResetAttributesToDe_1:
+        MOVX      @DPTR,A
+        INC       DPTR
+        DJNZ      R0,??zclSampleSensorEnviroment_ResetAttributesToDe_1
+//  864   }
+//  865   
+//  866   zclSampleSensorEnviroment_PhysicalEnvironment = PHY_UNSPECIFIED_ENV;
+        MOV       DPTR,#zclSampleSensorEnviroment_PhysicalEnvironment
+        CLR       A
+        MOVX      @DPTR,A
+//  867   zclSampleSensorEnviroment_DeviceEnable = DEVICE_ENABLED;
+        MOV       DPTR,#zclSampleSensorEnviroment_DeviceEnable
+        INC       A
+        MOVX      @DPTR,A
+//  868   
+//  869 #ifdef ZCL_IDENTIFY
+//  870   zclSampleSensorEnviroment_IdentifyTime = 0;
+        MOV       DPTR,#zclSampleSensorEnviroment_IdentifyTime
+        CLR       A
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+//  871 #endif
+//  872   
+//  873   zclSampleSensorEnviroment_Temperature_MeasuredValue = SAMPLESENSORENVIROMENT_TEMPERATURE_MEASURED_VALUE;
+        MOV       DPTR,#zclSampleSensorEnviroment_Temperature_MeasuredValue
+        MOV       A,#-0x30
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,#0x7
+        MOVX      @DPTR,A
+//  874   zclSampleSensorEnviroment_Temperature_MinMeasuredValue = SAMPLESENSORENVIROMENT_TEMPERATURE_MIN_MEASURED_VALUE; 
+        MOV       DPTR,#zclSampleSensorEnviroment_Temperature_MinMeasuredValue
+        MOV       A,#-0x5c
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,#0x6
+        MOVX      @DPTR,A
+//  875   zclSampleSensorEnviroment_Temperature_MaxMeasuredValue = SAMPLESENSORENVIROMENT_TEMPERATURE_MAX_MEASURED_VALUE;
+        MOV       DPTR,#zclSampleSensorEnviroment_Temperature_MaxMeasuredValue
+        MOV       A,#-0x74
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,#0xa
+        MOVX      @DPTR,A
+//  876   zclSampleSensorEnviroment_Light_MeasuredValue = SAMPLESENSORENVIROMENT_LIGHT_MEASURED_VALUE;
+        MOV       DPTR,#zclSampleSensorEnviroment_Light_MeasuredValue
+        MOV       A,#0x32
+        MOVX      @DPTR,A
+        INC       DPTR
+        CLR       A
+        MOVX      @DPTR,A
+//  877   zclSampleSensorEnviroment_Humidity_MeasuredValue = SAMPLESENSORENVIROMENT_HUMIDITY_MEASURED_VALUE;
+        MOV       DPTR,#zclSampleSensorEnviroment_Humidity_MeasuredValue
+        MOV       A,#-0x6a
+        MOVX      @DPTR,A
+        INC       DPTR
+        CLR       A
+        MOVX      @DPTR,A
+//  878   zclSampleSensorEnviroment_Humidity_MinMeasuredValue = SAMPLESENSORENVIROMENT_HUMIDITY_MIN_MEASURED_VALUE;
+        MOV       DPTR,#zclSampleSensorEnviroment_Humidity_MinMeasuredValue
+        MOV       A,#0x32
+        MOVX      @DPTR,A
+        INC       DPTR
+        CLR       A
+        MOVX      @DPTR,A
+//  879   zclSampleSensorEnviroment_Humidity_MaxMeasuredValue = SAMPLESENSORENVIROMENT_HUMIDITY_MAX_MEASURED_VALUE;
+        MOV       DPTR,#zclSampleSensorEnviroment_Humidity_MaxMeasuredValue
+        MOV       A,#0x2c
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOV       A,#0x1
+        MOVX      @DPTR,A
+//  880   zclSampleSensorEnviroment_Pir_Status = 0;
+        MOV       DPTR,#zclSampleSensorEnviroment_Pir_Status
+        CLR       A
+        MOVX      @DPTR,A
+//  881   zclSampleSensorEnviroment_Pir_Type = MS_OCCUPANCY_SENSOR_TYPE_PIR;            
+        MOV       DPTR,#zclSampleSensorEnviroment_Pir_Type
+        MOVX      @DPTR,A
+//  882 }
+        POP       DPH
+          CFI DPH0 SameValue
+          CFI CFA_SP SP+-4
+        POP       DPL
+          CFI DPL0 SameValue
+          CFI CFA_SP SP+-3
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for zclSampleSensorEnviroment_Te`:
+        DATA16
+        DW 1700
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for zclSampleSensorEnviroment_Te_1`:
+        DATA16
+        DW 2700
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for zclSampleSensorEnviroment_Hu`:
+        DATA16
+        DW 50
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for zclSampleSensorEnviroment_Hu_1`:
+        DATA16
+        DW 300
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for zclSampleSensorEnviroment_Si`:
+        DATA8
+        DB 8
+        DATA16
+        DW 260
+        DW 770
+        DATA8
+        DB 0
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_Light_InClusterList
+        DATA8
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_Light_OutClusterList
+        DATA8
+        DB 9
+        DATA16
+        DW 260
+        DW 770
+        DATA8
+        DB 0
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_Temperature_InClusterList
+        DATA8
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_Temperature_OutClusterList
+        DATA8
+        DB 10
+        DATA16
+        DW 260
+        DW 770
+        DATA8
+        DB 0
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_Humidity_InClusterList
+        DATA8
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_Humidity_OutClusterList
+        DATA8
+        DB 11
+        DATA16
+        DW 260
+        DW 770
+        DATA8
+        DB 0
+        DB 3
+        DATA16
+        DW zclSampleSensorEnviroment_Pir_InClusterList
+        DATA8
+        DB 1
+        DATA16
+        DW zclSampleSensorEnviroment_Pir_OutClusterList
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??zclSampleSensorEnviroment_ResetAttributesToDe:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+
+        END
+//  883 
+//  884 /****************************************************************************
+//  885 ****************************************************************************/
+//  886 
+//  887 
+// 
+// 119 bytes in segment BANKED_CODE
+//   6 bytes in segment BANK_RELAYS
+// 492 bytes in segment CODE_C
+//  56 bytes in segment XDATA_I
+//  56 bytes in segment XDATA_ID
+//  88 bytes in segment XDATA_ROM_C
+//  29 bytes in segment XDATA_Z
+// 
+// 554 bytes of CODE     memory
+//  88 bytes of CONST    memory
+// 119 bytes of HUGECODE memory
+//  85 bytes of XDATA    memory
+//
+//Errors: none
+//Warnings: none

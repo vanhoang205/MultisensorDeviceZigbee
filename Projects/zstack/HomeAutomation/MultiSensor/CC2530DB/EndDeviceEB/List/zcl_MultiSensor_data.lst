@@ -1,0 +1,1168 @@
+###############################################################################
+#
+# IAR C/C++ Compiler V10.20.1.5333 for 8051               27/Jul/2020  16:29:57
+# Copyright 2004-2018 IAR Systems AB.
+# PC-locked license - IAR Embedded Workbench for 8051
+#
+#    Core               =  plain
+#    Code model         =  banked
+#    Data model         =  large
+#    Calling convention =  xdata reentrant
+#    Constant location  =  data_rom
+#    Dptr setup         =  1,16
+#                          
+#    Source file        =  
+#        C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\Source\zcl_MultiSensor_data.c
+#    Command line       =  
+#        -f C:\Users\TS-577\AppData\Local\Temp\EW8CCB.tmp
+#        ("C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\Source\zcl_MultiSensor_data.c"
+#        -D xBDB_REPORTING -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D
+#        NV_RESTORE -D xPOWER_SAVING -D NWK_AUTO_POLL -D ZTOOL_P1 -D xMT_TASK
+#        -D xMT_APP_FUNC -D xMT_SYS_FUNC -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D
+#        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+#        ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_GROUPS -D ZCL_REPORT -D
+#        ZCL_REPORTING_DEVICE -lC "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\EndDeviceEB\List"
+#        -lA "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\EndDeviceEB\List"
+#        --diag_suppress Pe001,Pa010 -o "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\EndDeviceEB\Obj"
+#        -e --debug --core=plain --dptr=16,1 --data_model=large
+#        --code_model=banked --calling_convention=xdata_reentrant
+#        --place_constants=data_rom --nr_virtual_regs 16 -f
+#        "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"
+#        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_TX_DATA_MAX=3
+#        -DMAC_CFG_TX_MAX=6 -DMAC_CFG_RX_MAX=3) -f
+#        "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+#        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+#        -DDEFAULT_CHANLIST=0x00002000 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+#        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+#        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+#        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+#        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+#        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+#        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+#        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+#        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0} -DMAC_MAX_FRAME_SIZE=116
+#        -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const __code"
+#        -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=TRUE -DPOLL_RATE=1000
+#        -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100 -DREJOIN_POLL_RATE=440
+#        -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000) -f
+#        "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\Source\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\Source\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\ZMain\TI2530DB\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\hal\include\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\mac\include\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\mt\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\osal\include\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\stack\af\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\stack\gp\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\zmac\"
+#        -I "C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+#        -Ohz --require_prototypes)
+#    Locale             =  Japanese_JPN.932
+#    List file          =  
+#        C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\EndDeviceEB\List\zcl_MultiSensor_data.lst
+#    Object file        =  
+#        C:\Users\TS-577\Desktop\Zigbee
+#        workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\CC2530DB\EndDeviceEB\Obj\zcl_MultiSensor_data.r51
+#
+###############################################################################
+
+C:\Users\TS-577\Desktop\Zigbee workspace\MultiSensorDevice\Projects\zstack\HomeAutomation\MultiSensor\Source\zcl_MultiSensor_data.c
+      1          /**************************************************************************************************
+      2          Filename:       zcl_sampletemperaturesensor_data.c
+      3          Revised:        $Date: 2014-09-25 13:20:41 -0700 (Thu, 25 Sep 2014) $
+      4          Revision:       $Revision: 40295 $
+      5          
+      6          
+      7          Description:    Zigbee Cluster Library - sample device application.
+      8          
+      9          
+     10          Copyright 2013-2014 Texas Instruments Incorporated. All rights reserved.
+     11          
+     12          IMPORTANT: Your use of this Software is limited to those specific rights
+     13          granted under the terms of a software license agreement between the user
+     14          who downloaded the software, his/her employer (which must be your employer)
+     15          and Texas Instruments Incorporated (the "License").  You may not use this
+     16          Software unless you agree to abide by the terms of the License. The License
+     17          limits your use, and you acknowledge, that the Software may not be modified,
+     18          copied or distributed unless embedded on a Texas Instruments microcontroller
+     19          or used solely and exclusively in conjunction with a Texas Instruments radio
+     20          frequency transceiver, which is integrated into your product.  Other than for
+     21          the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     22          works of, modify, distribute, perform, display or sell this Software and/or
+     23          its documentation for any purpose.
+     24          
+     25          YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     26          PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     27          INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     28          NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     29          TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     30          NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     31          LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     32          INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     33          OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     34          OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     35          (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     36          
+     37          Should you have any questions regarding your right to use this Software,
+     38          contact Texas Instruments Incorporated at www.TI.com.
+     39          **************************************************************************************************/
+     40          
+     41          /*********************************************************************
+     42          * INCLUDES
+     43          */
+     44          #include "ZComDef.h"
+     45          #include "OSAL.h"
+     46          #include "AF.h"
+     47          #include "ZDConfig.h"
+     48          
+     49          #include "zcl.h"
+     50          #include "zcl_general.h"
+     51          #include "zcl_ha.h"
+     52          #include "zcl_ms.h"
+     53          
+     54          #include "zcl_MultiSensor.h"
+     55          
+     56          /*********************************************************************
+     57          * CONSTANTS
+     58          */
+     59          
+     60          #define MULTISENSOR_DEVICE_VERSION     0
+     61          #define MULTISENSOR_FLAGS              0
+     62          
+     63          #define MULTISENSOR_HWVERSION          1
+     64          #define MULTISENSOR_ZCLVERSION         6
+     65          
+     66          #define MULTISENSOR_TEMPERATURE_MAX_MEASURED_VALUE  12500  // 27.00C
+     67          #define MULTISENSOR_TEMPERATURE_MIN_MEASURED_VALUE  -4000  // 17.00C
+     68          
+     69          #define MULTISENSOR_HUMIDITY_MIN_MEASURED_VALUE     0
+     70          #define MULTISENSOR_HUMIDITY_MAX_MEASURED_VALUE     10000
+     71          
+     72          
+     73          /*********************************************************************
+     74          * TYPEDEFS
+     75          */
+     76          
+     77          /*********************************************************************
+     78          * MACROS
+     79          */
+     80          
+     81          /*********************************************************************
+     82          * GLOBAL VARIABLES
+     83          */
+     84          
+     85          // Global attributes
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     86          const uint16 zclMultiSensor_clusterRevision_all = 0x0001; 
+   \                     zclMultiSensor_clusterRevision_all:
+   \   000000   0100         DW 1
+     87          
+     88          // Basic Cluster
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     89          const uint8 zclMultiSensor_HWRevision = MULTISENSOR_HWVERSION;
+   \                     zclMultiSensor_HWRevision:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     90          const uint8 zclMultiSensor_ZCLVersion = MULTISENSOR_ZCLVERSION;
+   \                     zclMultiSensor_ZCLVersion:
+   \   000000   06           DB 6
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     91          const uint8 zclMultiSensor_ManufacturerName[] = { 16, 'I','T','S','C','-','R','D','-','T','e','c','h',' ',' ',' ',' ' };
+   \                     zclMultiSensor_ManufacturerName:
+   \   000000   10           DB 16
+   \   000001   49           DB 73
+   \   000002   54           DB 84
+   \   000003   53           DB 83
+   \   000004   43           DB 67
+   \   000005   2D           DB 45
+   \   000006   52           DB 82
+   \   000007   44           DB 68
+   \   000008   2D           DB 45
+   \   000009   54           DB 84
+   \   00000A   65           DB 101
+   \   00000B   63           DB 99
+   \   00000C   68           DB 104
+   \   00000D   20           DB 32
+   \   00000E   20           DB 32
+   \   00000F   20           DB 32
+   \   000010   20           DB 32
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     92          const uint8 zclMultiSensor_ModelId[] = { 16, 'I','T','S','C','0','0','0','1',' ',' ',' ',' ',' ',' ',' ',' ' };
+   \                     zclMultiSensor_ModelId:
+   \   000000   10           DB 16
+   \   000001   49           DB 73
+   \   000002   54           DB 84
+   \   000003   53           DB 83
+   \   000004   43           DB 67
+   \   000005   30           DB 48
+   \   000006   30           DB 48
+   \   000007   30           DB 48
+   \   000008   31           DB 49
+   \   000009   20           DB 32
+   \   00000A   20           DB 32
+   \   00000B   20           DB 32
+   \   00000C   20           DB 32
+   \   00000D   20           DB 32
+   \   00000E   20           DB 32
+   \   00000F   20           DB 32
+   \   000010   20           DB 32
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     93          const uint8 zclMultiSensor_DateCode[] = { 16, '2','0','0','6','0','8','3','1',' ',' ',' ',' ',' ',' ',' ',' ' };
+   \                     zclMultiSensor_DateCode:
+   \   000000   10           DB 16
+   \   000001   32           DB 50
+   \   000002   30           DB 48
+   \   000003   30           DB 48
+   \   000004   36           DB 54
+   \   000005   30           DB 48
+   \   000006   38           DB 56
+   \   000007   33           DB 51
+   \   000008   31           DB 49
+   \   000009   20           DB 32
+   \   00000A   20           DB 32
+   \   00000B   20           DB 32
+   \   00000C   20           DB 32
+   \   00000D   20           DB 32
+   \   00000E   20           DB 32
+   \   00000F   20           DB 32
+   \   000010   20           DB 32
+
+   \                                 In  segment XDATA_ROM_C, align 1
+     94          const uint8 zclMultiSensor_PowerSource = POWER_SOURCE_MAINS_1_PHASE;
+   \                     zclMultiSensor_PowerSource:
+   \   000000   01           DB 1
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     95          uint8 zclMultiSensor_LocationDescription[17];
+   \                     zclMultiSensor_LocationDescription:
+   \   000000                DS 17
+   \   000011                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+     96          uint8 zclMultiSensor_PhysicalEnvironment = 0x0B; //office
+   \                     zclMultiSensor_PhysicalEnvironment:
+   \   000000                DS 1
+   \   000001                REQUIRE `?<Initializer for zclMultiSensor_PhysicalEnvir`
+   \   000001                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+     97          uint8 zclMultiSensor_DeviceEnable;
+   \                     zclMultiSensor_DeviceEnable:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+     98          
+     99          // Identify Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    100          uint16 zclMultiSensor_IdentifyTime;
+   \                     zclMultiSensor_IdentifyTime:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    101          
+    102          // Temperature Sensor Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    103          int16 zclMultiSensor_Temperature_MeasuredValue;
+   \                     zclMultiSensor_Temperature_MeasuredValue:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    104          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    105          int16 zclMultiSensor_Temperature_MinMeasuredValue = MULTISENSOR_TEMPERATURE_MIN_MEASURED_VALUE; 
+   \                     zclMultiSensor_Temperature_MinMeasuredValue:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for zclMultiSensor_Temperature_M`
+   \   000002                REQUIRE __INIT_XDATA_I
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    106          uint16 zclMultiSensor_Temperature_MaxMeasuredValue = MULTISENSOR_TEMPERATURE_MAX_MEASURED_VALUE;
+   \                     zclMultiSensor_Temperature_MaxMeasuredValue:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for zclMultiSensor_Temperature_M_1`
+   \   000002                REQUIRE __INIT_XDATA_I
+    107          
+    108          // Light Sensor Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    109          uint16 zclMultiSensor_Light_MeasuredValue;
+   \                     zclMultiSensor_Light_MeasuredValue:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    110          
+    111          // Humidity Sensor Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    112          uint16 zclMultiSensor_Humidity_MeasuredValue;
+   \                     zclMultiSensor_Humidity_MeasuredValue:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    113          uint16 zclMultiSensor_Humidity_MinMeasuredValue = MULTISENSOR_HUMIDITY_MIN_MEASURED_VALUE;
+   \                     zclMultiSensor_Humidity_MinMeasuredValue:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    114          uint16 zclMultiSensor_Humidity_MaxMeasuredValue = MULTISENSOR_HUMIDITY_MAX_MEASURED_VALUE;
+   \                     zclMultiSensor_Humidity_MaxMeasuredValue:
+   \   000000                DS 2
+   \   000002                REQUIRE `?<Initializer for zclMultiSensor_Humidity_MaxM`
+   \   000002                REQUIRE __INIT_XDATA_I
+    115          
+    116          // PIR Sensor Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    117          uint8 zclMultiSensor_Pir_Status;
+   \                     zclMultiSensor_Pir_Status:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    118          uint8 zclMultiSensor_Pir_Type = MS_OCCUPANCY_SENSOR_TYPE_PIR;
+   \                     zclMultiSensor_Pir_Type:
+   \   000000                DS 1
+   \   000001                REQUIRE __INIT_XDATA_Z
+    119          
+    120          // TVOC Sensor Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    121          uint16 zclMultiSensor_TVOC_MeasuredValue;
+   \                     zclMultiSensor_TVOC_MeasuredValue:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    122          
+    123          // CO2 Sensor Cluster
+
+   \                                 In  segment XDATA_Z, align 1, keep-with-next
+    124          uint16 zclMultiSensor_CO2_MeasuredValue;
+   \                     zclMultiSensor_CO2_MeasuredValue:
+   \   000000                DS 2
+   \   000002                REQUIRE __INIT_XDATA_Z
+    125          
+    126          /*********************************************************************
+    127          * ATTRIBUTE DEFINITIONS - Uses REAL cluster IDs
+    128          */
+    129          
+    130          // NOTE: The attributes listed in the AttrRec must be in ascending order 
+    131          // per cluster to allow right function of the Foundation discovery commands
+    132          
+
+   \                                 In  segment CODE_C, align 1
+    133          CONST zclAttrRec_t zclMultiSensor_Attrs[] =
+   \                     zclMultiSensor_Attrs:
+   \   000000   0000         DW 0
+   \   000002   0000         DW 0
+   \   000004   20           DB 32
+   \   000005   01           DB 1
+   \   000006   ....         DW zclMultiSensor_ZCLVersion
+   \   000008   0000         DW 0
+   \   00000A   0300         DW 3
+   \   00000C   20           DB 32
+   \   00000D   01           DB 1
+   \   00000E   ....         DW zclMultiSensor_HWRevision
+   \   000010   0000         DW 0
+   \   000012   0400         DW 4
+   \   000014   42           DB 66
+   \   000015   01           DB 1
+   \   000016   ....         DW zclMultiSensor_ManufacturerName
+   \   000018   0000         DW 0
+   \   00001A   0500         DW 5
+   \   00001C   42           DB 66
+   \   00001D   01           DB 1
+   \   00001E   ....         DW zclMultiSensor_ModelId
+   \   000020   0000         DW 0
+   \   000022   0600         DW 6
+   \   000024   42           DB 66
+   \   000025   01           DB 1
+   \   000026   ....         DW zclMultiSensor_DateCode
+   \   000028   0000         DW 0
+   \   00002A   0700         DW 7
+   \   00002C   30           DB 48
+   \   00002D   01           DB 1
+   \   00002E   ....         DW zclMultiSensor_PowerSource
+   \   000030   0000         DW 0
+   \   000032   1000         DW 16
+   \   000034   42           DB 66
+   \   000035   03           DB 3
+   \   000036   ....         DW zclMultiSensor_LocationDescription
+   \   000038   0000         DW 0
+   \   00003A   1100         DW 17
+   \   00003C   30           DB 48
+   \   00003D   03           DB 3
+   \   00003E   ....         DW zclMultiSensor_PhysicalEnvironment
+   \   000040   0000         DW 0
+   \   000042   1200         DW 18
+   \   000044   10           DB 16
+   \   000045   03           DB 3
+   \   000046   ....         DW zclMultiSensor_DeviceEnable
+   \   000048   0000         DW 0
+   \   00004A   FDFF         DW 65533
+   \   00004C   21           DB 33
+   \   00004D   01           DB 1
+   \   00004E   ....         DW zclMultiSensor_clusterRevision_all
+   \   000050   0300         DW 3
+   \   000052   0000         DW 0
+   \   000054   21           DB 33
+   \   000055   03           DB 3
+   \   000056   ....         DW zclMultiSensor_IdentifyTime
+   \   000058   0300         DW 3
+   \   00005A   FDFF         DW 65533
+   \   00005C   21           DB 33
+   \   00005D   41           DB 65
+   \   00005E   ....         DW zclMultiSensor_clusterRevision_all
+   \   000060   0004         DW 1024
+   \   000062   0000         DW 0
+   \   000064   21           DB 33
+   \   000065   05           DB 5
+   \   000066   ....         DW zclMultiSensor_Light_MeasuredValue
+   \   000068   0004         DW 1024
+   \   00006A   FDFF         DW 65533
+   \   00006C   21           DB 33
+   \   00006D   01           DB 1
+   \   00006E   ....         DW zclMultiSensor_clusterRevision_all
+   \   000070   0204         DW 1026
+   \   000072   0000         DW 0
+   \   000074   29           DB 41
+   \   000075   05           DB 5
+   \   000076   ....         DW zclMultiSensor_Temperature_MeasuredValue
+   \   000078   0204         DW 1026
+   \   00007A   0100         DW 1
+   \   00007C   29           DB 41
+   \   00007D   05           DB 5
+   \   00007E   ....         DW zclMultiSensor_Temperature_MinMeasuredValue
+   \   000080   0204         DW 1026
+   \   000082   0200         DW 2
+   \   000084   29           DB 41
+   \   000085   05           DB 5
+   \   000086   ....         DW zclMultiSensor_Temperature_MaxMeasuredValue
+   \   000088   0204         DW 1026
+   \   00008A   FDFF         DW 65533
+   \   00008C   21           DB 33
+   \   00008D   01           DB 1
+   \   00008E   ....         DW zclMultiSensor_clusterRevision_all
+   \   000090   0504         DW 1029
+   \   000092   0000         DW 0
+   \   000094   29           DB 41
+   \   000095   05           DB 5
+   \   000096   ....         DW zclMultiSensor_Humidity_MeasuredValue
+   \   000098   0504         DW 1029
+   \   00009A   0100         DW 1
+   \   00009C   29           DB 41
+   \   00009D   05           DB 5
+   \   00009E   ....         DW zclMultiSensor_Humidity_MinMeasuredValue
+   \   0000A0   0504         DW 1029
+   \   0000A2   0200         DW 2
+   \   0000A4   29           DB 41
+   \   0000A5   05           DB 5
+   \   0000A6   ....         DW zclMultiSensor_Humidity_MaxMeasuredValue
+   \   0000A8   0504         DW 1029
+   \   0000AA   FDFF         DW 65533
+   \   0000AC   21           DB 33
+   \   0000AD   01           DB 1
+   \   0000AE   ....         DW zclMultiSensor_clusterRevision_all
+   \   0000B0   0604         DW 1030
+   \   0000B2   0000         DW 0
+   \   0000B4   21           DB 33
+   \   0000B5   05           DB 5
+   \   0000B6   ....         DW zclMultiSensor_Pir_Status
+   \   0000B8   0604         DW 1030
+   \   0000BA   0100         DW 1
+   \   0000BC   21           DB 33
+   \   0000BD   01           DB 1
+   \   0000BE   ....         DW zclMultiSensor_Pir_Type
+   \   0000C0   0604         DW 1030
+   \   0000C2   FDFF         DW 65533
+   \   0000C4   21           DB 33
+   \   0000C5   01           DB 1
+   \   0000C6   ....         DW zclMultiSensor_clusterRevision_all
+   \   0000C8   000C         DW 3072
+   \   0000CA   0000         DW 0
+   \   0000CC   21           DB 33
+   \   0000CD   05           DB 5
+   \   0000CE   ....         DW zclMultiSensor_TVOC_MeasuredValue
+   \   0000D0   000C         DW 3072
+   \   0000D2   FDFF         DW 65533
+   \   0000D4   21           DB 33
+   \   0000D5   01           DB 1
+   \   0000D6   ....         DW zclMultiSensor_clusterRevision_all
+   \   0000D8   010C         DW 3073
+   \   0000DA   0000         DW 0
+   \   0000DC   21           DB 33
+   \   0000DD   05           DB 5
+   \   0000DE   ....         DW zclMultiSensor_CO2_MeasuredValue
+   \   0000E0   010C         DW 3073
+   \   0000E2   FDFF         DW 65533
+   \   0000E4   21           DB 33
+   \   0000E5   01           DB 1
+   \   0000E6   ....         DW zclMultiSensor_clusterRevision_all
+    134          {
+    135            // *** General Basic Cluster Attributes ***
+    136            {
+    137              ZCL_CLUSTER_ID_GEN_BASIC,
+    138              { // Attribute record
+    139                ATTRID_BASIC_ZCL_VERSION,
+    140                ZCL_DATATYPE_UINT8,
+    141                ACCESS_CONTROL_READ,
+    142                (void *)&zclMultiSensor_ZCLVersion
+    143              }
+    144            },
+    145            {
+    146              ZCL_CLUSTER_ID_GEN_BASIC,             // Cluster IDs - defined in the foundation (ie. zcl.h)
+    147              {  // Attribute record
+    148                ATTRID_BASIC_HW_VERSION,            // Attribute ID - Found in Cluster Library header (ie. zcl_general.h)
+    149                ZCL_DATATYPE_UINT8,                 // Data Type - found in zcl.h
+    150                ACCESS_CONTROL_READ,                // Variable access control - found in zcl.h
+    151                (void *)&zclMultiSensor_HWRevision  // Pointer to attribute variable
+    152              }
+    153            },
+    154            {
+    155              ZCL_CLUSTER_ID_GEN_BASIC,
+    156              { // Attribute record
+    157                ATTRID_BASIC_MANUFACTURER_NAME,
+    158                ZCL_DATATYPE_CHAR_STR,
+    159                ACCESS_CONTROL_READ,
+    160                (void *)zclMultiSensor_ManufacturerName
+    161              }
+    162            },
+    163            {
+    164              ZCL_CLUSTER_ID_GEN_BASIC,
+    165              { // Attribute record
+    166                ATTRID_BASIC_MODEL_ID,
+    167                ZCL_DATATYPE_CHAR_STR,
+    168                ACCESS_CONTROL_READ,
+    169                (void *)zclMultiSensor_ModelId
+    170              }
+    171            },
+    172            {
+    173              ZCL_CLUSTER_ID_GEN_BASIC,
+    174              { // Attribute record
+    175                ATTRID_BASIC_DATE_CODE,
+    176                ZCL_DATATYPE_CHAR_STR,
+    177                ACCESS_CONTROL_READ,
+    178                (void *)zclMultiSensor_DateCode
+    179              }
+    180            },
+    181            {
+    182              ZCL_CLUSTER_ID_GEN_BASIC,
+    183              { // Attribute record
+    184                ATTRID_BASIC_POWER_SOURCE,
+    185                ZCL_DATATYPE_ENUM8,
+    186                ACCESS_CONTROL_READ,
+    187                (void *)&zclMultiSensor_PowerSource
+    188              }
+    189            },
+    190            {
+    191              ZCL_CLUSTER_ID_GEN_BASIC,
+    192              { // Attribute record
+    193                ATTRID_BASIC_LOCATION_DESC,
+    194                ZCL_DATATYPE_CHAR_STR,
+    195                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    196                (void *)zclMultiSensor_LocationDescription
+    197              }
+    198            },
+    199            {
+    200              ZCL_CLUSTER_ID_GEN_BASIC,
+    201              { // Attribute record
+    202                ATTRID_BASIC_PHYSICAL_ENV,
+    203                ZCL_DATATYPE_ENUM8,
+    204                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    205                (void *)&zclMultiSensor_PhysicalEnvironment
+    206              }
+    207            },
+    208            {
+    209              ZCL_CLUSTER_ID_GEN_BASIC,
+    210              { // Attribute record
+    211                ATTRID_BASIC_DEVICE_ENABLED,
+    212                ZCL_DATATYPE_BOOLEAN,
+    213                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    214                (void *)&zclMultiSensor_DeviceEnable
+    215              }
+    216            },
+    217            {
+    218              ZCL_CLUSTER_ID_GEN_BASIC,
+    219              {  // Attribute record
+    220                ATTRID_CLUSTER_REVISION,
+    221                ZCL_DATATYPE_UINT16,
+    222                ACCESS_CONTROL_READ,
+    223                (void *)&zclMultiSensor_clusterRevision_all
+    224              }
+    225            },
+    226            // *** Identify Cluster Attribute ***
+    227            {
+    228              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    229              { // Attribute record
+    230                ATTRID_IDENTIFY_TIME,
+    231                ZCL_DATATYPE_UINT16,
+    232                (ACCESS_CONTROL_READ | ACCESS_CONTROL_WRITE),
+    233                (void *)&zclMultiSensor_IdentifyTime
+    234              }
+    235            },
+    236            {
+    237              ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    238              {  // Attribute record
+    239                ATTRID_CLUSTER_REVISION,
+    240                ZCL_DATATYPE_UINT16,
+    241                ACCESS_CONTROL_READ | ACCESS_GLOBAL,
+    242                (void *)&zclMultiSensor_clusterRevision_all
+    243              }
+    244            },
+    245            // *** Light Measurement Attriubtes ***
+    246            {
+    247              ZCL_CLUSTER_ID_MS_ILLUMINANCE_MEASUREMENT,
+    248              { // Attribute record
+    249                ATTRID_MS_ILLUMINANCE_LEVEL_STATUS,
+    250                ZCL_DATATYPE_UINT16,
+    251                ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+    252                (void *)&zclMultiSensor_Light_MeasuredValue
+    253              }
+    254            },
+    255            
+    256            {
+    257              ZCL_CLUSTER_ID_MS_ILLUMINANCE_MEASUREMENT,
+    258              {  // Attribute record
+    259                ATTRID_CLUSTER_REVISION,
+    260                ZCL_DATATYPE_UINT16,
+    261                ACCESS_CONTROL_READ,
+    262                (void *)&zclMultiSensor_clusterRevision_all
+    263              }
+    264            },
+    265             // *** Temperature Measurement Attriubtes ***
+    266            {
+    267              ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    268              { // Attribute record
+    269                ATTRID_MS_TEMPERATURE_MEASURED_VALUE,
+    270                ZCL_DATATYPE_INT16,
+    271                ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+    272                (void *)&zclMultiSensor_Temperature_MeasuredValue
+    273              }
+    274            },
+    275            {
+    276              ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    277              { // Attribute record
+    278                ATTRID_MS_TEMPERATURE_MIN_MEASURED_VALUE,
+    279                ZCL_DATATYPE_INT16,
+    280                ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+    281                (void *)&zclMultiSensor_Temperature_MinMeasuredValue
+    282              }
+    283            },
+    284            {
+    285              ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    286              { // Attribute record
+    287                ATTRID_MS_TEMPERATURE_MAX_MEASURED_VALUE,
+    288                ZCL_DATATYPE_INT16,
+    289                ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+    290                (void *)&zclMultiSensor_Temperature_MaxMeasuredValue
+    291              }
+    292            },
+    293            {
+    294              ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    295              {  // Attribute record
+    296                ATTRID_CLUSTER_REVISION,
+    297                ZCL_DATATYPE_UINT16,
+    298                ACCESS_CONTROL_READ,
+    299                (void *)&zclMultiSensor_clusterRevision_all
+    300              }
+    301            },
+    302            
+    303            
+    304            // *** Humidity Measurement Attriubtes ***
+    305            {
+    306              ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+    307              { // Attribute record
+    308                ATTRID_MS_RELATIVE_HUMIDITY_MEASURED_VALUE,
+    309                ZCL_DATATYPE_INT16,
+    310                ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+    311                (void *)&zclMultiSensor_Humidity_MeasuredValue
+    312              }
+    313            },
+    314              {
+    315              ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+    316              { // Attribute record
+    317                ATTRID_MS_RELATIVE_HUMIDITY_MIN_MEASURED_VALUE,
+    318                ZCL_DATATYPE_INT16,
+    319                ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+    320                (void *)&zclMultiSensor_Humidity_MinMeasuredValue
+    321              }
+    322            },
+    323              {
+    324              ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+    325              { // Attribute record
+    326                ATTRID_MS_RELATIVE_HUMIDITY_MAX_MEASURED_VALUE,
+    327                ZCL_DATATYPE_INT16,
+    328                ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+    329                (void *)&zclMultiSensor_Humidity_MaxMeasuredValue
+    330              }
+    331            }, 
+    332            {
+    333              ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+    334              {  // Attribute record
+    335                ATTRID_CLUSTER_REVISION,
+    336                ZCL_DATATYPE_UINT16,
+    337                ACCESS_CONTROL_READ,
+    338                (void *)&zclMultiSensor_clusterRevision_all
+    339              }
+    340            },
+    341              // *** PIR Attriubtes ***
+    342            {
+    343              ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING,
+    344              { // Attribute record
+    345                ATTRID_MS_OCCUPANCY_SENSING_CONFIG_OCCUPANCY,
+    346                ZCL_DATATYPE_UINT16,
+    347                ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+    348                (void *)&zclMultiSensor_Pir_Status
+    349              }
+    350            },
+    351            
+    352            {
+    353              ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING,
+    354              { // Attribute record
+    355                ATTRID_MS_OCCUPANCY_SENSING_CONFIG_OCCUPANCY_SENSOR_TYPE,
+    356                ZCL_DATATYPE_UINT16,
+    357                ACCESS_CONTROL_READ,
+    358                (void *)&zclMultiSensor_Pir_Type
+    359              }
+    360            },
+    361            
+    362            {
+    363              ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING,
+    364              {  // Attribute record
+    365                ATTRID_CLUSTER_REVISION,
+    366                ZCL_DATATYPE_UINT16,
+    367                ACCESS_CONTROL_READ,
+    368                (void *)&zclMultiSensor_clusterRevision_all
+    369              }
+    370            },
+    371            
+    372                // *** TVOC Attriubtes ***
+    373            {
+    374              ZCL_CLUSTER_ID_MS_TVOC_MEASUREMENT,
+    375              { // Attribute record
+    376                ATTRID_MS_TVOC_MEASURED_VALUE,
+    377                ZCL_DATATYPE_UINT16,
+    378                ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+    379                (void *)&zclMultiSensor_TVOC_MeasuredValue
+    380              }
+    381            },
+    382            
+    383            {
+    384              ZCL_CLUSTER_ID_MS_TVOC_MEASUREMENT,
+    385              {  // Attribute record
+    386                ATTRID_CLUSTER_REVISION,
+    387                ZCL_DATATYPE_UINT16,
+    388                ACCESS_CONTROL_READ,
+    389                (void *)&zclMultiSensor_clusterRevision_all
+    390              }
+    391            }, 
+    392            
+    393                // *** CO2 Attriubtes ***
+    394            {
+    395              ZCL_CLUSTER_ID_MS_CO2_MEASUREMENT,
+    396              { // Attribute record
+    397                ATTRID_MS_CO2_MEASURED_VALUE,
+    398                ZCL_DATATYPE_UINT16,
+    399                ACCESS_CONTROL_READ | ACCESS_REPORTABLE,
+    400                (void *)&zclMultiSensor_CO2_MeasuredValue
+    401              }
+    402            },
+    403            
+    404            {
+    405              ZCL_CLUSTER_ID_MS_CO2_MEASUREMENT,
+    406              {  // Attribute record
+    407                ATTRID_CLUSTER_REVISION,
+    408                ZCL_DATATYPE_UINT16,
+    409                ACCESS_CONTROL_READ,
+    410                (void *)&zclMultiSensor_clusterRevision_all
+    411              }
+    412            }
+    413          };
+    414          
+    415          
+
+   \                                 In  segment CODE_C, align 1
+    416          uint8 CONST zclMultiSensor_NumAttributes = ( sizeof(zclMultiSensor_Attrs) / sizeof(zclMultiSensor_Attrs[0]) );
+   \                     zclMultiSensor_NumAttributes:
+   \   000000   1D           DB 29
+    417          
+    418          /*********************************************************************
+    419          * SIMPLE DESCRIPTOR
+    420          */
+    421          // This is the Cluster ID List and should be filled with Application
+    422          // specific cluster IDs.
+    423          
+    424          /************************ Cluster List for Light Sensor Endpoint ********************************/
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    425          const cId_t zclMultiSensor_InClusterList[ZCL_MULTISENSOR_MAX_INCLUSTERS] =
+   \                     zclMultiSensor_InClusterList:
+   \   000000   0000         DW 0
+   \   000002   0300         DW 3
+   \   000004   0004         DW 1024
+   \   000006   0204         DW 1026
+   \   000008   0504         DW 1029
+   \   00000A   0604         DW 1030
+   \   00000C   000C         DW 3072
+   \   00000E   010C         DW 3073
+    426          {
+    427            ZCL_CLUSTER_ID_GEN_BASIC,
+    428            ZCL_CLUSTER_ID_GEN_IDENTIFY,
+    429            ZCL_CLUSTER_ID_MS_ILLUMINANCE_MEASUREMENT,
+    430            ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT,
+    431            ZCL_CLUSTER_ID_MS_RELATIVE_HUMIDITY,
+    432            ZCL_CLUSTER_ID_MS_OCCUPANCY_SENSING,
+    433            ZCL_CLUSTER_ID_MS_TVOC_MEASUREMENT,
+    434            ZCL_CLUSTER_ID_MS_CO2_MEASUREMENT
+    435          };
+    436          
+
+   \                                 In  segment XDATA_ROM_C, align 1
+    437          const cId_t zclMultiSensor_OutClusterList[ZCL_MULTISENSOR_MAX_OUTCLUSTERS] =
+   \                     zclMultiSensor_OutClusterList:
+   \   000000   0300         DW 3
+    438          {
+    439            ZCL_CLUSTER_ID_GEN_IDENTIFY
+    440          };
+    441          
+    442          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    443          SimpleDescriptionFormat_t zclMultiSensor_SimpleDesc =
+   \                     zclMultiSensor_SimpleDesc:
+   \   000000                DS 12
+   \   00000C                REQUIRE `?<Initializer for zclMultiSensor_SimpleDesc>`
+   \   00000C                REQUIRE __INIT_XDATA_I
+    444          {
+    445            
+    446            /************************ Simple Description for mux Sensor Endpoint **********************************/
+    447              MULTISENSOR_ENDPOINT,                        //  int Endpoint;
+    448              ZCL_HA_PROFILE_ID,                                          //  uint16 AppProfId[2];
+    449              ZCL_HA_DEVICEID_MULTI_SENSOR,                           //  uint16 AppDeviceId[2];
+    450              MULTISENSOR_DEVICE_VERSION,                      //  int   AppDevVer:4;
+    451              MULTISENSOR_FLAGS,                               //  int   AppFlags:4;
+    452              ZCL_MULTISENSOR_MAX_INCLUSTERS,               //  byte  AppNumInClusters;
+    453              (cId_t *)zclMultiSensor_InClusterList,       //  byte *pAppInClusterList;
+    454              ZCL_MULTISENSOR_MAX_OUTCLUSTERS,              //  byte  AppNumInClusters;
+    455              (cId_t *)zclMultiSensor_OutClusterList       //  byte *pAppInClusterList;
+    456          };
+    457          
+
+   \                                 In  segment XDATA_I, align 1, keep-with-next
+    458          zclConfigReportRec_t zclMultiSensor_ConfigReportRecs[]= 
+   \                     zclMultiSensor_ConfigReportRecs:
+   \   000000                DS 54
+   \   000036                REQUIRE `?<Initializer for zclMultiSensor_ConfigReportR`
+   \   000036                REQUIRE __INIT_XDATA_I
+    459          {
+    460            {
+    461              //******** Light mesurement Attribute *********
+    462              ZCL_CLUSTER_ID_MS_ILLUMINANCE_MEASUREMENT,                    // Cluster ID
+    463              0xFFFF,                                                       // timeup
+    464              (void *)&zclMultiSensor_Light_MeasuredValue,   // &lastReportValue
+    465              { //cdfReportRec
+    466                ZCL_REPORT_SEND,                            // Direction
+    467                ATTRID_MS_ILLUMINANCE_LEVEL_STATUS,         // Attribute ID
+    468                ZCL_DATATYPE_UINT16,                         // Data Type
+    469                0,                                          // min Report interval
+    470                0xFFFF,                                     // max Report interval
+    471                0,                                          // timeout period
+    472                NULL                                        // reportable change
+    473              }
+    474            },
+    475            
+    476            {
+    477              //******** TVOC measurement Attribute ***********
+    478              ZCL_CLUSTER_ID_MS_TVOC_MEASUREMENT,
+    479              0xFFFF,
+    480              (void *)&zclMultiSensor_TVOC_MeasuredValue,
+    481              { 
+    482                ZCL_REPORT_SEND,
+    483                ATTRID_MS_TVOC_MEASURED_VALUE,
+    484                ZCL_DATATYPE_UINT16,
+    485                0,
+    486                0xFFFF,
+    487                0,
+    488                NULL
+    489              }
+    490            },
+    491            
+    492            {
+    493              //******** CO2 measurement Attribute ***********
+    494              ZCL_CLUSTER_ID_MS_CO2_MEASUREMENT,
+    495              0xFFFF,
+    496              (void *)&zclMultiSensor_CO2_MeasuredValue,
+    497              { 
+    498                ZCL_REPORT_SEND,
+    499                ATTRID_MS_CO2_MEASURED_VALUE,
+    500                ZCL_DATATYPE_UINT16,
+    501                0,
+    502                0xFFFF,
+    503                0,
+    504                NULL
+    505              }
+    506            }
+    507          };
+    508          
+
+   \                                 In  segment CODE_C, align 1
+    509          uint8 CONST zclMultiSensor_NumConfigReportRecs = ( sizeof(zclMultiSensor_ConfigReportRecs) / sizeof(zclMultiSensor_ConfigReportRecs[0]) );
+   \                     zclMultiSensor_NumConfigReportRecs:
+   \   000000   03           DB 3
+    510          
+    511          /*********************************************************************
+    512          * GLOBAL FUNCTIONS
+    513          */
+    514          
+    515          /*********************************************************************
+    516          * LOCAL FUNCTIONS
+    517          */
+    518          
+    519          /*********************************************************************
+    520          * @fn      zclSampleLight_ResetAttributesToDefaultValues
+    521          *
+    522          * @brief   Reset all writable attributes to their default values.
+    523          *
+    524          * @param   none
+    525          *
+    526          * @return  none
+    527          */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    528          void zclMultiSensor_ResetAttributesToDefaultValues(void)
+   \                     zclMultiSensor_ResetAttributesToDefaultValues:
+    529          {
+   \   000000   C082         PUSH      DPL
+   \   000002   C083         PUSH      DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    530            int i;
+    531            
+    532            zclMultiSensor_LocationDescription[0] = 16;
+   \   000004   90....       MOV       DPTR,#zclMultiSensor_LocationDescription
+   \   000007   7410         MOV       A,#0x10
+   \   000009   F0           MOVX      @DPTR,A
+    533            for (i = 1; i <= 16; i++)
+    534            {
+    535              zclMultiSensor_LocationDescription[i] = ' ';
+   \   00000A   7420         MOV       A,#0x20
+   \   00000C   A3           INC       DPTR
+   \   00000D   7810         MOV       R0,#0x10
+   \                     ??zclMultiSensor_ResetAttributesToDefaultValues_1:
+   \   00000F   F0           MOVX      @DPTR,A
+   \   000010   A3           INC       DPTR
+   \   000011   D8FC         DJNZ      R0,??zclMultiSensor_ResetAttributesToDefaultValues_1
+    536            }
+    537            
+    538            zclMultiSensor_PhysicalEnvironment = PHY_UNSPECIFIED_ENV;
+   \   000013   90....       MOV       DPTR,#zclMultiSensor_PhysicalEnvironment
+   \   000016   E4           CLR       A
+   \   000017   F0           MOVX      @DPTR,A
+    539            zclMultiSensor_DeviceEnable = DEVICE_ENABLED;
+   \   000018   90....       MOV       DPTR,#zclMultiSensor_DeviceEnable
+   \   00001B   04           INC       A
+   \   00001C   F0           MOVX      @DPTR,A
+    540            
+    541          #ifdef ZCL_IDENTIFY
+    542            zclMultiSensor_IdentifyTime = 0;
+   \   00001D   90....       MOV       DPTR,#zclMultiSensor_IdentifyTime
+   \   000020   E4           CLR       A
+   \   000021   F0           MOVX      @DPTR,A
+   \   000022   A3           INC       DPTR
+   \   000023   F0           MOVX      @DPTR,A
+    543          #endif
+    544            
+    545          }
+   \   000024   D083         POP       DPH
+   \   000026   D082         POP       DPL
+   \   000028   02....       LJMP      ?BRET
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclMultiSensor_PhysicalEnvir`:
+   \   000000   0B           DB 11
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclMultiSensor_Temperature_M`:
+   \   000000   60F0         DW -4000
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclMultiSensor_Temperature_M_1`:
+   \   000000   D430         DW 12500
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclMultiSensor_Humidity_MaxM`:
+   \   000000   1027         DW 10000
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclMultiSensor_SimpleDesc>`:
+   \   000000   08           DB 8
+   \   000001   0401         DW 260
+   \   000003   0005         DW 1280
+   \   000005   00           DB 0
+   \   000006   08           DB 8
+   \   000007   ....         DW zclMultiSensor_InClusterList
+   \   000009   01           DB 1
+   \   00000A   ....         DW zclMultiSensor_OutClusterList
+
+   \                                 In  segment XDATA_ID, align 1, keep-with-next
+   \                     `?<Initializer for zclMultiSensor_ConfigReportR`:
+   \   000000   0004         DW 1024
+   \   000002   FFFF         DW 65535
+   \   000004   ....         DW zclMultiSensor_Light_MeasuredValue
+   \   000006   00           DB 0
+   \   000007   0000         DW 0
+   \   000009   21           DB 33
+   \   00000A   0000         DW 0
+   \   00000C   FFFF         DW 65535
+   \   00000E   0000         DW 0
+   \   000010   0000         DW 0H
+   \   000012   000C         DW 3072
+   \   000014   FFFF         DW 65535
+   \   000016   ....         DW zclMultiSensor_TVOC_MeasuredValue
+   \   000018   00           DB 0
+   \   000019   0000         DW 0
+   \   00001B   21           DB 33
+   \   00001C   0000         DW 0
+   \   00001E   FFFF         DW 65535
+   \   000020   0000         DW 0
+   \   000022   0000         DW 0H
+   \   000024   010C         DW 3073
+   \   000026   FFFF         DW 65535
+   \   000028   ....         DW zclMultiSensor_CO2_MeasuredValue
+   \   00002A   00           DB 0
+   \   00002B   0000         DW 0
+   \   00002D   21           DB 33
+   \   00002E   0000         DW 0
+   \   000030   FFFF         DW 65535
+   \   000032   0000         DW 0
+   \   000034   0000         DW 0H
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??zclMultiSensor_ResetAttributesToDefaultValues:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    zclMultiSensor_ResetAttributesToDefaultValues
+    546          
+    547          /****************************************************************************
+    548          ****************************************************************************/
+    549          
+    550          
+
+   Maximum stack usage in bytes:
+
+   ISTACK Function
+   ------ --------
+      2   zclMultiSensor_ResetAttributesToDefaultValues
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+      54  ?<Initializer for zclMultiSensor_ConfigReportR
+       2  ?<Initializer for zclMultiSensor_Humidity_MaxM
+       1  ?<Initializer for zclMultiSensor_PhysicalEnvir
+      12  ?<Initializer for zclMultiSensor_SimpleDesc>
+       2  ?<Initializer for zclMultiSensor_Temperature_M
+       2  ?<Initializer for zclMultiSensor_Temperature_M_1
+     232  zclMultiSensor_Attrs
+       2  zclMultiSensor_CO2_MeasuredValue
+      54  zclMultiSensor_ConfigReportRecs
+      17  zclMultiSensor_DateCode
+       1  zclMultiSensor_DeviceEnable
+       1  zclMultiSensor_HWRevision
+       2  zclMultiSensor_Humidity_MaxMeasuredValue
+       2  zclMultiSensor_Humidity_MeasuredValue
+       2  zclMultiSensor_Humidity_MinMeasuredValue
+       2  zclMultiSensor_IdentifyTime
+      16  zclMultiSensor_InClusterList
+       2  zclMultiSensor_Light_MeasuredValue
+      17  zclMultiSensor_LocationDescription
+      17  zclMultiSensor_ManufacturerName
+      17  zclMultiSensor_ModelId
+       1  zclMultiSensor_NumAttributes
+       1  zclMultiSensor_NumConfigReportRecs
+       2  zclMultiSensor_OutClusterList
+       1  zclMultiSensor_PhysicalEnvironment
+       1  zclMultiSensor_Pir_Status
+       1  zclMultiSensor_Pir_Type
+       1  zclMultiSensor_PowerSource
+      43  zclMultiSensor_ResetAttributesToDefaultValues
+       6  zclMultiSensor_ResetAttributesToDefaultValues::?relay
+      12  zclMultiSensor_SimpleDesc
+       2  zclMultiSensor_TVOC_MeasuredValue
+       2  zclMultiSensor_Temperature_MaxMeasuredValue
+       2  zclMultiSensor_Temperature_MeasuredValue
+       2  zclMultiSensor_Temperature_MinMeasuredValue
+       1  zclMultiSensor_ZCLVersion
+       2  zclMultiSensor_clusterRevision_all
+
+ 
+  43 bytes in segment BANKED_CODE
+   6 bytes in segment BANK_RELAYS
+ 234 bytes in segment CODE_C
+  73 bytes in segment XDATA_I
+  73 bytes in segment XDATA_ID
+  74 bytes in segment XDATA_ROM_C
+  34 bytes in segment XDATA_Z
+ 
+ 313 bytes of CODE     memory
+  74 bytes of CONST    memory
+  43 bytes of HUGECODE memory
+ 107 bytes of XDATA    memory
+
+Errors: none
+Warnings: none

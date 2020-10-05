@@ -1,0 +1,2597 @@
+///////////////////////////////////////////////////////////////////////////////
+//
+// IAR C/C++ Compiler V10.20.1.5333 for 8051              06/Jun/2020  14:24:58
+// Copyright 2004-2018 IAR Systems AB.
+// PC-locked license - IAR Embedded Workbench for 8051
+//
+//    Core               =  plain
+//    Code model         =  banked
+//    Data model         =  large
+//    Calling convention =  xdata reentrant
+//    Constant location  =  data_rom
+//    Dptr setup         =  1,16
+//                          
+//    Source file        =  
+//        C:\Users\TS-577\Desktop\Zigbee workspace\Product Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\Source\zcl_SampleSensorEnviroment.c
+//    Command line       =  
+//        -f C:\Users\TS-577\AppData\Local\Temp\EW5F80.tmp
+//        ("C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\Source\zcl_SampleSensorEnviroment.c"
+//        -D BDB_REPORTING -D SECURE=1 -D TC_LINKKEY_JOIN -D NV_INIT -D
+//        NV_RESTORE -D xZTOOL_P1 -D xMT_TASK -D xMT_APP_FUNC -D xMT_SYS_FUNC
+//        -D xMT_ZDO_FUNC -D xMT_APP_CNF_FUNC -D LCD_SUPPORTED=DEBUG -D
+//        MULTICAST_ENABLED=FALSE -D ZCL_READ -D ZCL_DISCOVER -D ZCL_WRITE -D
+//        ZCL_BASIC -D ZCL_IDENTIFY -D ZCL_TEMPERATURE_MEASUREMENT -D
+//        ZCL_GROUPS -lC "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\CoordinatorEB\List"
+//        -lA "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\CoordinatorEB\List"
+//        --diag_suppress Pe001,Pa010 -o "C:\Users\TS-577\Desktop\Zigbee
+//        workspace\Product Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\CoordinatorEB\Obj"
+//        -e --debug --core=plain --dptr=16,1 --data_model=large
+//        --code_model=banked --calling_convention=xdata_reentrant
+//        --place_constants=data_rom --nr_virtual_regs 16 -f
+//        "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\Tools\CC2530DB\f8wCoord.cfg"
+//        (-DCPU32MHZ -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRUE
+//        -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8 -DMAC_CFG_RX_MAX=5
+//        -DZDO_COORDINATOR -DRTR_NWK) -f "C:\Users\TS-577\Desktop\Zigbee
+//        workspace\Product Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"
+//        (-DZIGBEEPRO -DSECURE=1 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR
+//        -DDEFAULT_CHANLIST=0x00000800 -DZDAPP_CONFIG_PAN_ID=0xFFFF
+//        -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MASK=0x007F
+//        -DBEACON_REQUEST_DELAY=100 -DBEACON_REQ_DELAY_MASK=0x00FF
+//        -DLINK_STATUS_JITTER_MASK=0x007F -DROUTE_EXPIRY_TIME=30
+//        -DAPSC_ACK_WAIT_DURATION_POLLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7
+//        -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3
+//        -DNWK_MAX_DATA_RETRIES=2 -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9
+//        -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40 -DNWK_MAX_BINDING_ENTRIES=4
+//        -DMAX_BINDING_CLUSTER_IDS=4 -DDEFAULT_KEY={0}
+//        -DMAC_MAX_FRAME_SIZE=116 -DZDNWKMGR_MIN_TRANSMISSIONS=20
+//        "-DCONST=const __code" -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=TRUE
+//        -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100
+//        -DREJOIN_POLL_RATE=440 -DREJOIN_BACKOFF=900000 -DREJOIN_SCAN=900000)
+//        -f "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\Tools\CC2530DB\f8wZCL.cfg"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\Source\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\Source\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\ZMain\TI2530DB\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\hal\include\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\hal\target\CC2530EB\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\mac\include\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\mac\high_level\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\mac\low_level\srf04\single_chip\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\mt\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\osal\include\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\services\saddr\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\services\sdata\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\af\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\bdb\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\gp\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\nwk\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\sapi\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\sec\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\sys\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\zcl\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\stack\zdo\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\zmac\"
+//        -I "C:\Users\TS-577\Desktop\Zigbee workspace\Product
+//        Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\..\..\..\..\..\Components\zmac\f8w\"
+//        -Ohz --require_prototypes)
+//    Locale             =  Japanese_JPN.932
+//    List file          =  
+//        C:\Users\TS-577\Desktop\Zigbee workspace\Product Developer\particular
+//        product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\CC2530DB\CoordinatorEB\List\zcl_SampleSensorEnviroment.s51
+//
+///////////////////////////////////////////////////////////////////////////////
+
+        NAME zcl_SampleSensorEnviroment
+
+        RTMODEL "__SystemLibrary", "CLib"
+        RTMODEL "__calling_convention", "xdata_reentrant"
+        RTMODEL "__code_model", "banked"
+        RTMODEL "__core", "plain"
+        RTMODEL "__data_model", "large"
+        RTMODEL "__dptr_size", "16"
+        RTMODEL "__extended_stack", "disabled"
+        RTMODEL "__location_for_constants", "data"
+        RTMODEL "__number_of_dptrs", "1"
+        RTMODEL "__register_banks", "*"
+        RTMODEL "__rt_version", "1"
+
+        RSEG DOVERLAY:DATA:NOROOT(0)
+        RSEG IOVERLAY:IDATA:NOROOT(0)
+        RSEG ISTACK:IDATA:NOROOT(0)
+        RSEG PSTACK:XDATA:NOROOT(0)
+        RSEG XSTACK:XDATA:NOROOT(0)
+
+        EXTERN ?V0
+        EXTERN ?V1
+        EXTERN ?V2
+        EXTERN ?V3
+        EXTERN ?BANKED_ENTER_XDATA
+        EXTERN ?BANKED_LEAVE_XDATA
+        EXTERN ?BDISPATCH
+        EXTERN ?BRET
+        EXTERN __INIT_XDATA_I
+        EXTERN __INIT_XDATA_Z
+
+        FUNCTION `??zclSampleSensorEnviroment_BasicResetCB::?rela`,0203H
+        FUNCTION `??zclSampleSensorEnviroment_BatteryWarningCB::?`,0203H
+        PUBLIC `??zclSampleSensorEnviroment_Init::?relay`
+        FUNCTION `??zclSampleSensorEnviroment_Init::?relay`,0203H
+        FUNCTION ??zclSampleSensorEnviroment_ProcessCommissionin,0203H
+        FUNCTION ??zclSampleSensorEnviroment_ProcessInDiscCmdsRs,0203H
+        FUNCTION `??zclSampleSensorEnviroment_ProcessIncomingMsg:`,0203H
+        PUBLIC `??zclSampleSensorEnviroment_event_loop::?relay`
+        FUNCTION `??zclSampleSensorEnviroment_event_loop::?relay`,0203H
+        PUBLIC reportableChange
+        FUNCTION zclSampleSensorEnviroment_BasicResetCB,021603H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION zclSampleSensorEnviroment_BatteryWarningCB,0603H
+        ARGFRAME XSTACK, 0, STACK
+        PUBLIC zclSampleSensorEnviroment_Init
+        FUNCTION zclSampleSensorEnviroment_Init,021203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC zclSampleSensorEnviroment_NwkState
+        FUNCTION zclSampleSensorEnviroment_ProcessCommissioningStatus,021603H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd,0203H
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME ISTACK, 2, STACK
+        FUNCTION zclSampleSensorEnviroment_ProcessIncomingMsg,021203H
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        LOCFRAME XSTACK, 9, STACK
+        PUBLIC zclSampleSensorEnviroment_TaskID
+        PUBLIC zclSampleSensorEnviroment_dstAddr_hummidity
+        PUBLIC zclSampleSensorEnviroment_dstAddr_light
+        PUBLIC zclSampleSensorEnviroment_dstAddr_pir
+        PUBLIC zclSampleSensorEnviroment_dstAddr_temperature
+        PUBLIC zclSampleSensorEnviroment_event_loop
+        FUNCTION zclSampleSensorEnviroment_event_loop,0a1203H
+        ARGFRAME XSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        
+          CFI Names cfiNames0
+          CFI StackFrame CFA_SP SP IDATA
+          CFI StackFrame CFA_PSP16 PSP16 XDATA
+          CFI StackFrame CFA_XSP16 XSP16 XDATA
+          CFI StaticOverlayFrame CFA_IOVERLAY IOVERLAY
+          CFI StaticOverlayFrame CFA_DOVERLAY DOVERLAY
+          CFI Resource `PSW.CY`:1, `B.BR0`:1, `B.BR1`:1, `B.BR2`:1, `B.BR3`:1
+          CFI Resource `B.BR4`:1, `B.BR5`:1, `B.BR6`:1, `B.BR7`:1, `VB.BR8`:1
+          CFI Resource `VB.BR9`:1, `VB.BR10`:1, `VB.BR11`:1, `VB.BR12`:1
+          CFI Resource `VB.BR13`:1, `VB.BR14`:1, `VB.BR15`:1, VB:8, B:8, A:8
+          CFI Resource PSW:8, DPL0:8, DPH0:8, R0:8, R1:8, R2:8, R3:8, R4:8, R5:8
+          CFI Resource R6:8, R7:8, V0:8, V1:8, V2:8, V3:8, V4:8, V5:8, V6:8, V7:8
+          CFI Resource V8:8, V9:8, V10:8, V11:8, V12:8, V13:8, V14:8, V15:8, SP:8
+          CFI Resource PSPH:8, PSPL:8, PSP16:16, XSPH:8, XSPL:8, XSP16:16
+          CFI VirtualResource ?RET:24
+          CFI Resource ?BRET_EXT:8
+          CFI VirtualResource ?RET_HIGH:8, ?RET_LOW:8
+          CFI ResourceParts PSP16 PSPH, PSPL
+          CFI ResourceParts XSP16 XSPH, XSPL
+          CFI ResourceParts ?RET ?BRET_EXT, ?RET_HIGH, ?RET_LOW
+          CFI EndNames cfiNames0
+        
+          CFI Common cfiCommon0 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-3
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B Undefined
+          CFI A Undefined
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 Undefined
+          CFI R1 Undefined
+          CFI R2 Undefined
+          CFI R3 Undefined
+          CFI R4 Undefined
+          CFI R5 Undefined
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI V8 SameValue
+          CFI V9 SameValue
+          CFI V10 SameValue
+          CFI V11 SameValue
+          CFI V12 SameValue
+          CFI V13 SameValue
+          CFI V14 SameValue
+          CFI V15 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT Frame(CFA_SP, 3)
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon0
+        
+        
+          CFI Common cfiCommon1 Using cfiNames0
+          CFI CodeAlign 1
+          CFI DataAlign -1
+          CFI ReturnAddress ?RET CODE
+          CFI CFA_DOVERLAY Used
+          CFI CFA_IOVERLAY Used
+          CFI CFA_SP SP+-2
+          CFI CFA_PSP16 PSP16+0
+          CFI CFA_XSP16 XSP16+0
+          CFI `PSW.CY` SameValue
+          CFI `B.BR0` SameValue
+          CFI `B.BR1` SameValue
+          CFI `B.BR2` SameValue
+          CFI `B.BR3` SameValue
+          CFI `B.BR4` SameValue
+          CFI `B.BR5` SameValue
+          CFI `B.BR6` SameValue
+          CFI `B.BR7` SameValue
+          CFI `VB.BR8` SameValue
+          CFI `VB.BR9` SameValue
+          CFI `VB.BR10` SameValue
+          CFI `VB.BR11` SameValue
+          CFI `VB.BR12` SameValue
+          CFI `VB.BR13` SameValue
+          CFI `VB.BR14` SameValue
+          CFI `VB.BR15` SameValue
+          CFI VB SameValue
+          CFI B SameValue
+          CFI A SameValue
+          CFI PSW SameValue
+          CFI DPL0 SameValue
+          CFI DPH0 SameValue
+          CFI R0 SameValue
+          CFI R1 SameValue
+          CFI R2 SameValue
+          CFI R3 SameValue
+          CFI R4 SameValue
+          CFI R5 SameValue
+          CFI R6 SameValue
+          CFI R7 SameValue
+          CFI V0 SameValue
+          CFI V1 SameValue
+          CFI V2 SameValue
+          CFI V3 SameValue
+          CFI V4 SameValue
+          CFI V5 SameValue
+          CFI V6 SameValue
+          CFI V7 SameValue
+          CFI V8 SameValue
+          CFI V9 SameValue
+          CFI V10 SameValue
+          CFI V11 SameValue
+          CFI V12 SameValue
+          CFI V13 SameValue
+          CFI V14 SameValue
+          CFI V15 SameValue
+          CFI PSPH Undefined
+          CFI PSPL Undefined
+          CFI XSPH Undefined
+          CFI XSPL Undefined
+          CFI ?RET Concat
+          CFI ?BRET_EXT SameValue
+          CFI ?RET_HIGH Frame(CFA_SP, 2)
+          CFI ?RET_LOW Frame(CFA_SP, 1)
+          CFI EndCommon cfiCommon1
+        
+RegisterForKeys     SYMBOL "RegisterForKeys"
+`??RegisterForKeys::?relay` SYMBOL "?relay", RegisterForKeys
+RegisterVoltageWarningCB SYMBOL "RegisterVoltageWarningCB"
+`??RegisterVoltageWarningCB::?relay` SYMBOL "?relay", RegisterVoltageWarningCB
+ZDO_RegisterForZDOMsg SYMBOL "ZDO_RegisterForZDOMsg"
+`??ZDO_RegisterForZDOMsg::?relay` SYMBOL "?relay", ZDO_RegisterForZDOMsg
+afRegister          SYMBOL "afRegister"
+`??afRegister::?relay` SYMBOL "?relay", afRegister
+bdb_RegisterCommissioningStatusCB SYMBOL "bdb_RegisterCommissioningStatusCB"
+`??bdb_RegisterCommissioningStatusCB::?relay` SYMBOL "?relay", bdb_RegisterCommissioningStatusCB
+bdb_RegisterSimpleDescriptor SYMBOL "bdb_RegisterSimpleDescriptor"
+`??bdb_RegisterSimpleDescriptor::?relay` SYMBOL "?relay", bdb_RegisterSimpleDescriptor
+bdb_StartCommissioning SYMBOL "bdb_StartCommissioning"
+`??bdb_StartCommissioning::?relay` SYMBOL "?relay", bdb_StartCommissioning
+osal_mem_free       SYMBOL "osal_mem_free"
+`??osal_mem_free::?relay` SYMBOL "?relay", osal_mem_free
+osal_msg_deallocate SYMBOL "osal_msg_deallocate"
+`??osal_msg_deallocate::?relay` SYMBOL "?relay", osal_msg_deallocate
+osal_msg_receive    SYMBOL "osal_msg_receive"
+`??osal_msg_receive::?relay` SYMBOL "?relay", osal_msg_receive
+zclGeneral_RegisterCmdCallbacks SYMBOL "zclGeneral_RegisterCmdCallbacks"
+`??zclGeneral_RegisterCmdCallbacks::?relay` SYMBOL "?relay", zclGeneral_RegisterCmdCallbacks
+zclSampleSensorEnviroment_ResetAttributesToDefaultValues SYMBOL "zclSampleSensorEnviroment_ResetAttributesToDefaultValues"
+??zclSampleSensorEnviroment_ResetAttributesToDe SYMBOL "?relay", zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+zcl_registerAttrList SYMBOL "zcl_registerAttrList"
+`??zcl_registerAttrList::?relay` SYMBOL "?relay", zcl_registerAttrList
+zcl_registerForMsg  SYMBOL "zcl_registerForMsg"
+`??zcl_registerForMsg::?relay` SYMBOL "?relay", zcl_registerForMsg
+zclSampleSensorEnviroment_Init SYMBOL "zclSampleSensorEnviroment_Init"
+`??zclSampleSensorEnviroment_Init::?relay` SYMBOL "?relay", zclSampleSensorEnviroment_Init
+zclSampleSensorEnviroment_event_loop SYMBOL "zclSampleSensorEnviroment_event_loop"
+`??zclSampleSensorEnviroment_event_loop::?relay` SYMBOL "?relay", zclSampleSensorEnviroment_event_loop
+
+        EXTERN `??RegisterForKeys::?relay`
+        FUNCTION `??RegisterForKeys::?relay`,00H
+        EXTERN `??RegisterVoltageWarningCB::?relay`
+        FUNCTION `??RegisterVoltageWarningCB::?relay`,00H
+        EXTERN `??ZDO_RegisterForZDOMsg::?relay`
+        FUNCTION `??ZDO_RegisterForZDOMsg::?relay`,00H
+        EXTERN `??afRegister::?relay`
+        FUNCTION `??afRegister::?relay`,00H
+        EXTERN `??bdb_RegisterCommissioningStatusCB::?relay`
+        FUNCTION `??bdb_RegisterCommissioningStatusCB::?relay`,00H
+        EXTERN `??bdb_RegisterSimpleDescriptor::?relay`
+        FUNCTION `??bdb_RegisterSimpleDescriptor::?relay`,00H
+        EXTERN `??bdb_StartCommissioning::?relay`
+        FUNCTION `??bdb_StartCommissioning::?relay`,00H
+        EXTERN `??osal_mem_free::?relay`
+        FUNCTION `??osal_mem_free::?relay`,00H
+        EXTERN `??osal_msg_deallocate::?relay`
+        FUNCTION `??osal_msg_deallocate::?relay`,00H
+        EXTERN `??osal_msg_receive::?relay`
+        FUNCTION `??osal_msg_receive::?relay`,00H
+        EXTERN `??zclGeneral_RegisterCmdCallbacks::?relay`
+        FUNCTION `??zclGeneral_RegisterCmdCallbacks::?relay`,00H
+        EXTERN ??zclSampleSensorEnviroment_ResetAttributesToDe
+        FUNCTION ??zclSampleSensorEnviroment_ResetAttributesToDe,00H
+        EXTERN `??zcl_registerAttrList::?relay`
+        FUNCTION `??zcl_registerAttrList::?relay`,00H
+        EXTERN `??zcl_registerForMsg::?relay`
+        FUNCTION `??zcl_registerForMsg::?relay`,00H
+        EXTERN RegisterForKeys
+        FUNCTION RegisterForKeys,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN RegisterVoltageWarningCB
+        FUNCTION RegisterVoltageWarningCB,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN ZDO_RegisterForZDOMsg
+        FUNCTION ZDO_RegisterForZDOMsg,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN afRegister
+        FUNCTION afRegister,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN bdb_RegisterCommissioningStatusCB
+        FUNCTION bdb_RegisterCommissioningStatusCB,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN bdb_RegisterSimpleDescriptor
+        FUNCTION bdb_RegisterSimpleDescriptor,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN bdb_StartCommissioning
+        FUNCTION bdb_StartCommissioning,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_mem_free
+        FUNCTION osal_mem_free,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_deallocate
+        FUNCTION osal_msg_deallocate,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN osal_msg_receive
+        FUNCTION osal_msg_receive,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN zclGeneral_RegisterCmdCallbacks
+        FUNCTION zclGeneral_RegisterCmdCallbacks,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN zclSampleSensorEnviroment_Humidity_Attrs
+        EXTERN zclSampleSensorEnviroment_Humidity_NumAttributes
+        EXTERN zclSampleSensorEnviroment_Light_Attrs
+        EXTERN zclSampleSensorEnviroment_Light_NumAttributes
+        EXTERN zclSampleSensorEnviroment_Pir_Attrs
+        EXTERN zclSampleSensorEnviroment_Pir_NumAttributes
+        EXTERN zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+        FUNCTION zclSampleSensorEnviroment_ResetAttributesToDefaultValues,0202H
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN zclSampleSensorEnviroment_SimpleDesc_List
+        EXTERN zclSampleSensorEnviroment_Temperature_Attrs
+        EXTERN zclSampleSensorEnviroment_Temperature_NumAttributes
+        EXTERN zcl_registerAttrList
+        FUNCTION zcl_registerAttrList,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN zcl_registerForMsg
+        FUNCTION zcl_registerForMsg,0202H
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        EXTERN zdpExternalStateTaskID
+
+// C:\Users\TS-577\Desktop\Zigbee workspace\Product Developer\particular product\Projects\zstack\HomeAutomation\SampleSensorEnviroment_2\Source\zcl_SampleSensorEnviroment.c
+//    1 /**************************************************************************************************
+//    2   Filename:       zcl_sampletemperaturesensor.c
+//    3   Revised:        $Date: 2014-10-24 16:04:46 -0700 (Fri, 24 Oct 2014) $
+//    4   Revision:       $Revision: 40796 $
+//    5 
+//    6   Description:    Zigbee Cluster Library - sample device application.
+//    7 
+//    8 
+//    9   Copyright 2013 Texas Instruments Incorporated. All rights reserved.
+//   10 
+//   11   IMPORTANT: Your use of this Software is limited to those specific rights
+//   12   granted under the terms of a software license agreement between the user
+//   13   who downloaded the software, his/her employer (which must be your employer)
+//   14   and Texas Instruments Incorporated (the "License").  You may not use this
+//   15   Software unless you agree to abide by the terms of the License. The License
+//   16   limits your use, and you acknowledge, that the Software may not be modified,
+//   17   copied or distributed unless embedded on a Texas Instruments microcontroller
+//   18   or used solely and exclusively in conjunction with a Texas Instruments radio
+//   19   frequency transceiver, which is integrated into your product.  Other than for
+//   20   the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+//   21   works of, modify, distribute, perform, display or sell this Software and/or
+//   22   its documentation for any purpose.
+//   23 
+//   24   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+//   25   PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+//   26   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+//   27   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+//   28   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+//   29   NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+//   30   LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+//   31   INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+//   32   OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+//   33   OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+//   34   (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+//   35 
+//   36   Should you have any questions regarding your right to use this Software,
+//   37   contact Texas Instruments Incorporated at www.TI.com.
+//   38 **************************************************************************************************/
+//   39 
+//   40 /*********************************************************************
+//   41   This application implements a ZigBee Temperature Sensor, based on Z-Stack 3.0.
+//   42 
+//   43   This application is based on the common sample-application user interface. Please see the main
+//   44   comment in zcl_sampleapp_ui.c. The rest of this comment describes only the content specific for
+//   45   this sample applicetion.
+//   46   
+//   47   Application-specific UI peripherals being used:
+//   48 
+//   49   - LEDs:
+//   50     LED1 is not used in this application
+//   51 
+//   52   Application-specific menu system:
+//   53 
+//   54     <SET LOCAL TEMP> Set the temperature of the local temperature sensor
+//   55       Up/Down changes the temperature 
+//   56       This screen shows the following information:
+//   57         Line2:
+//   58           Shows the temperature of the local temperature sensor
+//   59 
+//   60 *********************************************************************/
+//   61 
+//   62 /*********************************************************************
+//   63  * INCLUDES
+//   64  */
+//   65 #include "ZComDef.h"
+//   66 #include "OSAL.h"
+//   67 #include "AF.h"
+//   68 #include "ZDApp.h"
+//   69 #include "ZDObject.h"
+//   70 #include "ZDProfile.h"
+//   71 
+//   72 #include "zcl.h"
+//   73 #include "zcl_general.h"
+//   74 #include "zcl_ha.h"
+//   75 #include "zcl_ms.h"
+//   76 
+//   77 #include "zcl_SampleSensorEnviroment.h"
+//   78 
+//   79 #include "onboard.h"
+//   80 
+//   81 /* HAL */
+//   82 #include "hal_led.h"
+//   83 #include "hal_key.h"
+//   84 
+//   85 #include "bdb_interface.h"
+//   86 #include "bdb_Reporting.h"
+//   87    
+//   88 /*********************************************************************
+//   89  * MACROS
+//   90  */
+//   91 
+//   92 // how often to report temperature
+//   93 #define SAMPLESENSORENVIROMENT_REPORT_INTERVAL   10000
+//   94 
+//   95 /*********************************************************************
+//   96  * CONSTANTS
+//   97  */
+//   98 
+//   99 /*********************************************************************
+//  100  * TYPEDEFS
+//  101  */
+//  102 
+//  103 /*********************************************************************
+//  104  * GLOBAL VARIABLES
+//  105  */
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  106 byte zclSampleSensorEnviroment_TaskID;
+zclSampleSensorEnviroment_TaskID:
+        DS 1
+        REQUIRE __INIT_XDATA_Z
+//  107 extern int16 zdpExternalStateTaskID;
+//  108 
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  109 afAddrType_t zclSampleSensorEnviroment_dstAddr_light;
+zclSampleSensorEnviroment_dstAddr_light:
+        DS 12
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  110 afAddrType_t zclSampleSensorEnviroment_dstAddr_temperature;
+zclSampleSensorEnviroment_dstAddr_temperature:
+        DS 12
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  111 afAddrType_t zclSampleSensorEnviroment_dstAddr_hummidity;
+zclSampleSensorEnviroment_dstAddr_hummidity:
+        DS 12
+        REQUIRE __INIT_XDATA_Z
+
+        RSEG XDATA_Z:XDATA:NOROOT(0)
+        DATA8
+//  112 afAddrType_t zclSampleSensorEnviroment_dstAddr_pir;
+zclSampleSensorEnviroment_dstAddr_pir:
+        DS 12
+        REQUIRE __INIT_XDATA_Z
+//  113 
+//  114 /*********************************************************************
+//  115  * GLOBAL FUNCTIONS
+//  116  */
+//  117 
+//  118 /*********************************************************************
+//  119  * LOCAL VARIABLES
+//  120  */
+//  121 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  122 devStates_t zclSampleSensorEnviroment_NwkState = DEV_INIT;
+zclSampleSensorEnviroment_NwkState:
+        DATA8
+        DS 1
+        REQUIRE `?<Initializer for zclSampleSensorEnviroment_Nw`
+        REQUIRE __INIT_XDATA_I
+//  123 
+//  124 //static uint8 aProcessCmd[] = { 1, 0, 0, 0 }; // used for reset command, { length + cmd0 + cmd1 + data }
+//  125 
+//  126 // Test Endpoint to allow SYS_APP_MSGs
+//  127 
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  128 static endPointDesc_t sampleTemperatureSensor_EpList[] =
+sampleTemperatureSensor_EpList:
+        DATA8
+        DS 28
+        REQUIRE `?<Initializer for sampleTemperatureSensor_EpLi`
+        REQUIRE __INIT_XDATA_I
+//  129 {
+//  130   {
+//  131     SAMPLESENSORENVIROMENT_ENDPOINT_LIGHT,              // Light sensor endpoint
+//  132     0,
+//  133     &zclSampleSensorEnviroment_TaskID,
+//  134     (SimpleDescriptionFormat_t *)NULL,                  // No Simple description for this test endpoint
+//  135     (afNetworkLatencyReq_t)0                            // No Network Latency req
+//  136   },
+//  137   
+//  138   {
+//  139     SAMPLESENSORENVIROMENT_ENDPOINT_TEMPERATURE,        // Temperature sensor endpoint
+//  140     0,
+//  141     &zclSampleSensorEnviroment_TaskID,
+//  142     (SimpleDescriptionFormat_t *)NULL,                  // No Simple description for this test endpoint
+//  143     (afNetworkLatencyReq_t)0                            // No Network Latency req
+//  144   }, 
+//  145   
+//  146   {
+//  147     SAMPLESENSORENVIROMENT_ENDPOINT_HUMMIDITY,          // Hummidity sensor endpoint
+//  148     0,
+//  149     &zclSampleSensorEnviroment_TaskID,
+//  150     (SimpleDescriptionFormat_t *)NULL,                  // No Simple description for this test endpoint
+//  151     (afNetworkLatencyReq_t)0                            // No Network Latency req
+//  152   },
+//  153   
+//  154   {
+//  155     SAMPLESENSORENVIROMENT_ENDPOINT_PIR,                // PIR sensor endpoint
+//  156     0,
+//  157     &zclSampleSensorEnviroment_TaskID,
+//  158     (SimpleDescriptionFormat_t *)NULL,                  // No Simple description for this test endpoint
+//  159     (afNetworkLatencyReq_t)0                            // No Network Latency req
+//  160   }
+//  161 };
+//  162 
+//  163 
+//  164 #ifdef BDB_REPORTING
+//  165 #if BDBREPORTING_MAX_ANALOG_ATTR_SIZE == 8
+//  166   uint8 reportableChange[] = {0x2C, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}; // 0x2C01 is 300 in int16
+//  167 #endif
+//  168 #if BDBREPORTING_MAX_ANALOG_ATTR_SIZE == 4
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  169   uint8 reportableChange[] = {0x2C, 0x01, 0x00, 0x00}; // 0x2C01 is 300 in int16
+reportableChange:
+        DATA32
+        DS 4
+        REQUIRE `?<Initializer for reportableChange>`
+        REQUIRE __INIT_XDATA_I
+//  170 #endif 
+//  171 #if BDBREPORTING_MAX_ANALOG_ATTR_SIZE == 2
+//  172   uint8 reportableChange[] = {0x2C, 0x01}; // 0x2C01 is 300 in int16
+//  173 #endif 
+//  174 #endif
+//  175 
+//  176 /*********************************************************************
+//  177  * LOCAL FUNCTIONS
+//  178  */
+//  179 static void zclSampleSensorEnviroment_HandleKeys( byte shift, byte keys );
+//  180 static void zclSampleSensorEnviroment_BasicResetCB( void );
+//  181 
+//  182 static void zclSampleSensorEnviroment_ProcessCommissioningStatus(bdbCommissioningModeMsg_t* bdbCommissioningModeMsg);
+//  183 
+//  184 // Functions to process ZCL Foundation incoming Command/Response messages
+//  185 static void zclSampleSensorEnviroment_ProcessIncomingMsg( zclIncomingMsg_t *msg );
+//  186 #ifdef ZCL_READ
+//  187 static uint8 zclSampleSensorEnviroment_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg );
+//  188 #endif
+//  189 #ifdef ZCL_WRITE
+//  190 static uint8 zclSampleSensorEnviroment_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg );
+//  191 #endif
+//  192 static uint8 zclSampleSensorEnviroment_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg );
+//  193 #ifdef ZCL_DISCOVER
+//  194 static uint8 zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg );
+//  195 static uint8 zclSampleSensorEnviroment_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg );
+//  196 static uint8 zclSampleSensorEnviroment_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg );
+//  197 #endif // ZCL_DISCOVER
+//  198 
+//  199 static void zclSampleSensorEnviroment_BatteryWarningCB( uint8 voltLevel);
+//  200 
+//  201 /*********************************************************************
+//  202  * STATUS STRINGS
+//  203  */
+//  204 
+//  205 /*********************************************************************
+//  206  * CONSTANTS
+//  207  */
+//  208 
+//  209 /*********************************************************************
+//  210  * ZCL General Profile Callback table
+//  211  */
+
+        RSEG XDATA_I:XDATA:NOROOT(0)
+//  212 static zclGeneral_AppCallbacks_t zclSampleSensorEnviroment_CmdCallbacksList[] =
+zclSampleSensorEnviroment_CmdCallbacksList:
+        DATA8
+        DS 72
+        REQUIRE `?<Initializer for zclSampleSensorEnviroment_Cm`
+        REQUIRE __INIT_XDATA_I
+//  213 {
+//  214 // *************************************** Callback List of Light Sensor Endpoint ***************************************/
+//  215   {
+//  216     zclSampleSensorEnviroment_BasicResetCB,        // Basic Cluster Reset command
+//  217     NULL,                                           // Identify Trigger Effect command
+//  218     NULL,             				                      // On/Off cluster command
+//  219     NULL,                                           // On/Off cluster enhanced command Off with Effect
+//  220     NULL,                                           // On/Off cluster enhanced command On with Recall Global Scene
+//  221     NULL,                                           // On/Off cluster enhanced command On with Timed Off
+//  222   #ifdef ZCL_LEVEL_CTRL
+//  223     NULL,                                           // Level Control Move to Level command
+//  224     NULL,                                           // Level Control Move command
+//  225     NULL,                                           // Level Control Step command
+//  226     NULL,                                           // Level Control Stop command
+//  227   #endif
+//  228   #ifdef ZCL_GROUPS
+//  229     NULL,                                           // Group Response commands
+//  230   #endif
+//  231   #ifdef ZCL_SCENES
+//  232     NULL,                                           // Scene Store Request command
+//  233     NULL,                                           // Scene Recall Request command
+//  234     NULL,                                           // Scene Response command
+//  235   #endif
+//  236   #ifdef ZCL_ALARMS
+//  237     NULL,                                           // Alarm (Response) commands
+//  238   #endif
+//  239   #ifdef SE_UK_EXT
+//  240     NULL,                                           // Get Event Log command
+//  241     NULL,                                           // Publish Event Log command
+//  242   #endif
+//  243     NULL,                                           // RSSI Location command
+//  244     NULL                                            // RSSI Location Response command
+//  245   },
+//  246   
+//  247 // ********************************* Callback List of Temperature Sensor Endpoint **************************************/
+//  248   {
+//  249     zclSampleSensorEnviroment_BasicResetCB,        // Basic Cluster Reset command
+//  250     NULL,                                           // Identify Trigger Effect command
+//  251     NULL,             				                      // On/Off cluster command
+//  252     NULL,                                           // On/Off cluster enhanced command Off with Effect
+//  253     NULL,                                           // On/Off cluster enhanced command On with Recall Global Scene
+//  254     NULL,                                           // On/Off cluster enhanced command On with Timed Off
+//  255   #ifdef ZCL_LEVEL_CTRL
+//  256     NULL,                                           // Level Control Move to Level command
+//  257     NULL,                                           // Level Control Move command
+//  258     NULL,                                           // Level Control Step command
+//  259     NULL,                                           // Level Control Stop command
+//  260   #endif
+//  261   #ifdef ZCL_GROUPS
+//  262     NULL,                                           // Group Response commands
+//  263   #endif
+//  264   #ifdef ZCL_SCENES
+//  265     NULL,                                           // Scene Store Request command
+//  266     NULL,                                           // Scene Recall Request command
+//  267     NULL,                                           // Scene Response command
+//  268   #endif
+//  269   #ifdef ZCL_ALARMS
+//  270     NULL,                                           // Alarm (Response) commands
+//  271   #endif
+//  272   #ifdef SE_UK_EXT
+//  273     NULL,                                           // Get Event Log command
+//  274     NULL,                                           // Publish Event Log command
+//  275   #endif
+//  276     NULL,                                           // RSSI Location command
+//  277     NULL                                            // RSSI Location Response command
+//  278   },
+//  279   
+//  280 // ******************************** Callback List of Hummidity Sensor Endpoint **************************************/
+//  281   {
+//  282     zclSampleSensorEnviroment_BasicResetCB,        // Basic Cluster Reset command
+//  283     NULL,                                           // Identify Trigger Effect command
+//  284     NULL,             				                      // On/Off cluster command
+//  285     NULL,                                           // On/Off cluster enhanced command Off with Effect
+//  286     NULL,                                           // On/Off cluster enhanced command On with Recall Global Scene
+//  287     NULL,                                           // On/Off cluster enhanced command On with Timed Off
+//  288   #ifdef ZCL_LEVEL_CTRL
+//  289     NULL,                                           // Level Control Move to Level command
+//  290     NULL,                                           // Level Control Move command
+//  291     NULL,                                           // Level Control Step command
+//  292     NULL,                                           // Level Control Stop command
+//  293   #endif
+//  294   #ifdef ZCL_GROUPS
+//  295     NULL,                                           // Group Response commands
+//  296   #endif
+//  297   #ifdef ZCL_SCENES
+//  298     NULL,                                           // Scene Store Request command
+//  299     NULL,                                           // Scene Recall Request command
+//  300     NULL,                                           // Scene Response command
+//  301   #endif
+//  302   #ifdef ZCL_ALARMS
+//  303     NULL,                                           // Alarm (Response) commands
+//  304   #endif
+//  305   #ifdef SE_UK_EXT
+//  306     NULL,                                           // Get Event Log command
+//  307     NULL,                                           // Publish Event Log command
+//  308   #endif
+//  309     NULL,                                           // RSSI Location command
+//  310     NULL                                            // RSSI Location Response command
+//  311   },
+//  312   
+//  313 // ************************************ Callback List of PIR Sensor Endpoint *********************************************/  
+//  314   {
+//  315     zclSampleSensorEnviroment_BasicResetCB,        // Basic Cluster Reset command
+//  316     NULL,                                           // Identify Trigger Effect command
+//  317     NULL,             				                      // On/Off cluster command
+//  318     NULL,                                           // On/Off cluster enhanced command Off with Effect
+//  319     NULL,                                           // On/Off cluster enhanced command On with Recall Global Scene
+//  320     NULL,                                           // On/Off cluster enhanced command On with Timed Off
+//  321   #ifdef ZCL_LEVEL_CTRL
+//  322     NULL,                                           // Level Control Move to Level command
+//  323     NULL,                                           // Level Control Move command
+//  324     NULL,                                           // Level Control Step command
+//  325     NULL,                                           // Level Control Stop command
+//  326   #endif
+//  327   #ifdef ZCL_GROUPS
+//  328     NULL,                                           // Group Response commands
+//  329   #endif
+//  330   #ifdef ZCL_SCENES
+//  331     NULL,                                           // Scene Store Request command
+//  332     NULL,                                           // Scene Recall Request command
+//  333     NULL,                                           // Scene Response command
+//  334   #endif
+//  335   #ifdef ZCL_ALARMS
+//  336     NULL,                                           // Alarm (Response) commands
+//  337   #endif
+//  338   #ifdef SE_UK_EXT
+//  339     NULL,                                           // Get Event Log command
+//  340     NULL,                                           // Publish Event Log command
+//  341   #endif
+//  342     NULL,                                           // RSSI Location command
+//  343     NULL                                            // RSSI Location Response command
+//  344   }
+//  345 };
+//  346 
+//  347 /*********************************************************************
+//  348  * @fn          zclSampleSensorEnviroment_Init
+//  349  *
+//  350  * @brief       Initialization function for the zclGeneral layer.
+//  351  *
+//  352  * @param       none
+//  353 *
+//  354 * @return      none
+//  355 */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  356 void zclSampleSensorEnviroment_Init( byte task_id )
+zclSampleSensorEnviroment_Init:
+          CFI Block cfiBlock0 Using cfiCommon0
+          CFI Function zclSampleSensorEnviroment_Init
+        CODE
+//  357 {
+        FUNCALL zclSampleSensorEnviroment_Init, bdb_RegisterSimpleDescriptor
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, bdb_RegisterSimpleDescriptor
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, bdb_RegisterSimpleDescriptor
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, bdb_RegisterSimpleDescriptor
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, zclGeneral_RegisterCmdCallbacks
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, zclGeneral_RegisterCmdCallbacks
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, zclGeneral_RegisterCmdCallbacks
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, zclGeneral_RegisterCmdCallbacks
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, zcl_registerAttrList
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, zcl_registerAttrList
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, zcl_registerAttrList
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, zcl_registerAttrList
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, zcl_registerForMsg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, RegisterVoltageWarningCB
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, RegisterForKeys
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, bdb_RegisterCommissioningStatusCB
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, afRegister
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, afRegister
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, afRegister
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, afRegister
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, ZDO_RegisterForZDOMsg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_Init, ZDO_RegisterForZDOMsg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+        MOV       A,R1
+//  358   zclSampleSensorEnviroment_TaskID = task_id;
+        MOV       DPTR,#zclSampleSensorEnviroment_TaskID
+        MOVX      @DPTR,A
+//  359   
+//  360   // Set destination address of Light Sensor to indirect
+//  361   zclSampleSensorEnviroment_dstAddr_light.addrMode = (afAddrMode_t)AddrNotPresent;
+        MOV       DPTR,#zclSampleSensorEnviroment_dstAddr_light + 8
+        CLR       A
+        MOVX      @DPTR,A
+//  362   zclSampleSensorEnviroment_dstAddr_light.endPoint = 0;
+        INC       DPTR
+        MOVX      @DPTR,A
+//  363   zclSampleSensorEnviroment_dstAddr_light.addr.shortAddr = 0;
+        MOV       DPTR,#zclSampleSensorEnviroment_dstAddr_light
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+//  364 
+//  365   // Set destination address of Temperature Sensor to indirect
+//  366   zclSampleSensorEnviroment_dstAddr_temperature.addrMode = (afAddrMode_t)AddrNotPresent;
+        MOV       DPTR,#zclSampleSensorEnviroment_dstAddr_temperature + 8
+        MOVX      @DPTR,A
+//  367   zclSampleSensorEnviroment_dstAddr_temperature.endPoint = 0;
+        INC       DPTR
+        MOVX      @DPTR,A
+//  368   zclSampleSensorEnviroment_dstAddr_temperature.addr.shortAddr = 0;
+        MOV       DPTR,#zclSampleSensorEnviroment_dstAddr_temperature
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+//  369   
+//  370   // Set destination address of Humidity Sensor to indirect
+//  371   zclSampleSensorEnviroment_dstAddr_hummidity.addrMode = (afAddrMode_t)AddrNotPresent;
+        MOV       DPTR,#zclSampleSensorEnviroment_dstAddr_hummidity + 8
+        MOVX      @DPTR,A
+//  372   zclSampleSensorEnviroment_dstAddr_hummidity.endPoint = 0;
+        INC       DPTR
+        MOVX      @DPTR,A
+//  373   zclSampleSensorEnviroment_dstAddr_hummidity.addr.shortAddr = 0;
+        MOV       DPTR,#zclSampleSensorEnviroment_dstAddr_hummidity
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+//  374   
+//  375   // Set destination address of PIR Sensor to indirect
+//  376   zclSampleSensorEnviroment_dstAddr_pir.addrMode = (afAddrMode_t)AddrNotPresent;
+        MOV       DPTR,#zclSampleSensorEnviroment_dstAddr_pir + 8
+        MOVX      @DPTR,A
+//  377   zclSampleSensorEnviroment_dstAddr_pir.endPoint = 0;
+        INC       DPTR
+        MOVX      @DPTR,A
+//  378   zclSampleSensorEnviroment_dstAddr_pir.addr.shortAddr = 0;
+        MOV       DPTR,#zclSampleSensorEnviroment_dstAddr_pir
+        MOVX      @DPTR,A
+        INC       DPTR
+        MOVX      @DPTR,A
+//  379   
+//  380   // Register the Simple Descriptor for this application
+//  381   bdb_RegisterSimpleDescriptor( &zclSampleSensorEnviroment_SimpleDesc_List[INDEX_LIGHT] );
+        ; Setup parameters for call to function bdb_RegisterSimpleDescriptor
+        MOV       R2,#zclSampleSensorEnviroment_SimpleDesc_List & 0xff
+        MOV       R3,#(zclSampleSensorEnviroment_SimpleDesc_List >> 8) & 0xff
+        LCALL     `??bdb_RegisterSimpleDescriptor::?relay`; Banked call to: bdb_RegisterSimpleDescriptor
+//  382   bdb_RegisterSimpleDescriptor( &zclSampleSensorEnviroment_SimpleDesc_List[INDEX_TEMPERATURE] ); 
+        ; Setup parameters for call to function bdb_RegisterSimpleDescriptor
+        MOV       R2,#(zclSampleSensorEnviroment_SimpleDesc_List + 12) & 0xff
+        MOV       R3,#((zclSampleSensorEnviroment_SimpleDesc_List + 12) >> 8) & 0xff
+        LCALL     `??bdb_RegisterSimpleDescriptor::?relay`; Banked call to: bdb_RegisterSimpleDescriptor
+//  383   bdb_RegisterSimpleDescriptor( &zclSampleSensorEnviroment_SimpleDesc_List[INDEX_HUMMIDITY] ); 
+        ; Setup parameters for call to function bdb_RegisterSimpleDescriptor
+        MOV       R2,#(zclSampleSensorEnviroment_SimpleDesc_List + 24) & 0xff
+        MOV       R3,#((zclSampleSensorEnviroment_SimpleDesc_List + 24) >> 8) & 0xff
+        LCALL     `??bdb_RegisterSimpleDescriptor::?relay`; Banked call to: bdb_RegisterSimpleDescriptor
+//  384   bdb_RegisterSimpleDescriptor( &zclSampleSensorEnviroment_SimpleDesc_List[INDEX_PIR] ); 
+        ; Setup parameters for call to function bdb_RegisterSimpleDescriptor
+        MOV       R2,#(zclSampleSensorEnviroment_SimpleDesc_List + 36) & 0xff
+        MOV       R3,#((zclSampleSensorEnviroment_SimpleDesc_List + 36) >> 8) & 0xff
+        LCALL     `??bdb_RegisterSimpleDescriptor::?relay`; Banked call to: bdb_RegisterSimpleDescriptor
+//  385 
+//  386   
+//  387   // Register the ZCL General Cluster Library callback functions
+//  388   zclGeneral_RegisterCmdCallbacks( SAMPLESENSORENVIROMENT_ENDPOINT_LIGHT, &zclSampleSensorEnviroment_CmdCallbacksList[INDEX_LIGHT] );
+        ; Setup parameters for call to function zclGeneral_RegisterCmdCallbacks
+        MOV       R2,#zclSampleSensorEnviroment_CmdCallbacksList & 0xff
+        MOV       R3,#(zclSampleSensorEnviroment_CmdCallbacksList >> 8) & 0xff
+        MOV       R1,#0x8
+        LCALL     `??zclGeneral_RegisterCmdCallbacks::?relay`; Banked call to: zclGeneral_RegisterCmdCallbacks
+//  389   zclGeneral_RegisterCmdCallbacks( SAMPLESENSORENVIROMENT_ENDPOINT_TEMPERATURE, &zclSampleSensorEnviroment_CmdCallbacksList[INDEX_TEMPERATURE] );
+        ; Setup parameters for call to function zclGeneral_RegisterCmdCallbacks
+        MOV       R2,#(zclSampleSensorEnviroment_CmdCallbacksList + 18) & 0xff
+        MOV       R3,#((zclSampleSensorEnviroment_CmdCallbacksList + 18) >> 8) & 0xff
+        MOV       R1,#0x9
+        LCALL     `??zclGeneral_RegisterCmdCallbacks::?relay`; Banked call to: zclGeneral_RegisterCmdCallbacks
+//  390   zclGeneral_RegisterCmdCallbacks( SAMPLESENSORENVIROMENT_ENDPOINT_HUMMIDITY, &zclSampleSensorEnviroment_CmdCallbacksList[INDEX_HUMMIDITY] );
+        ; Setup parameters for call to function zclGeneral_RegisterCmdCallbacks
+        MOV       R2,#(zclSampleSensorEnviroment_CmdCallbacksList + 36) & 0xff
+        MOV       R3,#((zclSampleSensorEnviroment_CmdCallbacksList + 36) >> 8) & 0xff
+        MOV       R1,#0xa
+        LCALL     `??zclGeneral_RegisterCmdCallbacks::?relay`; Banked call to: zclGeneral_RegisterCmdCallbacks
+//  391   zclGeneral_RegisterCmdCallbacks( SAMPLESENSORENVIROMENT_ENDPOINT_PIR, &zclSampleSensorEnviroment_CmdCallbacksList[INDEX_PIR] );
+        ; Setup parameters for call to function zclGeneral_RegisterCmdCallbacks
+        MOV       R2,#(zclSampleSensorEnviroment_CmdCallbacksList + 54) & 0xff
+        MOV       R3,#((zclSampleSensorEnviroment_CmdCallbacksList + 54) >> 8) & 0xff
+        MOV       R1,#0xb
+        LCALL     `??zclGeneral_RegisterCmdCallbacks::?relay`; Banked call to: zclGeneral_RegisterCmdCallbacks
+//  392 
+//  393   // Register the application's attribute list
+//  394   zclSampleSensorEnviroment_ResetAttributesToDefaultValues();
+        ; Setup parameters for call to function zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+        LCALL     ??zclSampleSensorEnviroment_ResetAttributesToDe; Banked call to: zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+//  395   zcl_registerAttrList( SAMPLESENSORENVIROMENT_ENDPOINT_LIGHT, zclSampleSensorEnviroment_Light_NumAttributes, zclSampleSensorEnviroment_Light_Attrs );   
+        ; Setup parameters for call to function zcl_registerAttrList
+        MOV       R4,#zclSampleSensorEnviroment_Light_Attrs & 0xff
+        MOV       R5,#(zclSampleSensorEnviroment_Light_Attrs >> 8) & 0xff
+        MOV       DPTR,#zclSampleSensorEnviroment_Light_NumAttributes
+        CLR       A
+        MOVC      A,@A+DPTR
+        MOV       R2,A
+        MOV       R1,#0x8
+        LCALL     `??zcl_registerAttrList::?relay`; Banked call to: zcl_registerAttrList
+//  396   zcl_registerAttrList( SAMPLESENSORENVIROMENT_ENDPOINT_TEMPERATURE, zclSampleSensorEnviroment_Temperature_NumAttributes, zclSampleSensorEnviroment_Temperature_Attrs );   
+        ; Setup parameters for call to function zcl_registerAttrList
+        MOV       R4,#zclSampleSensorEnviroment_Temperature_Attrs & 0xff
+        MOV       R5,#(zclSampleSensorEnviroment_Temperature_Attrs >> 8) & 0xff
+        MOV       DPTR,#zclSampleSensorEnviroment_Temperature_NumAttributes
+        CLR       A
+        MOVC      A,@A+DPTR
+        MOV       R2,A
+        MOV       R1,#0x9
+        LCALL     `??zcl_registerAttrList::?relay`; Banked call to: zcl_registerAttrList
+//  397   zcl_registerAttrList( SAMPLESENSORENVIROMENT_ENDPOINT_HUMMIDITY, zclSampleSensorEnviroment_Humidity_NumAttributes, zclSampleSensorEnviroment_Humidity_Attrs );   
+        ; Setup parameters for call to function zcl_registerAttrList
+        MOV       R4,#zclSampleSensorEnviroment_Humidity_Attrs & 0xff
+        MOV       R5,#(zclSampleSensorEnviroment_Humidity_Attrs >> 8) & 0xff
+        MOV       DPTR,#zclSampleSensorEnviroment_Humidity_NumAttributes
+        CLR       A
+        MOVC      A,@A+DPTR
+        MOV       R2,A
+        MOV       R1,#0xa
+        LCALL     `??zcl_registerAttrList::?relay`; Banked call to: zcl_registerAttrList
+//  398   zcl_registerAttrList( SAMPLESENSORENVIROMENT_ENDPOINT_PIR, zclSampleSensorEnviroment_Pir_NumAttributes, zclSampleSensorEnviroment_Pir_Attrs );   
+        ; Setup parameters for call to function zcl_registerAttrList
+        MOV       R4,#zclSampleSensorEnviroment_Pir_Attrs & 0xff
+        MOV       R5,#(zclSampleSensorEnviroment_Pir_Attrs >> 8) & 0xff
+        MOV       DPTR,#zclSampleSensorEnviroment_Pir_NumAttributes
+        CLR       A
+        MOVC      A,@A+DPTR
+        MOV       R2,A
+        MOV       R1,#0xb
+        LCALL     `??zcl_registerAttrList::?relay`; Banked call to: zcl_registerAttrList
+//  399 
+//  400   // Register the Application to receive the unprocessed Foundation command/response messages
+//  401   zcl_registerForMsg( zclSampleSensorEnviroment_TaskID );
+        ; Setup parameters for call to function zcl_registerForMsg
+        MOV       DPTR,#zclSampleSensorEnviroment_TaskID
+        MOVX      A,@DPTR
+        MOV       R1,A
+        LCALL     `??zcl_registerForMsg::?relay`; Banked call to: zcl_registerForMsg
+//  402   
+//  403   // Register low voltage NV memory protection application callback
+//  404   RegisterVoltageWarningCB( zclSampleSensorEnviroment_BatteryWarningCB );
+        ; Setup parameters for call to function RegisterVoltageWarningCB
+        MOV       R2,#`??zclSampleSensorEnviroment_BatteryWarningCB::?` & 0xff
+        MOV       R3,#(`??zclSampleSensorEnviroment_BatteryWarningCB::?` >> 8) & 0xff
+        LCALL     `??RegisterVoltageWarningCB::?relay`; Banked call to: RegisterVoltageWarningCB
+//  405   
+//  406   // Register for all key events - This app will handle all key events
+//  407   RegisterForKeys( zclSampleSensorEnviroment_TaskID );
+        ; Setup parameters for call to function RegisterForKeys
+        MOV       DPTR,#zclSampleSensorEnviroment_TaskID
+        MOVX      A,@DPTR
+        MOV       R1,A
+        LCALL     `??RegisterForKeys::?relay`; Banked call to: RegisterForKeys
+//  408   
+//  409   bdb_RegisterCommissioningStatusCB( zclSampleSensorEnviroment_ProcessCommissioningStatus );
+        ; Setup parameters for call to function bdb_RegisterCommissioningStatusCB
+        MOV       R2,#??zclSampleSensorEnviroment_ProcessCommissionin & 0xff
+        MOV       R3,#(??zclSampleSensorEnviroment_ProcessCommissionin >> 8) & 0xff
+        LCALL     `??bdb_RegisterCommissioningStatusCB::?relay`; Banked call to: bdb_RegisterCommissioningStatusCB
+//  410   
+//  411 #ifdef BDB_REPORTING
+//  412   //Adds the default configuration values for the temperature attribute of the ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT cluster, for endpoint SAMPLESENSORENVIROMENT_ENDPOINT
+//  413   //Default maxReportingInterval value is 10 seconds
+//  414   //Default minReportingInterval value is 3 seconds
+//  415   //Default reportChange value is 300 (3 degrees)
+//  416   //bdb_RepAddAttrCfgRecordDefaultToList(SAMPLESENSORENVIROMENT_ENDPOINT, ZCL_CLUSTER_ID_MS_TEMPERATURE_MEASUREMENT, ATTRID_MS_TEMPERATURE_MEASURED_VALUE, 0, 10, reportableChange);
+//  417 #endif
+//  418   
+//  419   //Register for Endpoints
+//  420   afRegister( &sampleTemperatureSensor_EpList[INDEX_LIGHT] );
+        ; Setup parameters for call to function afRegister
+        MOV       R2,#sampleTemperatureSensor_EpList & 0xff
+        MOV       R3,#(sampleTemperatureSensor_EpList >> 8) & 0xff
+        LCALL     `??afRegister::?relay`; Banked call to: afRegister
+//  421   afRegister( &sampleTemperatureSensor_EpList[INDEX_TEMPERATURE] );
+        ; Setup parameters for call to function afRegister
+        MOV       R2,#(sampleTemperatureSensor_EpList + 7) & 0xff
+        MOV       R3,#((sampleTemperatureSensor_EpList + 7) >> 8) & 0xff
+        LCALL     `??afRegister::?relay`; Banked call to: afRegister
+//  422   afRegister( &sampleTemperatureSensor_EpList[INDEX_HUMMIDITY] );
+        ; Setup parameters for call to function afRegister
+        MOV       R2,#(sampleTemperatureSensor_EpList + 14) & 0xff
+        MOV       R3,#((sampleTemperatureSensor_EpList + 14) >> 8) & 0xff
+        LCALL     `??afRegister::?relay`; Banked call to: afRegister
+//  423   afRegister( &sampleTemperatureSensor_EpList[INDEX_PIR] );
+        ; Setup parameters for call to function afRegister
+        MOV       R2,#(sampleTemperatureSensor_EpList + 21) & 0xff
+        MOV       R3,#((sampleTemperatureSensor_EpList + 21) >> 8) & 0xff
+        LCALL     `??afRegister::?relay`; Banked call to: afRegister
+//  424 
+//  425   zdpExternalStateTaskID = zclSampleSensorEnviroment_TaskID;
+        MOV       DPTR,#zclSampleSensorEnviroment_TaskID
+        MOVX      A,@DPTR
+        MOV       DPTR,#zdpExternalStateTaskID
+        MOVX      @DPTR,A
+        INC       DPTR
+        CLR       A
+        MOVX      @DPTR,A
+//  426   
+//  427   ZDO_RegisterForZDOMsg( zclSampleSensorEnviroment_TaskID, End_Device_Bind_rsp );
+        ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+        MOV       R2,#0x20
+        MOV       R3,#-0x80
+        MOV       DPTR,#zclSampleSensorEnviroment_TaskID
+        MOVX      A,@DPTR
+        MOV       R1,A
+        LCALL     `??ZDO_RegisterForZDOMsg::?relay`; Banked call to: ZDO_RegisterForZDOMsg
+//  428   ZDO_RegisterForZDOMsg( zclSampleSensorEnviroment_TaskID, Match_Desc_rsp );
+        ; Setup parameters for call to function ZDO_RegisterForZDOMsg
+        MOV       R2,#0x6
+        MOV       R3,#-0x80
+        MOV       DPTR,#zclSampleSensorEnviroment_TaskID
+        MOVX      A,@DPTR
+        MOV       R1,A
+        LCALL     `??ZDO_RegisterForZDOMsg::?relay`; Banked call to: ZDO_RegisterForZDOMsg
+//  429 }
+          CFI EndBlock cfiBlock0
+        REQUIRE ?Subroutine0
+        ; // Fall through to label ?Subroutine0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine0:
+          CFI Block cfiBlock1 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+        MOV       R7,#0x1
+        LJMP      ?BANKED_LEAVE_XDATA
+          CFI EndBlock cfiBlock1
+//  430 
+//  431 /*********************************************************************
+//  432  * @fn          zclSample_event_loop
+//  433  *
+//  434  * @brief       Event Loop Processor for zclGeneral.
+//  435  *
+//  436  * @param       none
+//  437  *
+//  438  * @return      none
+//  439  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  440 uint16 zclSampleSensorEnviroment_event_loop( uint8 task_id, uint16 events )
+zclSampleSensorEnviroment_event_loop:
+          CFI Block cfiBlock2 Using cfiCommon0
+          CFI Function zclSampleSensorEnviroment_event_loop
+        CODE
+//  441 {
+        FUNCALL zclSampleSensorEnviroment_event_loop, zclSampleSensorEnviroment_ProcessIncomingMsg
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_event_loop, osal_msg_deallocate
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_event_loop, osal_msg_receive
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 12, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 12, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        REQUIRE ?V0
+        REQUIRE ?V1
+        REQUIRE ?V2
+        REQUIRE ?V3
+        MOV       A,#-0xc
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V3 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI V2 load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V1 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-10)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-11)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-12)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 12)
+        ; Saved register size: 12
+        ; Auto size: 0
+        MOV       ?V0,R2
+        MOV       ?V1,R3
+//  442   afIncomingMSGPacket_t *MSGpkt;
+//  443 
+//  444   (void)task_id;  // Intentionally unreferenced parameter
+//  445 
+//  446   if ( events & SYS_EVENT_MSG )
+        MOV       A,R3
+        ANL       A,#0x80
+        JNZ       ??zclSampleSensorEnviroment_event_loop_0
+//  447   {
+//  448     while ( (MSGpkt = (afIncomingMSGPacket_t *)osal_msg_receive( zclSampleSensorEnviroment_TaskID )) )
+//  449     {
+//  450       switch ( MSGpkt->hdr.event )
+//  451       {
+//  452         case ZCL_INCOMING_MSG:
+//  453           // Incoming ZCL Foundation command/response messages
+//  454           zclSampleSensorEnviroment_ProcessIncomingMsg( (zclIncomingMsg_t *)MSGpkt );
+//  455           break;
+//  456 
+//  457         case KEY_CHANGE:
+//  458           zclSampleSensorEnviroment_HandleKeys( ((keyChange_t *)MSGpkt)->state, ((keyChange_t *)MSGpkt)->keys );
+//  459           break;
+//  460 
+//  461         case ZDO_STATE_CHANGE:
+//  462           break;
+//  463 
+//  464         default:
+//  465           break;
+//  466       }
+//  467 
+//  468       // Release the memory
+//  469       osal_msg_deallocate( (uint8 *)MSGpkt );
+//  470     }
+//  471 
+//  472     // return unprocessed events
+//  473     return (events ^ SYS_EVENT_MSG);
+//  474   }
+//  475   
+//  476 #if ZG_BUILD_ENDDEVICE_TYPE    
+//  477   if ( events & SAMPLEAPP_END_DEVICE_REJOIN_EVT )
+//  478   {
+//  479     bdb_ZedAttemptRecoverNwk();
+//  480     return ( events ^ SAMPLEAPP_END_DEVICE_REJOIN_EVT );
+//  481   }
+//  482 #endif
+//  483 
+//  484   // Discard unknown events
+//  485   return 0;
+        MOV       R2,#0x0
+        MOV       R3,#0x0
+??zclSampleSensorEnviroment_event_loop_1:
+        MOV       R7,#0x4
+        LJMP      ?BANKED_LEAVE_XDATA
+??zclSampleSensorEnviroment_event_loop_2:
+        MOV       DPL,R2
+        MOV       DPH,R3
+        MOVX      A,@DPTR
+        XRL       A,#0x34
+        JNZ       ??zclSampleSensorEnviroment_event_loop_3
+        ; Setup parameters for call to function zclSampleSensorEnviroment_ProcessIncomingMsg
+        LCALL     `??zclSampleSensorEnviroment_ProcessIncomingMsg:`; Banked call to: zclSampleSensorEnviroment_ProcessIncomingMsg
+??zclSampleSensorEnviroment_event_loop_3:
+        ; Setup parameters for call to function osal_msg_deallocate
+        MOV       R2,?V2
+        MOV       A,R7
+        MOV       R3,A
+        LCALL     `??osal_msg_deallocate::?relay`; Banked call to: osal_msg_deallocate
+??zclSampleSensorEnviroment_event_loop_0:
+        ; Setup parameters for call to function osal_msg_receive
+        MOV       DPTR,#zclSampleSensorEnviroment_TaskID
+        MOVX      A,@DPTR
+        MOV       R1,A
+        LCALL     `??osal_msg_receive::?relay`; Banked call to: osal_msg_receive
+        MOV       ?V2,R2
+        MOV       ?V3,R3
+        MOV       R7,?V3
+        MOV       A,R2
+        ORL       A,R7
+        JNZ       ??zclSampleSensorEnviroment_event_loop_2
+        MOV       R2,?V0
+        MOV       A,?V1
+        XRL       A,#0x80
+        MOV       R3,A
+        SJMP      ??zclSampleSensorEnviroment_event_loop_1
+//  486 }
+          CFI EndBlock cfiBlock2
+//  487 
+//  488 
+//  489 /*********************************************************************
+//  490  * @fn      zclSampleSensorEnviroment_LcdDisplayMainMode
+//  491  *
+//  492  * @brief   Called to display the main screen on the LCD.
+//  493  *
+//  494  * @param   none
+//  495  *
+//  496  * @return  none
+//  497  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  498 static void zclSampleSensorEnviroment_ProcessCommissioningStatus(bdbCommissioningModeMsg_t* bdbCommissioningModeMsg)
+zclSampleSensorEnviroment_ProcessCommissioningStatus:
+          CFI Block cfiBlock3 Using cfiCommon0
+          CFI Function zclSampleSensorEnviroment_ProcessCommissioningStatus
+        CODE
+//  499 {
+        FUNCALL zclSampleSensorEnviroment_ProcessCommissioningStatus, bdb_StartCommissioning
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  500     switch(bdbCommissioningModeMsg->bdbCommissioningMode)
+        MOV       DPL,R2
+        MOV       DPH,R3
+        INC       DPTR
+        MOVX      A,@DPTR
+        XRL       A,#0x2
+        JNZ       ??zclSampleSensorEnviroment_ProcessCommissionin_1
+//  501     {
+//  502       case BDB_COMMISSIONING_FORMATION:
+//  503         if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+        MOV       DPL,R2
+        MOV       DPH,R3
+        MOVX      A,@DPTR
+        JNZ       ??zclSampleSensorEnviroment_ProcessCommissionin_1
+//  504         {
+//  505           //After formation, perform nwk steering again plus the remaining commissioning modes that has not been process yet
+//  506           bdb_StartCommissioning(BDB_COMMISSIONING_MODE_NWK_STEERING | bdbCommissioningModeMsg->bdbRemainingCommissioningModes);
+        ; Setup parameters for call to function bdb_StartCommissioning
+        INC       DPTR
+        INC       DPTR
+        MOVX      A,@DPTR
+        ORL       A,#0x2
+        MOV       R1,A
+        LCALL     `??bdb_StartCommissioning::?relay`; Banked call to: bdb_StartCommissioning
+//  507         }
+//  508         else
+//  509         {
+//  510           //Want to try other channels?
+//  511           //try with bdb_setChannelAttribute
+//  512         }
+//  513       break;
+//  514       case BDB_COMMISSIONING_NWK_STEERING:
+//  515         if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+//  516         {
+//  517           //YOUR JOB:
+//  518           //We are on the nwk, what now?
+//  519         }
+//  520         else
+//  521         {
+//  522           //See the possible errors for nwk steering procedure
+//  523           //No suitable networks found
+//  524           //Want to try other channels?
+//  525           //try with bdb_setChannelAttribute
+//  526         }
+//  527       break;
+//  528       case BDB_COMMISSIONING_FINDING_BINDING:
+//  529         if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_SUCCESS)
+//  530         {
+//  531           //YOUR JOB:
+//  532         }
+//  533         else
+//  534         {
+//  535           //YOUR JOB:
+//  536           //retry?, wait for user interaction?
+//  537         }
+//  538       break;
+//  539       case BDB_COMMISSIONING_INITIALIZATION:
+//  540         //Initialization notification can only be successful. Failure on initialization 
+//  541         //only happens for ZED and is notified as BDB_COMMISSIONING_PARENT_LOST notification
+//  542         
+//  543         //YOUR JOB:
+//  544         //We are on a network, what now?
+//  545         
+//  546       break;
+//  547 #if ZG_BUILD_ENDDEVICE_TYPE    
+//  548     case BDB_COMMISSIONING_PARENT_LOST:
+//  549       if(bdbCommissioningModeMsg->bdbCommissioningStatus == BDB_COMMISSIONING_NETWORK_RESTORED)
+//  550       {
+//  551         //We did recover from losing parent
+//  552       }
+//  553       else
+//  554       {
+//  555         //Parent not found, attempt to rejoin again after a fixed delay
+//  556         osal_start_timerEx(zclSampleSensorEnviroment_TaskID, SAMPLEAPP_END_DEVICE_REJOIN_EVT, SAMPLEAPP_END_DEVICE_REJOIN_DELAY);
+//  557       }
+//  558     break;
+//  559 #endif 
+//  560     }
+//  561 }
+??zclSampleSensorEnviroment_ProcessCommissionin_1:
+          CFI EndBlock cfiBlock3
+        REQUIRE ?Subroutine1
+        ; // Fall through to label ?Subroutine1
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine1:
+          CFI Block cfiBlock4 Using cfiCommon0
+          CFI NoFunction
+          CFI CFA_SP SP+-5
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+        POP       DPH
+          CFI CFA_SP SP+-4
+          CFI DPH0 SameValue
+        POP       DPL
+          CFI CFA_SP SP+-3
+          CFI DPL0 SameValue
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock4
+//  562 
+//  563 /*********************************************************************
+//  564  * @fn      zclSampleSensorEnviroment_BasicResetCB
+//  565  *
+//  566  * @brief   Callback from the ZCL General Cluster Library
+//  567  *          to set all the Basic Cluster attributes to default values.
+//  568  *
+//  569  * @param   none
+//  570  *
+//  571  * @return  none
+//  572  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  573 static void zclSampleSensorEnviroment_BasicResetCB( void )
+zclSampleSensorEnviroment_BasicResetCB:
+          CFI Block cfiBlock5 Using cfiCommon0
+          CFI Function zclSampleSensorEnviroment_BasicResetCB
+        CODE
+//  574 {
+        FUNCALL zclSampleSensorEnviroment_BasicResetCB, zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+        LOCFRAME ISTACK, 2, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 0, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 2, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 0, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  575   zclSampleSensorEnviroment_ResetAttributesToDefaultValues();
+        ; Setup parameters for call to function zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+        LCALL     ??zclSampleSensorEnviroment_ResetAttributesToDe; Banked call to: zclSampleSensorEnviroment_ResetAttributesToDefaultValues
+//  576 }
+        SJMP      ?Subroutine1
+          CFI EndBlock cfiBlock5
+//  577 
+//  578 /*********************************************************************
+//  579  * @fn      zclSampleSensorEnviroment_BatteryWarningCB
+//  580  *
+//  581  * @brief   Called to handle battery-low situation.
+//  582  *
+//  583  * @param   voltLevel - level of severity
+//  584  *
+//  585  * @return  none
+//  586  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  587 void zclSampleSensorEnviroment_BatteryWarningCB( uint8 voltLevel )
+zclSampleSensorEnviroment_BatteryWarningCB:
+          CFI Block cfiBlock6 Using cfiCommon0
+          CFI Function zclSampleSensorEnviroment_BatteryWarningCB
+        CODE
+//  588 {
+        ; Saved register size: 0
+        ; Auto size: 0
+//  589   if ( voltLevel == VOLT_LEVEL_CAUTIOUS )
+//  590   {
+//  591     // Send warning message to the gateway and blink LED
+//  592   }
+//  593   else if ( voltLevel == VOLT_LEVEL_BAD )
+//  594   {
+//  595     // Shut down the system
+//  596   }
+//  597 }
+        LJMP      ?BRET
+          CFI EndBlock cfiBlock6
+//  598 
+//  599 /******************************************************************************
+//  600  *
+//  601  *  Functions for processing ZCL Foundation incoming Command/Response messages
+//  602  *
+//  603  *****************************************************************************/
+//  604 
+//  605 /*********************************************************************
+//  606  * @fn      zclSampleSensorEnviroment_ProcessIncomingMsg
+//  607  *
+//  608  * @brief   Process ZCL Foundation incoming message
+//  609  *
+//  610  * @param   pInMsg - pointer to the received message
+//  611  *
+//  612  * @return  none
+//  613  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  614 static void zclSampleSensorEnviroment_ProcessIncomingMsg( zclIncomingMsg_t *pInMsg)
+zclSampleSensorEnviroment_ProcessIncomingMsg:
+          CFI Block cfiBlock7 Using cfiCommon0
+          CFI Function zclSampleSensorEnviroment_ProcessIncomingMsg
+        CODE
+//  615 {
+        FUNCALL zclSampleSensorEnviroment_ProcessIncomingMsg, zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_ProcessIncomingMsg, zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        FUNCALL zclSampleSensorEnviroment_ProcessIncomingMsg, osal_mem_free
+        LOCFRAME ISTACK, 0, STACK
+        LOCFRAME PSTACK, 0, STACK
+        LOCFRAME XSTACK, 9, STACK
+        LOCFRAME IOVERLAY, 0, STATIC
+        LOCFRAME DOVERLAY, 0, STATIC
+        ARGFRAME ISTACK, 0, STACK
+        ARGFRAME PSTACK, 0, STACK
+        ARGFRAME XSTACK, 9, STACK
+        ARGFRAME IOVERLAY, 0, STATIC
+        ARGFRAME DOVERLAY, 0, STATIC
+        MOV       A,#-0x9
+        LCALL     ?BANKED_ENTER_XDATA
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI CFA_SP SP+0
+          CFI CFA_XSP16 add(XSP16, 9)
+        ; Saved register size: 9
+        ; Auto size: 0
+//  616   switch ( pInMsg->zclHdr.commandID )
+        MOV       A,R2
+        ADD       A,#0x17
+        MOV       R0,A
+        CLR       A
+        ADDC      A,R3
+        MOV       R1,A
+        MOV       A,R0
+        MOV       R6,A
+        MOV       A,R1
+        MOV       R7,A
+        MOV       DPL,R2
+        MOV       DPH,R3
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        INC       DPTR
+        MOVX      A,@DPTR
+        DEC       A
+        JZ        ??zclSampleSensorEnviroment_ProcessIncomingMsg_0
+        ADD       A,#-0x3
+        JZ        ??zclSampleSensorEnviroment_ProcessIncomingMsg_1
+        ADD       A,#-0x9
+        JZ        ??zclSampleSensorEnviroment_ProcessIncomingMsg_2
+        ADD       A,#-0x5
+        JZ        ??zclSampleSensorEnviroment_ProcessIncomingMsg_3
+        ADD       A,#-0x2
+        JZ        ??zclSampleSensorEnviroment_ProcessIncomingMsg_3
+        ADD       A,#-0x2
+        JZ        ??zclSampleSensorEnviroment_ProcessIncomingMsg_4
+        SJMP      ??zclSampleSensorEnviroment_ProcessIncomingMsg_5
+//  617   {
+//  618 #ifdef ZCL_READ
+//  619     case ZCL_CMD_READ_RSP:
+//  620       zclSampleSensorEnviroment_ProcessInReadRspCmd( pInMsg );
+??zclSampleSensorEnviroment_ProcessIncomingMsg_0:
+        LCALL     ?Subroutine3 & 0xFFFF
+??CrossCallReturnLabel_0:
+        MOVX      A,@DPTR
+        MOV       R1,A
+        MOV       A,R0
+        CLR       C
+        SUBB      A,R1
+        JNC       ??zclSampleSensorEnviroment_ProcessIncomingMsg_5
+        INC       R0
+        SJMP      ??CrossCallReturnLabel_0
+//  621       break;
+//  622 #endif
+//  623 #ifdef ZCL_WRITE
+//  624     case ZCL_CMD_WRITE_RSP:
+//  625       zclSampleSensorEnviroment_ProcessInWriteRspCmd( pInMsg );
+??zclSampleSensorEnviroment_ProcessIncomingMsg_1:
+        LCALL     ?Subroutine3 & 0xFFFF
+??CrossCallReturnLabel_1:
+        MOVX      A,@DPTR
+        MOV       R1,A
+        MOV       A,R0
+        CLR       C
+        SUBB      A,R1
+        JNC       ??zclSampleSensorEnviroment_ProcessIncomingMsg_5
+        INC       R0
+        SJMP      ??CrossCallReturnLabel_1
+//  626       break;
+//  627 #endif
+//  628 #ifdef ZCL_REPORT
+//  629     // See ZCL Test Applicaiton (zcl_testapp.c) for sample code on Attribute Reporting
+//  630     case ZCL_CMD_CONFIG_REPORT:
+//  631       //zclSampleSensorEnviroment_ProcessInConfigReportCmd( pInMsg );
+//  632       break;
+//  633       case ZCL_CMD_READ_REPORT_CFG:
+//  634       //zclSampleSensorEnviroment_ProcessInReadReportCfgCmd( pInMsg );
+//  635       break;
+//  636     case ZCL_CMD_CONFIG_REPORT_RSP:
+//  637       //zclSampleSensorEnviroment_ProcessInConfigReportRspCmd( pInMsg );
+//  638       break;
+//  639     case ZCL_CMD_READ_REPORT_CFG_RSP:
+//  640       //zclSampleSensorEnviroment_ProcessInReadReportCfgRspCmd( pInMsg );
+//  641       break;
+//  642 
+//  643     case ZCL_CMD_REPORT:
+//  644       //zclSampleSensorEnviroment_ProcessInReportCmd( pInMsg );
+//  645       break;
+//  646 #endif
+//  647     case ZCL_CMD_DEFAULT_RSP:
+//  648       zclSampleSensorEnviroment_ProcessInDefaultRspCmd( pInMsg );
+//  649       break;
+//  650 #ifdef ZCL_DISCOVER
+//  651     case ZCL_CMD_DISCOVER_CMDS_RECEIVED_RSP:
+//  652       zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd( pInMsg );
+??zclSampleSensorEnviroment_ProcessIncomingMsg_3:
+        ; Setup parameters for call to function zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd
+//  653       break;
+//  654 
+//  655     case ZCL_CMD_DISCOVER_CMDS_GEN_RSP:
+//  656       zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd( pInMsg );
+        ; Setup parameters for call to function zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd
+        LCALL     ??zclSampleSensorEnviroment_ProcessInDiscCmdsRs; Banked call to: zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd
+//  657       break;
+        SJMP      ??zclSampleSensorEnviroment_ProcessIncomingMsg_5
+//  658 
+//  659     case ZCL_CMD_DISCOVER_ATTRS_RSP:
+//  660       zclSampleSensorEnviroment_ProcessInDiscAttrsRspCmd( pInMsg );
+??zclSampleSensorEnviroment_ProcessIncomingMsg_2:
+        LCALL     ?Subroutine2 & 0xFFFF
+??CrossCallReturnLabel_3:
+        MOV       DPL,R0
+        MOV       DPH,R1
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R3,A
+        MOV       A,R2
+        CLR       C
+        SUBB      A,R3
+        JNC       ??zclSampleSensorEnviroment_ProcessIncomingMsg_5
+        INC       R2
+        SJMP      ??CrossCallReturnLabel_3
+//  661       break;
+//  662 
+//  663     case ZCL_CMD_DISCOVER_ATTRS_EXT_RSP:
+//  664       zclSampleSensorEnviroment_ProcessInDiscAttrsExtRspCmd( pInMsg );
+??zclSampleSensorEnviroment_ProcessIncomingMsg_4:
+        LCALL     ?Subroutine2 & 0xFFFF
+//  665       break;
+//  666 #endif
+//  667     default:
+//  668       break;
+//  669   }
+??CrossCallReturnLabel_4:
+        SJMP      ??zclSampleSensorEnviroment_ProcessIncomingMsg_6
+??zclSampleSensorEnviroment_ProcessIncomingMsg_7:
+        INC       R2
+??zclSampleSensorEnviroment_ProcessIncomingMsg_6:
+        MOV       DPL,R0
+        MOV       DPH,R1
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R3,A
+        MOV       A,R2
+        CLR       C
+        SUBB      A,R3
+        JC        ??zclSampleSensorEnviroment_ProcessIncomingMsg_7
+//  670 
+//  671   if ( pInMsg->attrCmd )
+??zclSampleSensorEnviroment_ProcessIncomingMsg_5:
+        MOV       DPL,R6
+        MOV       DPH,R7
+        MOVX      A,@DPTR
+        MOV       R2,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R3,A
+        MOV       A,R2
+        ORL       A,R3
+        JZ        ??zclSampleSensorEnviroment_ProcessIncomingMsg_8
+//  672   {
+//  673     osal_mem_free( pInMsg->attrCmd );
+        ; Setup parameters for call to function osal_mem_free
+        LCALL     `??osal_mem_free::?relay`; Banked call to: osal_mem_free
+//  674   }
+//  675 }
+??zclSampleSensorEnviroment_ProcessIncomingMsg_8:
+        LJMP      ?Subroutine0 & 0xFFFF
+          CFI EndBlock cfiBlock7
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine3:
+          CFI Block cfiCond8 Using cfiCommon0
+          CFI Function zclSampleSensorEnviroment_ProcessIncomingMsg
+          CFI Conditional ??CrossCallReturnLabel_0
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 9)
+          CFI Block cfiCond9 Using cfiCommon0
+          CFI (cfiCond9) Function zclSampleSensorEnviroment_ProcessIncomingMsg
+          CFI (cfiCond9) Conditional ??CrossCallReturnLabel_1
+          CFI (cfiCond9) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond9) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond9) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond9) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond9) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond9) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond9) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond9) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond9) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond9) CFA_SP SP+-2
+          CFI (cfiCond9) CFA_XSP16 add(XSP16, 9)
+          CFI Block cfiPicker10 Using cfiCommon1
+          CFI (cfiPicker10) NoFunction
+          CFI (cfiPicker10) Picker
+        MOV       DPL,R0
+        MOV       DPH,R1
+        MOVX      A,@DPTR
+        MOV       R0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       DPL,R0
+        MOV       DPH,A
+        MOV       R0,#0x0
+        RET
+          CFI EndBlock cfiCond8
+          CFI EndBlock cfiCond9
+          CFI EndBlock cfiPicker10
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+?Subroutine2:
+          CFI Block cfiCond11 Using cfiCommon0
+          CFI Function zclSampleSensorEnviroment_ProcessIncomingMsg
+          CFI Conditional ??CrossCallReturnLabel_3
+          CFI R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI CFA_SP SP+-2
+          CFI CFA_XSP16 add(XSP16, 9)
+          CFI Block cfiCond12 Using cfiCommon0
+          CFI (cfiCond12) Function zclSampleSensorEnviroment_ProcessIncomingMsg
+          CFI (cfiCond12) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond12) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond12) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond12) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond12) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond12) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond12) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond12) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond12) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond12) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond12) CFA_SP SP+-2
+          CFI (cfiCond12) CFA_XSP16 add(XSP16, 9)
+          CFI Block cfiPicker13 Using cfiCommon1
+          CFI (cfiPicker13) NoFunction
+          CFI (cfiPicker13) Picker
+        MOV       DPL,R0
+        MOV       DPH,R1
+          CFI EndBlock cfiCond11
+          CFI EndBlock cfiCond12
+          CFI EndBlock cfiPicker13
+        REQUIRE ??Subroutine4_0
+        ; // Fall through to label ??Subroutine4_0
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+??Subroutine4_0:
+          CFI Block cfiCond14 Using cfiCommon0
+          CFI Function zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd
+          CFI Conditional ??CrossCallReturnLabel_2
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-7
+          CFI Block cfiCond15 Using cfiCommon0
+          CFI (cfiCond15) Function zclSampleSensorEnviroment_ProcessIncomingMsg
+          CFI (cfiCond15) Conditional ??CrossCallReturnLabel_3
+          CFI (cfiCond15) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond15) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond15) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond15) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond15) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond15) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond15) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond15) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond15) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond15) CFA_SP SP+-2
+          CFI (cfiCond15) CFA_XSP16 add(XSP16, 9)
+          CFI Block cfiCond16 Using cfiCommon0
+          CFI (cfiCond16) Function zclSampleSensorEnviroment_ProcessIncomingMsg
+          CFI (cfiCond16) Conditional ??CrossCallReturnLabel_4
+          CFI (cfiCond16) R6 load(1, XDATA, add(CFA_XSP16, literal(-9)))
+          CFI (cfiCond16) VB load(1, XDATA, add(CFA_XSP16, literal(-8)))
+          CFI (cfiCond16) V0 load(1, XDATA, add(CFA_XSP16, literal(-7)))
+          CFI (cfiCond16) R7 load(1, XDATA, add(CFA_XSP16, literal(-6)))
+          CFI (cfiCond16) ?RET_LOW load(1, XDATA, add(CFA_XSP16, literal(-5)))
+          CFI (cfiCond16) ?RET_HIGH load(1, XDATA, add(CFA_XSP16, literal(-4)))
+          CFI (cfiCond16) ?BRET_EXT load(1, XDATA, add(CFA_XSP16, literal(-3)))
+          CFI (cfiCond16) DPL0 load(1, XDATA, add(CFA_XSP16, literal(-2)))
+          CFI (cfiCond16) DPH0 load(1, XDATA, add(CFA_XSP16, literal(-1)))
+          CFI (cfiCond16) CFA_SP SP+-2
+          CFI (cfiCond16) CFA_XSP16 add(XSP16, 9)
+          CFI Block cfiPicker17 Using cfiCommon1
+          CFI (cfiPicker17) NoFunction
+          CFI (cfiPicker17) Picker
+        MOVX      A,@DPTR
+        MOV       R0,A
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R1,A
+        MOV       R2,#0x0
+        RET
+          CFI EndBlock cfiCond14
+          CFI EndBlock cfiCond15
+          CFI EndBlock cfiCond16
+          CFI EndBlock cfiPicker17
+//  676 
+//  677 #ifdef ZCL_READ
+//  678 /*********************************************************************
+//  679  * @fn      zclSampleSensorEnviroment_ProcessInReadRspCmd
+//  680  *
+//  681  * @brief   Process the "Profile" Read Response Command
+//  682  *
+//  683  * @param   pInMsg - incoming message to process
+//  684  *
+//  685  * @return  none
+//  686  */
+//  687 static uint8 zclSampleSensorEnviroment_ProcessInReadRspCmd( zclIncomingMsg_t *pInMsg )
+//  688 {
+//  689   zclReadRspCmd_t *readRspCmd;
+//  690   uint8 i;
+//  691 
+//  692   readRspCmd = (zclReadRspCmd_t *)pInMsg->attrCmd;
+//  693   for ( i = 0; i < readRspCmd->numAttr; i++ )
+//  694   {
+//  695     // Notify the originator of the results of the original read attributes
+//  696     // attempt and, for each successfull request, the value of the requested
+//  697     // attribute
+//  698   }
+//  699 
+//  700   return ( TRUE );
+//  701 }
+//  702 #endif // ZCL_READ
+//  703 
+//  704 #ifdef ZCL_WRITE
+//  705 /*********************************************************************
+//  706  * @fn      zclSampleSensorEnviroment_ProcessInWriteRspCmd
+//  707  *
+//  708  * @brief   Process the "Profile" Write Response Command
+//  709  *
+//  710  * @param   pInMsg - incoming message to process
+//  711  *
+//  712  * @return  none
+//  713  */
+//  714 static uint8 zclSampleSensorEnviroment_ProcessInWriteRspCmd( zclIncomingMsg_t *pInMsg )
+//  715 {
+//  716   zclWriteRspCmd_t *writeRspCmd;
+//  717   uint8 i;
+//  718 
+//  719   writeRspCmd = (zclWriteRspCmd_t *)pInMsg->attrCmd;
+//  720   for ( i = 0; i < writeRspCmd->numAttr; i++ )
+//  721   {
+//  722     // Notify the device of the results of the its original write attributes
+//  723     // command.
+//  724   }
+//  725 
+//  726   return ( TRUE );
+//  727 }
+//  728 #endif // ZCL_WRITE
+//  729 
+//  730 /*********************************************************************
+//  731  * @fn      zclSampleSensorEnviroment_ProcessInDefaultRspCmd
+//  732  *
+//  733  * @brief   Process the "Profile" Default Response Command
+//  734  *
+//  735  * @param   pInMsg - incoming message to process
+//  736  *
+//  737  * @return  none
+//  738  */
+//  739 static uint8 zclSampleSensorEnviroment_ProcessInDefaultRspCmd( zclIncomingMsg_t *pInMsg )
+//  740 {
+//  741   // zclDefaultRspCmd_t *defaultRspCmd = (zclDefaultRspCmd_t *)pInMsg->attrCmd;
+//  742 
+//  743   // Device is notified of the Default Response command.
+//  744   (void)pInMsg;
+//  745 
+//  746   return ( TRUE );
+//  747 }
+//  748 
+//  749 #ifdef ZCL_DISCOVER
+//  750 /*********************************************************************
+//  751  * @fn      zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd
+//  752  *
+//  753  * @brief   Process the Discover Commands Response Command
+//  754  *
+//  755  * @param   pInMsg - incoming message to process
+//  756  *
+//  757  * @return  none
+//  758  */
+
+        RSEG BANKED_CODE:HUGECODE:NOROOT(0)
+//  759 static uint8 zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd( zclIncomingMsg_t *pInMsg )
+zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd:
+          CFI Block cfiBlock18 Using cfiCommon0
+          CFI Function zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd
+        CODE
+//  760 {
+        PUSH      DPL
+          CFI DPL0 Frame(CFA_SP, 4)
+          CFI CFA_SP SP+-4
+        PUSH      DPH
+          CFI DPH0 Frame(CFA_SP, 5)
+          CFI CFA_SP SP+-5
+        ; Saved register size: 2
+        ; Auto size: 0
+//  761   zclDiscoverCmdsCmdRsp_t *discoverRspCmd;
+//  762   uint8 i;
+//  763 
+//  764   discoverRspCmd = (zclDiscoverCmdsCmdRsp_t *)pInMsg->attrCmd;
+        MOV       A,R2
+        ADD       A,#0x17
+        MOV       DPL,A
+        CLR       A
+        ADDC      A,R3
+        MOV       DPH,A
+        LCALL     ??Subroutine4_0 & 0xFFFF
+//  765   for ( i = 0; i < discoverRspCmd->numCmd; i++ )
+??CrossCallReturnLabel_2:
+        SJMP      ??zclSampleSensorEnviroment_ProcessInDiscCmdsRs_1
+??zclSampleSensorEnviroment_ProcessInDiscCmdsRs_2:
+        INC       R2
+??zclSampleSensorEnviroment_ProcessInDiscCmdsRs_1:
+        MOV       DPL,R0
+        MOV       DPH,R1
+        INC       DPTR
+        INC       DPTR
+        MOVX      A,@DPTR
+        MOV       R3,A
+        MOV       A,R2
+        CLR       C
+        SUBB      A,R3
+        JC        ??zclSampleSensorEnviroment_ProcessInDiscCmdsRs_2
+//  766   {
+//  767     // Device is notified of the result of its attribute discovery command.
+//  768   }
+//  769 
+//  770   return ( TRUE );
+        MOV       R1,#0x1
+        LJMP      ?Subroutine1 & 0xFFFF
+//  771 }
+          CFI EndBlock cfiBlock18
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for zclSampleSensorEnviroment_Nw`:
+        DATA8
+        DB 1
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for sampleTemperatureSensor_EpLi`:
+        DATA8
+        DB 8
+        DB 0
+        DATA16
+        DW zclSampleSensorEnviroment_TaskID
+        DW 0H
+        DATA8
+        DB 0
+        DB 9
+        DB 0
+        DATA16
+        DW zclSampleSensorEnviroment_TaskID
+        DW 0H
+        DATA8
+        DB 0
+        DB 10
+        DB 0
+        DATA16
+        DW zclSampleSensorEnviroment_TaskID
+        DW 0H
+        DATA8
+        DB 0
+        DB 11
+        DB 0
+        DATA16
+        DW zclSampleSensorEnviroment_TaskID
+        DW 0H
+        DATA8
+        DB 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for reportableChange>`:
+        DATA8
+        DB 44
+        DB 1
+        DB 0
+        DB 0
+
+        RSEG XDATA_ID:CODE:NOROOT(0)
+`?<Initializer for zclSampleSensorEnviroment_Cm`:
+        DATA16
+        DW `??zclSampleSensorEnviroment_BasicResetCB::?rela`
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW `??zclSampleSensorEnviroment_BasicResetCB::?rela`
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW `??zclSampleSensorEnviroment_BasicResetCB::?rela`
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW `??zclSampleSensorEnviroment_BasicResetCB::?rela`
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+        DW 0H
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??zclSampleSensorEnviroment_Init::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclSampleSensorEnviroment_Init
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??zclSampleSensorEnviroment_event_loop::?relay`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclSampleSensorEnviroment_event_loop
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??zclSampleSensorEnviroment_ProcessCommissionin:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclSampleSensorEnviroment_ProcessCommissioningStatus
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??zclSampleSensorEnviroment_BasicResetCB::?rela`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclSampleSensorEnviroment_BasicResetCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??zclSampleSensorEnviroment_BatteryWarningCB::?`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclSampleSensorEnviroment_BatteryWarningCB
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+`??zclSampleSensorEnviroment_ProcessIncomingMsg:`:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclSampleSensorEnviroment_ProcessIncomingMsg
+
+        RSEG BANK_RELAYS:CODE:REORDER:NOROOT(0)
+??zclSampleSensorEnviroment_ProcessInDiscCmdsRs:
+        CODE
+        LCALL   ?BDISPATCH
+        DATA24
+        DC24    zclSampleSensorEnviroment_ProcessInDiscCmdsRspCmd
+
+        END
+//  772 
+//  773 /*********************************************************************
+//  774  * @fn      zclSampleSensorEnviroment_ProcessInDiscAttrsRspCmd
+//  775  *
+//  776  * @brief   Process the "Profile" Discover Attributes Response Command
+//  777  *
+//  778  * @param   pInMsg - incoming message to process
+//  779  *
+//  780  * @return  none
+//  781  */
+//  782 static uint8 zclSampleSensorEnviroment_ProcessInDiscAttrsRspCmd( zclIncomingMsg_t *pInMsg )
+//  783 {
+//  784   zclDiscoverAttrsRspCmd_t *discoverRspCmd;
+//  785   uint8 i;
+//  786 
+//  787   discoverRspCmd = (zclDiscoverAttrsRspCmd_t *)pInMsg->attrCmd;
+//  788   for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+//  789   {
+//  790     // Device is notified of the result of its attribute discovery command.
+//  791   }
+//  792 
+//  793   return ( TRUE );
+//  794 }
+//  795 
+//  796 /*********************************************************************
+//  797  * @fn      zclSampleTemperatureSensor_ProcessInDiscAttrsExtRspCmd
+//  798  *
+//  799  * @brief   Process the "Profile" Discover Attributes Extended Response Command
+//  800  *
+//  801  * @param   pInMsg - incoming message to process
+//  802  *
+//  803  * @return  none
+//  804  */
+//  805 static uint8 zclSampleSensorEnviroment_ProcessInDiscAttrsExtRspCmd( zclIncomingMsg_t *pInMsg )
+//  806 {
+//  807   zclDiscoverAttrsExtRsp_t *discoverRspCmd;
+//  808   uint8 i;
+//  809 
+//  810   discoverRspCmd = (zclDiscoverAttrsExtRsp_t *)pInMsg->attrCmd;
+//  811   for ( i = 0; i < discoverRspCmd->numAttr; i++ )
+//  812   {
+//  813     // Device is notified of the result of its attribute discovery command.
+//  814   }
+//  815 
+//  816   return ( TRUE );
+//  817 }
+//  818 #endif // ZCL_DISCOVER
+//  819 
+//  820 /*********************************************************************
+//  821  * @fn      zclSampleTemperatureSensor_HandleKeys
+//  822  *
+//  823  * @brief   Handles all key events for this device.
+//  824  *
+//  825  * @param   shift - true if in shift/alt.
+//  826  * @param   keys - bit field for key events. Valid entries:
+//  827  *                 HAL_KEY_SW_5
+//  828  *                 HAL_KEY_SW_4
+//  829  *                 HAL_KEY_SW_3
+//  830  *                 HAL_KEY_SW_2
+//  831  *                 HAL_KEY_SW_1
+//  832  *
+//  833  * @return  none
+//  834  */
+//  835 static void zclSampleSensorEnviroment_HandleKeys( byte shift, byte keys )
+//  836 {
+//  837 }
+//  838 /****************************************************************************
+//  839 ****************************************************************************/
+//  840 
+//  841 
+// 
+// 605 bytes in segment BANKED_CODE
+//  42 bytes in segment BANK_RELAYS
+// 105 bytes in segment XDATA_I
+// 105 bytes in segment XDATA_ID
+//  49 bytes in segment XDATA_Z
+// 
+// 147 bytes of CODE     memory
+// 605 bytes of HUGECODE memory
+// 154 bytes of XDATA    memory
+//
+//Errors: none
+//Warnings: none
